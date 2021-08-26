@@ -1,21 +1,21 @@
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import Head from "next/head";
+import "../styles/reset.css";
+import "../styles/normalize.css";
 import "../styles/global.css";
-import "tailwindcss/tailwind.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
         <title>Joey</title>
-        <meta name="description" content="Stuff I made" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </AnimateSharedLayout>
     </>
   );
 }
