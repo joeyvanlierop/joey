@@ -10,10 +10,7 @@ export default function Home() {
       <Hero>
         <About
           name="joey van lierop"
-          lines={[
-            "this is my website with some things i've made",
-            "i'm not sure what to do with this yet so lower your expectations",
-          ]}
+          lines={["random text", "more text blah blah"]}
         />
       </Hero>
       {/* Writing */}

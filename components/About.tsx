@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 const fadeInDelay = 0.2;
@@ -18,12 +17,12 @@ export const About: React.FC<AboutProps> = (props) => {
             "--delay": "0.25s",
           }}
         >
-          joey van lierop
+          {props.name}
         </Text>
       </TextBounds>
       <h1>
         {props.lines.map((line, index) => (
-          <TextBounds>
+          <TextBounds key={index}>
             <Text
               style={{
                 "--delay": `${fadeInDelay * index + 0.25}s`,
@@ -42,7 +41,6 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 2rem;
 `;
 
 const TextBounds = styled.div`
