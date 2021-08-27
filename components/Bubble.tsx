@@ -51,8 +51,8 @@ export const Bubble: React.FC<BubbleProps> = (props) => {
                 }}
                 initial={{
                   visibility: "hidden",
-                  width: index === 0 ? `calc(${props.innerSize} * 1)` : 0,
-                  height: index === 0 ? `calc(${props.innerSize} * 1)` : 0,
+                  width: 0,
+                  height: 0,
                 }}
                 exit={
                   isClicked
