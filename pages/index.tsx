@@ -19,7 +19,7 @@ export default function Home() {
         innerSize="5rem"
         outerSize="50rem"
         offset={1}
-        href="writing"
+        href="/writing"
         top="30%"
         left="30%"
         transitions={["#fdebf1", "#fdf3f6", "#fff9fb", "#ffffff"]}
@@ -32,7 +32,7 @@ export default function Home() {
         innerSize="5rem"
         outerSize="40rem"
         offset={3}
-        href="games"
+        href="/games"
         top="40%"
         left="70%"
         transitions={["#e5f1f8", "#edf5fa", "#f5fafd", "#ffffff"]}
@@ -45,7 +45,7 @@ export default function Home() {
         innerSize="5rem"
         outerSize="30rem"
         offset={2}
-        href="movies"
+        href="/movies"
         top="65%"
         left="60%"
         transitions={["#feecea", "#fff2f6", "#fff9fb", "#ffffff"]}

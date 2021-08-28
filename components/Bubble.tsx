@@ -17,14 +17,14 @@ interface BubbleProps {
   top: string;
   left: string;
   href: string;
-  transitions: string[];
+  transitions?: string[];
 }
 
 export const Bubble: React.FC<BubbleProps> = (props) => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <Link href={`/${props.href}`}>
+    <Link href={props.href}>
       <StyledBubble
         style={{
           "--color": props.color,
@@ -38,7 +38,7 @@ export const Bubble: React.FC<BubbleProps> = (props) => {
       >
         <>
           {props.children}
-          {props.transitions.map((color, index) => {
+          {props.transitions?.map((color, index) => {
             const delay = index * transitionBubbleOffset;
             return (
               <TransitionBubble
