@@ -26,6 +26,11 @@ const Dot = styled.div`
 
 const Title = styled.h4`
   width: 100%;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 16px;
 `;
 
 const Date = styled.h4`
