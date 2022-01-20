@@ -120,7 +120,7 @@ const Title = styled.h4`
 const Date = styled.h4`
   color: #272727;
   opacity: 0.3;
-  transition: all 0.25s;
+  transition: opacity 0.25s;
   margin-left: auto;
 `;
 
@@ -174,7 +174,7 @@ const CategoryItem = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: opacity 0.25s;
 `;
 
 const CategoryWrapper = styled.div`
