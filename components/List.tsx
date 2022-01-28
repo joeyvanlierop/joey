@@ -37,12 +37,10 @@ export const List: React.FC<ListProps> = (props) => {
             <Dot
               className={idx === selected ? "selected" : ""}
               color={category.color}
-              style={{
-                marginRight: "12px",
-              }}
             />
             <Title
               style={{
+                marginLeft: "12px",
                 marginRight: "24px",
               }}
             >
@@ -175,6 +173,8 @@ const CategoryItem = styled.div`
   align-items: center;
   cursor: pointer;
   transition: opacity 0.25s;
+  flex-shrink: 1;
+  min-width: 0;
 `;
 
 const CategoryWrapper = styled.div`
@@ -183,8 +183,17 @@ const CategoryWrapper = styled.div`
   align-items: center;
   height: 60px;
   line-height: 60px;
+  width: 100%;
+  overflow: hidden;
 
   > :not(.selected) {
     opacity: 0.3;
+  }
+
+  @media only screen and (max-width: 768px) {
+    justify-content: space-between;
+    ${Title} {
+      display: none;
+    }
   }
 `;
