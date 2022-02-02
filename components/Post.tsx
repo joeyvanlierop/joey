@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export interface Post {
   title: string;
   date: string;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "@stitches/react";
 import { List } from "../components/List";
 import { Category, Post } from "../components/Post";
 
@@ -34,17 +34,17 @@ export default function Home() {
   );
 }
 
-const Center = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+const Center = styled("div", {
+  width: "100vw",
+  height: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+});
 
-const Column = styled.div`
-  width: 50%;
-  position: absolute;
-  top: 30%;
-`;
+const Column = styled("div", {
+  width: "50%",
+  position: "absolute",
+  top: "30%",
+});

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { styled } from "@stitches/react";
 import { Category, Post } from "./Post";
 
 interface ListProps {
@@ -36,10 +36,12 @@ export const List: React.FC<ListProps> = (props) => {
           >
             <Dot
               className={idx === selected ? "selected" : ""}
-              color={category.color}
+              css={{
+                backgroundColor: category.color,
+              }}
             />
             <Title
-              style={{
+              css={{
                 marginLeft: "12px",
                 marginRight: "24px",
               }}
@@ -86,8 +88,8 @@ const ListItem: React.FC<ListItemProps> = (props) => {
   return (
     <ListItemContent {...animations}>
       <Dot
-        color={props.color}
-        style={{
+        css={{
+          backgroundColor: props.color,
           marginRight: "12px",
         }}
       />
@@ -98,102 +100,101 @@ const ListItem: React.FC<ListItemProps> = (props) => {
   );
 };
 
-const Dot = styled.div`
-  background-color: ${(props) => props.color};
-  border-radius: 50%;
-  min-width: 8px;
-  min-height: 8px;
-  width: 8px;
-  height: 8px;
-`;
+const Dot = styled("div", {
+  backgroundColor: "black",
+  borderRadius: "50%",
+  minWidth: "8px",
+  minHeight: "8px",
+  width: "8px",
+  height: "8px",
+});
 
-const Title = styled.h4`
-  height: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-right: 16px;
-`;
+const Title = styled("h4", {
+  height: "100%",
+  textOverflow: "ellipsis",
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  marginRight: "16px",
+});
 
-const Date = styled.h4`
-  color: #272727;
-  opacity: 0.3;
-  transition: opacity 0.25s;
-  margin-left: auto;
-`;
+const Date = styled("h4", {
+  color: "#272727",
+  opacity: "0.3",
+  transition: "opacity 0.25s",
+  marginLeft: "auto",
+});
 
-const Expand = styled.svg`
-  background-image: url(expand.svg);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  width: 0;
-  height: 20px;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transition: all 0.25s;
-`;
+const Expand = styled("svg", {
+  backgroundImage: "url(expand.svg)",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center bottom",
+  width: "0",
+  height: "20px",
+  opacity: "0",
+  transform: "rotate(-90deg)",
+  transition: "all 0.25s",
+});
 
-const ListItemContent = styled(motion.li)`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  border-top: 1px solid #ebebeb;
-  box-shadow: inset 0 -1px 0 0 #ebebeb;
-  margin-top: -1px;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  transition: opacity 0.25s;
-  transform-origin: top;
-  cursor: pointer;
+const ListItemContent = styled(motion.li, {
+  display: "flex",
+  justifyContent: "start",
+  alignItems: "center",
+  borderTop: "1px solid #ebebeb",
+  boxShadow: "inset 0 -1px 0 0 #ebebeb",
+  marginTop: "-1px",
+  width: "100%",
+  height: "60px",
+  lineHeight: "60px",
+  transition: "opacity 0.25s",
+  transformOrigin: "top",
+  cursor: "pointer",
 
-  :hover {
-    opacity: 1 !important;
-  }
-  :hover ${Expand} {
-    width: 20px;
-    opacity: 1;
-    margin-left: 4px;
-  }
-  :hover ${Date} {
-    opacity: 1;
-  }
-`;
+  "&:hover": {
+    opacity: "1 !important",
+  },
+  [`&:hover ${Expand}`]: {
+    width: "20px",
+    opacity: "1",
+    marginLeft: "2px",
+  },
+  [`&:hover ${Date}`]: {
+    opacity: "1",
+  },
+});
 
-const ListWrapper = styled.ul`
-  width: 100%;
+const ListWrapper = styled("ul", {
+  width: "100%",
 
-  :hover ${ListItemContent} {
-    opacity: 0.3;
-  }
-`;
+  [`&:hover ${ListItemContent}`]: {
+    opacity: "0.3",
+  },
+});
 
-const CategoryItem = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: opacity 0.25s;
-  flex-shrink: 1;
-  min-width: 0;
-`;
+const CategoryItem = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  cursor: "pointer",
+  transition: "opacity 0.25s",
+  flexShrink: "1",
+  minWidth: "0",
+});
 
-const CategoryWrapper = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  height: 60px;
-  line-height: 60px;
-  width: 100%;
-  overflow: hidden;
+const CategoryWrapper = styled("div", {
+  display: "flex",
+  justifyContent: "start",
+  alignItems: "center",
+  height: "60px",
+  lineHeight: "60px",
+  width: "100%",
 
-  > :not(.selected) {
-    opacity: 0.3;
-  }
+  "> :not(.selected)": {
+    opacity: "0.3",
+  },
 
-  @media only screen and (max-width: 768px) {
-    justify-content: space-between;
-    ${Title} {
-      display: none;
-    }
-  }
-`;
+  // @media only screen and (max-width: 768px) {
+  //   justify-content: space-between,
+  //   ${Title} {
+  //     display: none,
+  //   }
+  // }
+});
