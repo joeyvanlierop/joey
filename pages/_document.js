@@ -2,29 +2,6 @@ import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { getCssText } from "../stitches.config";
 
 export default class Document extends NextDocument {
-  static async getInitialProps(ctx) {
-    try {
-      const initialProps = await NextDocument.getInitialProps(ctx);
-
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            <style
-              id="stitches"
-              dangerouslySetInnerHTML={{ __html: getCssText() }}
-            />
-          </>
-        ),
-      };
-    } catch (e) {
-      console.error(e.message);
-    } finally {
-      null;
-    }
-  }
-
   render() {
     return (
       <Html lang="en">
@@ -39,6 +16,10 @@ export default class Document extends NextDocument {
           <link
             href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
             rel="stylesheet"
+          />
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
         </Head>
         <body>
