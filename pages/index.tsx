@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "../stitches.config";
 import { List } from "../components/List";
 import { Category, Post } from "../components/Post";
 

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { styled } from "@stitches/react";
+import { styled } from "../stitches.config";
 import { Category, Post } from "./Post";
 
 interface ListProps {
