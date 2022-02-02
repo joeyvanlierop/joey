@@ -4,7 +4,7 @@ import "../styles/reset.css";
 import "../styles/normalize.css";
 import "../styles/global.css";
 
-function MyApp({ Component, pageProps, router }) {
+export default function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
@@ -19,5 +19,3 @@ function MyApp({ Component, pageProps, router }) {
     </>
   );
 }
-
-export default MyApp;
