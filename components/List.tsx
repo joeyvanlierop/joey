@@ -135,7 +135,7 @@ const Expand = styled("svg", {
   transition: "all 0.25s",
 });
 
-const ListItemContent = styled(motion.li, {
+const ListItemContent = styled(motion.div, {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
@@ -162,7 +162,7 @@ const ListItemContent = styled(motion.li, {
   },
 });
 
-const ListWrapper = styled("ul", {
+const ListWrapper = styled("div", {
   width: "100%",
 
   [`&:hover ${ListItemContent}`]: {
@@ -194,11 +194,4 @@ const CategoryWrapper = styled("div", {
   "> :not(.selected)": {
     opacity: "0.3",
   },
-
-  // @media only screen and (max-width: 768px) {
-  //   justify-content: space-between,
-  //   ${Title} {
-  //     display: none,
-  //   }
-  // }
 });
