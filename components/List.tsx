@@ -177,7 +177,11 @@ const CategoryItem = styled("div", {
   transition: "opacity 0.25s",
   flexShrink: "1",
   minWidth: "0",
-  opacity: "unset",
+  opacity: "0.3",
+
+  "&:hover": {
+    opacity: "1 !important",
+  },
 });
 
 const CategoryWrapper = styled("div", {
