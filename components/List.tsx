@@ -177,7 +177,7 @@ const CategoryItem = styled("div", {
   transition: "opacity 0.25s",
   flexShrink: "1",
   minWidth: "0",
-  opacity: "inherit",
+  opacity: "unset",
 });
 
 const CategoryWrapper = styled("div", {
