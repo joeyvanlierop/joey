@@ -1,10 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { styled } from "../stitches.config";
-import { Category, Post } from "./Post";
+import { Category, PostData } from "../../lib/Post";
+import { styled } from "../../stitches.config";
+import { ListItem, ListItemContent } from "./ListItem";
 
 interface ListProps {
-  posts: Post[];
+  posts: PostData[];
   categories: Category[];
 }
 
@@ -13,14 +14,14 @@ export const List: React.FC<ListProps> = (props) => {
   const [posts, setPosts] = useState(props.posts);
 
   useEffect(() => {
-    let newPosts: Post[];
+    let newPosts: PostData[];
     if (selected === 0) {
       newPosts = props.posts;
     } else {
       const selectedCategory = props.categories[selected];
-      newPosts = props.posts.filter(
-        (post) => post.category === selectedCategory
-      );
+      newPosts = props.posts.filter((post) => {
+        return post.category === selectedCategory.name;
+      });
     }
     setPosts(newPosts);
   }, [selected]);
@@ -53,50 +54,23 @@ export const List: React.FC<ListProps> = (props) => {
       </CategoryWrapper>
       <ListWrapper>
         <AnimatePresence initial={false}>
-          {posts.map((post) => (
-            <ListItem
-              key={post.title}
-              color={post.category.color}
-              title={post.title}
-              date={post.date}
-            />
-          ))}
+          {posts.map((post) => {
+            const category = props.categories.find(
+              (category) => category.name === post.category
+            );
+
+            return (
+              <ListItem
+                key={post.title}
+                color={category.color}
+                title={post.title}
+                date={post.date}
+              />
+            );
+          })}
         </AnimatePresence>
       </ListWrapper>
     </>
-  );
-};
-
-interface ListItemProps {
-  title: string;
-  date: string;
-  color: string;
-}
-
-const ListItem: React.FC<ListItemProps> = (props) => {
-  const animations = {
-    initial: { opacity: 0, scaleY: 0, height: 0 },
-    animate: { opacity: null, scaleY: 1, height: 60 },
-    exit: { opacity: 0, scaleY: 0, height: 0 },
-    transition: {
-      type: "spring",
-      bounce: 0,
-      duration: 0.5,
-    },
-  };
-
-  return (
-    <ListItemContent {...animations}>
-      <Dot
-        css={{
-          backgroundColor: props.color,
-          marginRight: "12px",
-        }}
-      />
-      <Title>{props.title}</Title>
-      <Date>{props.date}</Date>
-      <Expand />
-    </ListItemContent>
   );
 };
 
@@ -115,51 +89,6 @@ const Title = styled("h4", {
   overflow: "hidden",
   whiteSpace: "nowrap",
   marginRight: "16px",
-});
-
-const Date = styled("h4", {
-  color: "#272727",
-  opacity: "0.3",
-  transition: "opacity 0.25s",
-  marginLeft: "auto",
-});
-
-const Expand = styled("svg", {
-  backgroundImage: "url(expand.svg)",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center bottom",
-  width: "0",
-  height: "20px",
-  opacity: "0",
-  transform: "rotate(-90deg)",
-  transition: "all 0.25s",
-});
-
-const ListItemContent = styled(motion.div, {
-  display: "flex",
-  justifyContent: "start",
-  alignItems: "center",
-  borderTop: "1px solid #ebebeb",
-  boxShadow: "inset 0 -1px 0 0 #ebebeb",
-  marginTop: "-1px",
-  width: "100%",
-  height: "60px",
-  lineHeight: "60px",
-  transition: "opacity 0.25s",
-  transformOrigin: "top",
-  cursor: "pointer",
-
-  "&:hover": {
-    opacity: "1 !important",
-  },
-  [`&:hover ${Expand}`]: {
-    width: "20px",
-    opacity: "1",
-    marginLeft: "2px",
-  },
-  [`&:hover ${Date}`]: {
-    opacity: "1",
-  },
 });
 
 const ListWrapper = styled("div", {

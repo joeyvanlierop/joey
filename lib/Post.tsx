@@ -1,7 +1,7 @@
-export interface Post {
+export interface PostData {
   title: string;
   date: string;
-  category: Category;
+  category: string;
 }
 
 export interface Category {

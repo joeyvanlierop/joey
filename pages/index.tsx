@@ -1,6 +1,9 @@
 import { styled } from "../stitches.config";
-import { List } from "../components/List";
-import { Category, Post } from "../components/Post";
+import { List } from "../components/List/List";
+import { Category } from "../lib/Post";
+import matter from "gray-matter";
+import fs from "fs";
+import path from "path";
 
 const categories: Category[] = [
   { name: "All", color: "#d4d4d4" },
@@ -9,22 +12,7 @@ const categories: Category[] = [
   { name: "Etcetera", color: "#ffdb65" },
 ];
 
-const posts: Post[] = [
-  { category: categories[1], title: "This is a test post", date: "28th" },
-  { category: categories[3], title: "This is not a test post", date: "19th" },
-  {
-    category: categories[1],
-    title: "This may or may not be a test post",
-    date: "8th",
-  },
-  {
-    category: categories[2],
-    title: "This is most definitely a test post",
-    date: "2nd",
-  },
-];
-
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <Center>
       <Column>
@@ -32,6 +20,19 @@ export default function Home() {
       </Column>
     </Center>
   );
+}
+
+export async function getStaticProps() {
+  const posts = fs.readdirSync(path.join("pages", "posts")).map((file) => {
+    const { data } = matter(fs.readFileSync(path.join("pages", "posts", file)));
+    return data;
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
 
 const Center = styled("div", {
