@@ -1,9 +1,6 @@
 import { styled } from "../stitches.config";
 import { List } from "../components/List/List";
-import { Category } from "../lib/Post";
-import matter from "gray-matter";
-import fs from "fs";
-import path from "path";
+import { Category, getPosts } from "../lib/Post";
 
 const categories: Category[] = [
   { name: "All", color: "#d4d4d4" },
@@ -23,9 +20,8 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = fs.readdirSync(path.join("pages", "posts")).map((file) => {
-    const { data } = matter(fs.readFileSync(path.join("pages", "posts", file)));
-    return data;
+  const posts = getPosts().map((post) => {
+    return post.data;
   });
 
   return {
@@ -35,7 +31,7 @@ export async function getStaticProps() {
   };
 }
 
-const Center = styled("div", {
+export const Center = styled("div", {
   width: "100vw",
   height: "100vh",
   display: "flex",
@@ -44,7 +40,7 @@ const Center = styled("div", {
   alignItems: "center",
 });
 
-const Column = styled("div", {
+export const Column = styled("div", {
   width: "50%",
   position: "absolute",
   top: "30%",
