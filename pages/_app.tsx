@@ -16,6 +16,8 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     setIsMounted(true);
   }, []);
 
+  console.log(isMounted ? null : true);
+
   globalStyles();
   dayjs.extend(advancedFormat);
 
