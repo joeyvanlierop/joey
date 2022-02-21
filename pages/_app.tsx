@@ -18,18 +18,18 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <title>Joey</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <ThemeProvider
-        disableTransitionOnChange
-        attribute="class"
-        defaultTheme="system"
-        value={{ light: lightTheme.className, dark: darkTheme.className }}
-      >
-        <AnimateSharedLayout>
-          <AnimatePresence exitBeforeEnter>
+      <AnimateSharedLayout>
+        <AnimatePresence exitBeforeEnter>
+          <ThemeProvider
+            disableTransitionOnChange
+            attribute="class"
+            defaultTheme="system"
+            value={{ light: lightTheme.className, dark: darkTheme.className }}
+          >
             <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
-        </AnimateSharedLayout>
-      </ThemeProvider>
+          </ThemeProvider>
+        </AnimatePresence>
+      </AnimateSharedLayout>
     </>
   );
 }
