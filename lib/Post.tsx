@@ -21,7 +21,8 @@ export interface Post {
 export function getPostSlugs(): string[] {
   return fs
     .readdirSync(path.join("posts"))
-    .filter((file) => /\.mdx?$/.test(file));
+    .filter((file) => /\.mdx?$/.test(file))
+    .map((file) => file.replace(/\.mdx?$/, ""));
 }
 
 export function getPost(slug: string): Post {
@@ -34,10 +35,5 @@ export function getPost(slug: string): Post {
 }
 
 export function getPosts(): Post[] {
-  return fs
-    .readdirSync(path.join("posts"))
-    .map(
-      (file) =>
-        matter(fs.readFileSync(path.join("posts", file))) as unknown as Post
-    );
+  return getPostSlugs().map((slug) => getPost(slug));
 }
