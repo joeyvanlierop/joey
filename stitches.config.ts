@@ -37,8 +37,6 @@ export const globalStyles = globalCss({
     fontFamily: "inter",
     backgroundColor: "$loContrast",
     color: "$hiContrast",
-    transition: "all 200ms ease-in-out",
-    transitionProperty: "color, background-color, border",
   },
 
   h4: {
