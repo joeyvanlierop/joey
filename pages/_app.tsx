@@ -7,7 +7,6 @@ import "../styles/reset.css";
 // import "../styles/global.css";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { useState, useEffect } from "react";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   globalStyles();

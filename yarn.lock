@@ -859,10 +859,10 @@ next-mdx-remote@^3.0.8:
     esbuild "^0.12.9"
     pkg-dir "^5.0.0"
 
-next-themes@0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.14.tgz#2b9861990bc453149e23d8e6ef1a25a119e36675"
-  integrity sha512-x09OaM+wg3SIlEjOv8B21aw/E36jxTtfW3Dm/DPwMsSMluGt7twe1LigA6nc+mXP1u0qu9MxBaIrPPH6UTiKnA==
+next-themes@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.0.16.tgz#c7982311262d43cc47a3744db78d71ae80928bfc"
+  integrity sha512-fWC7sOAplZ7i5gggzw4JVZEdSDIP1+pZDF0iHiFXrJ3wnrdFQcxaOFYo5/SQ7+xCFj/MLaoqXPgX0F9KFaYxSg==
 
 next@^12.0.10:
   version "12.0.10"
