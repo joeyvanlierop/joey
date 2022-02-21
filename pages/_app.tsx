@@ -7,8 +7,15 @@ import "../styles/reset.css";
 // import "../styles/global.css";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import { useState, useEffect } from "react";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   globalStyles();
   dayjs.extend(advancedFormat);
 
@@ -21,6 +28,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
+        disableTransitionOnChange={!isMounted}
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimateSharedLayout>
