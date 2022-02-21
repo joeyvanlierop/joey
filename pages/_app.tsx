@@ -19,7 +19,6 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <ThemeProvider
-        disableTransitionOnChange
         attribute="class"
         defaultTheme="system"
         value={{ light: lightTheme.className, dark: darkTheme.className }}

@@ -38,6 +38,7 @@ export const globalStyles = globalCss({
     fontFamily: "$inter",
     backgroundColor: "$loContrast",
     color: "$hiContrast",
+    transition: "all 250ms",
   },
 
   h4: {
