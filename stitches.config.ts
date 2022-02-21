@@ -7,7 +7,7 @@ export const { styled, getCssText, createTheme, globalCss } = createStitches({
       ...gray,
       ...slate,
       loContrast: "white",
-      hiContrast: slate.slate12,
+      hiContrast: "$slate12",
     },
     shadows: {
       ...gray,
@@ -26,7 +26,6 @@ export const darkTheme = createTheme({
     ...grayDark,
     ...slateDark,
     loContrast: mauveDark.mauve1,
-    hiContrast: slateDark.slate12,
   },
   shadows: {
     ...grayDark,
