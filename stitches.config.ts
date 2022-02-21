@@ -26,6 +26,7 @@ export const darkTheme = createTheme({
     ...grayDark,
     ...slateDark,
     loContrast: mauveDark.mauve1,
+    hiContrast: "$slate12",
   },
   shadows: {
     ...grayDark,
