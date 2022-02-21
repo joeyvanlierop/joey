@@ -3,11 +3,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { styled } from "../stitches.config";
 
-interface ThemeButtonProps {
-  onClick: (string) => void;
-}
-
-export const ThemeButton: React.FC<ThemeButtonProps> = (props) => {
+export const ThemeButton: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

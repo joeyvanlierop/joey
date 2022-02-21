@@ -17,7 +17,7 @@ export default function Home({ posts }) {
         <List posts={posts} categories={categories} />
       </Column>
       <TopRight>
-        <ThemeButton onClick={(theme) => console.log("THEME:", theme)} />
+        <ThemeButton />
       </TopRight>
     </Center>
   );
