@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Category, PostData } from "../../lib/Post";
 import { styled } from "../../stitches.config";
-import { ListItem, ListItemContent } from "./ListItem";
+import { ListItem, ListItemWrapper } from "./ListItem";
 
 interface ListProps {
   posts: PostData[];
@@ -94,7 +94,7 @@ const Title = styled("h4", {
 const ListWrapper = styled("div", {
   width: "100%",
 
-  [`&:hover ${ListItemContent}`]: {
+  [`&:hover ${ListItemWrapper}`]: {
     opacity: "0.3",
   },
 });
