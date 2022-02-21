@@ -7,9 +7,6 @@ export const { styled, getCssText, createTheme, globalCss } = createStitches({
       inter: "Inter, sans-serif",
     },
   },
-  media: {
-    dark: "(prefers-color-scheme: dark)",
-  },
 });
 
 export const lightTheme = createTheme({
