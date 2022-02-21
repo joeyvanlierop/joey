@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-import { darkTheme } from "../stitches.config.ts";
+import { darkTheme, globalCss } from "../stitches.config";
 import Head from "next/head";
 // import "../styles/normalize.css";
 import "../styles/reset.css";
