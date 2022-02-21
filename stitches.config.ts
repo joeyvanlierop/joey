@@ -43,4 +43,22 @@ export const globalStyles = globalCss({
     fontSize: "16px",
     fontWeight: "normal",
   },
+
+  // https://rude.im/blog/dark-theme-with-stitches-and-next-js
+  "@dark": {
+    ":root:not(.light)": {
+      ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
+        const currentColor = darkTheme.colors[currentColorKey];
+        const currentColorValue =
+          currentColor.value.substring(0, 1) === "$"
+            ? `$colors${currentColor.value}`
+            : currentColor.value;
+
+        return {
+          [currentColor.variable]: currentColorValue,
+          ...varSet,
+        };
+      }, {}),
+    },
+  },
 });
