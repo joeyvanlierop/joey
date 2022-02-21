@@ -18,6 +18,21 @@ export interface Post {
   content: string;
 }
 
+export function getPostSlugs(): string[] {
+  return fs
+    .readdirSync(path.join("posts"))
+    .filter((file) => /\.mdx?$/.test(file));
+}
+
+export function getPost(slug: string): Post {
+  const file = fs.readFileSync(path.join("posts", `${slug}.mdx`));
+  const post = matter(file) as unknown as Post;
+  Object.keys(post.data).forEach((key) => {
+    if (post.data[key] === undefined) throw `Post ${slug} is missing ${key}`;
+  });
+  return post;
+}
+
 export function getPosts(): Post[] {
   return fs
     .readdirSync(path.join("posts"))
@@ -25,15 +40,4 @@ export function getPosts(): Post[] {
       (file) =>
         matter(fs.readFileSync(path.join("posts", file))) as unknown as Post
     );
-}
-
-export function getPost(post: string): Post {
-  const file = fs.readFileSync(path.join("posts", `${post}.mdx`));
-  return matter(file) as unknown as Post;
-}
-
-export function getPostSlugs(): string[] {
-  return fs
-    .readdirSync(path.join("posts"))
-    .map((file) => file.replace(".mdx", ""));
 }

@@ -17,7 +17,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   );
 
   return (
-    <ListItemContent
+    <ListItemWrapper
       initial={{ scaleY: 0, height: 0 }}
       animate={{ scaleY: 1, height: 60 }}
       exit={{ scaleY: 0, height: 0 }}
@@ -36,7 +36,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
       <Title>{props.title}</Title>
       <DatePublished>{dateNumber}</DatePublished>
       <Expand />
-    </ListItemContent>
+    </ListItemWrapper>
   );
 };
 
@@ -71,7 +71,7 @@ const Expand = styled(ArrowTopRightIcon, {
   transition: "all 0.25s",
 });
 
-export const ListItemContent = styled(motion.div, {
+export const ListItemWrapper = styled(motion.a, {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
