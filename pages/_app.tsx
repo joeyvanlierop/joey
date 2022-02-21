@@ -10,12 +10,6 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import { useState, useEffect } from "react";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   globalStyles();
   dayjs.extend(advancedFormat);
 
@@ -26,9 +20,9 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <ThemeProvider
-        disableTransitionOnChange={isMounted}
         attribute="class"
         defaultTheme="system"
+        disableTransitionOnChange={false}
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimateSharedLayout>
