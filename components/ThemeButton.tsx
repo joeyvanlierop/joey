@@ -5,9 +5,9 @@ import { styled } from "../stitches.config";
 
 export const ThemeButton: React.FC = () => {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const theme = useTheme();
 
-  console.log("THEME:", resolvedTheme);
+  console.log("THEME:", theme);
 
   // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
   useEffect(() => setMounted(true), []);
@@ -16,8 +16,10 @@ export const ThemeButton: React.FC = () => {
 
   return (
     <StyledIcon
-      as={resolvedTheme === "light" ? SunIcon : MoonIcon}
-      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+      as={theme.resolvedTheme === "light" ? SunIcon : MoonIcon}
+      onClick={() =>
+        theme.setTheme(theme.resolvedTheme === "light" ? "dark" : "light")
+      }
     />
   );
 };
