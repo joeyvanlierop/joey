@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimateSharedLayout>
