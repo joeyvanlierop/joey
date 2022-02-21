@@ -21,7 +21,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider
         disableTransitionOnChange
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="dark"
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimateSharedLayout>
