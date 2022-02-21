@@ -7,8 +7,6 @@ export const ThemeButton: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const theme = useTheme();
 
-  console.log("THEME:", theme);
-
   // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
   useEffect(() => setMounted(true), []);
 
