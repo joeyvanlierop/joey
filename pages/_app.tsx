@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-import { darkTheme, globalStyles } from "../stitches.config";
+import { lightTheme, darkTheme, globalStyles } from "../stitches.config";
 import Head from "next/head";
 import "../styles/reset.css";
 // import "../styles/global.css";
@@ -22,7 +22,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         disableTransitionOnChange
         attribute="class"
         defaultTheme="system"
-        value={{ light: "light-theme", dark: darkTheme.className }}
+        value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimateSharedLayout>
           <AnimatePresence exitBeforeEnter>

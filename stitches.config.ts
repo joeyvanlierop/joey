@@ -3,21 +3,24 @@ import { gray, slate, slateDark, grayDark, mauveDark } from "@radix-ui/colors";
 
 export const { styled, getCssText, createTheme, globalCss } = createStitches({
   theme: {
-    colors: {
-      ...gray,
-      ...slate,
-      loContrast: "white",
-      hiContrast: "$slate12",
-    },
-    shadows: {
-      ...gray,
-    },
     fonts: {
       inter: "Inter, sans-serif",
     },
   },
   media: {
     dark: "(prefers-color-scheme: dark)",
+  },
+});
+
+export const lightTheme = createTheme({
+  colors: {
+    ...gray,
+    ...slate,
+    loContrast: "white",
+    hiContrast: "$slate12",
+  },
+  shadows: {
+    ...gray,
   },
 });
 
