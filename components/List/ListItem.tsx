@@ -80,8 +80,6 @@ export const ListItemWrapper = styled(motion.a, {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
-  // borderTop: "1px solid $gray5",
-  // boxShadow: "inset 0 -1px 0 0 $gray5",
   marginTop: "-1px",
   width: "100%",
   height: "60px",
@@ -90,6 +88,8 @@ export const ListItemWrapper = styled(motion.a, {
   cursor: "pointer",
   position: "relative",
 
+  // borderTop: "1px solid $gray5",
+  // boxShadow: "inset 0 -1px 0 0 $gray5",
   "&::before, &::after": {
     content: "",
     height: "1px",
