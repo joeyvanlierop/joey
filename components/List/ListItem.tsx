@@ -3,11 +3,13 @@ import { useMemo } from "react";
 import { styled } from "../../stitches.config";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 interface ListItemProps {
   title: string;
   date: string;
   color: string;
+  slug: string;
 }
 
 export const ListItem: React.FC<ListItemProps> = (props) => {
@@ -17,26 +19,28 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   );
 
   return (
-    <ListItemWrapper
-      initial={{ scaleY: 0, height: 0 }}
-      animate={{ scaleY: 1, height: 60 }}
-      exit={{ scaleY: 0, height: 0 }}
-      transition={{
-        type: "spring",
-        bounce: 0,
-        duration: 0.5,
-      }}
-    >
-      <Dot
-        css={{
-          backgroundColor: props.color,
-          marginRight: "12px",
+    <Link href={`/posts/${props.slug}`}>
+      <ListItemWrapper
+        initial={{ scaleY: 0, height: 0 }}
+        animate={{ scaleY: 1, height: 60 }}
+        exit={{ scaleY: 0, height: 0 }}
+        transition={{
+          type: "spring",
+          bounce: 0,
+          duration: 0.5,
         }}
-      />
-      <Title>{props.title}</Title>
-      <DatePublished>{dateNumber}</DatePublished>
-      <Expand />
-    </ListItemWrapper>
+      >
+        <Dot
+          css={{
+            backgroundColor: props.color,
+            marginRight: "12px",
+          }}
+        />
+        <Title>{props.title}</Title>
+        <DatePublished>{dateNumber}</DatePublished>
+        <Expand />
+      </ListItemWrapper>
+    </Link>
   );
 };
 

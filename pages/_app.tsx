@@ -1,13 +1,11 @@
-import type { AppProps } from "next/app";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import { ThemeProvider } from "next-themes";
-import { lightTheme, darkTheme, globalStyles } from "../stitches.config";
-import Head from "next/head";
-import "../styles/reset.css";
-// import "../styles/global.css";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { useState, useEffect } from "react";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { ThemeProvider } from "next-themes";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { darkTheme, globalStyles, lightTheme } from "../stitches.config";
+import "../styles/reset.css";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   globalStyles();

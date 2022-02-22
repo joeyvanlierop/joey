@@ -65,6 +65,7 @@ export const List: React.FC<ListProps> = (props) => {
                 color={category.color}
                 title={post.title}
                 date={post.date}
+                slug={post.slug}
               />
             );
           })}
