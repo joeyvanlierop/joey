@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         disableTransitionOnChange={false}
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>
