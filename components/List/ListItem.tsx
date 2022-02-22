@@ -36,7 +36,9 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
             marginRight: "12px",
           }}
         />
-        <Title layoutId={props.title}>{props.title}</Title>
+        <Title layoutId={props.title} layout="position">
+          {props.title}
+        </Title>
         <DatePublished>{dateNumber}</DatePublished>
         <Expand />
       </ListItemWrapper>

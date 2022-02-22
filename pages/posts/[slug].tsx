@@ -13,7 +13,9 @@ interface PostProps {
 export default function Post({ data, source }: PostProps) {
   return (
     <Center>
-      <Title layoutId={data.title}>{data.title}</Title>
+      <Title layoutId={data.title} layout="position">
+        {data.title}
+      </Title>
       <MDXRemote {...source} />
     </Center>
   );
