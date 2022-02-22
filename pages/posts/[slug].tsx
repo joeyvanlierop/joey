@@ -1,20 +1,38 @@
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
-import { getPost, getPostSlugs } from "../../lib/Post";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { getPost, getPostSlugs, PostData } from "../../lib/Post";
 import { Center } from "../index";
+import { motion } from "framer-motion";
+import { styled } from "../../stitches.config";
 
-export default function TestPage({ source }) {
+interface PostProps {
+  data: PostData;
+  source: MDXRemoteSerializeResult;
+}
+
+export default function Post({ data, source }: PostProps) {
   return (
     <Center>
+      <Title layoutId={data.title}>{data.title}</Title>
       <MDXRemote {...source} />
     </Center>
   );
 }
 
-export async function getStaticProps(context) {
+const Title = styled(motion.h4, {
+  position: "absolute",
+  top: 150,
+});
+
+export async function getStaticProps(context): Promise<{ props: PostProps }> {
   const post = getPost(context.params.slug);
   const mdxSource = await serialize(post.content);
-  return { props: { source: mdxSource } };
+  return {
+    props: {
+      data: post.data,
+      source: mdxSource,
+    },
+  };
 }
 
 export async function getStaticPaths() {

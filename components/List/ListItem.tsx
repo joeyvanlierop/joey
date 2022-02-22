@@ -36,7 +36,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
             marginRight: "12px",
           }}
         />
-        <Title>{props.title}</Title>
+        <Title layoutId={props.title}>{props.title}</Title>
         <DatePublished>{dateNumber}</DatePublished>
         <Expand />
       </ListItemWrapper>
@@ -53,7 +53,7 @@ const Dot = styled("div", {
   height: "8px",
 });
 
-const Title = styled("h4", {
+const Title = styled(motion.h4, {
   height: "100%",
   textOverflow: "ellipsis",
   overflow: "hidden",
