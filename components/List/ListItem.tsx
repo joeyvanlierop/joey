@@ -80,7 +80,7 @@ export const ListItemWrapper = styled(motion.a, {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
-  marginTop: "-1px",
+  // marginTop: "-1px",
   width: "100%",
   height: "60px",
   transition: "opacity 250s",
@@ -99,7 +99,7 @@ export const ListItemWrapper = styled(motion.a, {
     top: "0%",
   },
   "&::after": {
-    top: "calc(100% - 1px)",
+    top: "100%",
   },
 
   "&:hover": {
