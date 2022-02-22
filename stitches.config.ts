@@ -34,7 +34,7 @@ export const darkTheme = createTheme({
 });
 
 export const globalStyles = globalCss({
-  body: {
+  "body, *::before, *::after": {
     fontFamily: "$inter",
     backgroundColor: "$loContrast",
     color: "$hiContrast",

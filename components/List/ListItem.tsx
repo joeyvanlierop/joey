@@ -56,7 +56,6 @@ const Dot = styled("div", {
 });
 
 export const Title = styled(motion.p, {
-  // lineHeight: "16px",
   textOverflow: "ellipsis",
   overflow: "hidden",
   whiteSpace: "nowrap",
@@ -81,15 +80,27 @@ export const ListItemWrapper = styled(motion.a, {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
-  borderTop: "1px solid $gray5",
-  boxShadow: "inset 0 -1px 0 0 $gray5",
+  // borderTop: "1px solid $gray5",
+  // boxShadow: "inset 0 -1px 0 0 $gray5",
   marginTop: "-1px",
   width: "100%",
   height: "60px",
-  // lineHeight: "60px",
-  transition: "opacity 0.25s",
+  transition: "opacity 250s",
   transformOrigin: "top",
   cursor: "pointer",
+  position: "relative",
+
+  "&::before, &::after": {
+    content: "",
+    height: "1px",
+    backgroundColor: "$gray5",
+    width: "100%",
+    position: "absolute",
+    top: "0%",
+  },
+  "&::after": {
+    top: "calc(100% - 1px)",
+  },
 
   "&:hover": {
     opacity: "1 !important",
