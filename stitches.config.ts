@@ -34,10 +34,13 @@ export const darkTheme = createTheme({
 });
 
 export const globalStyles = globalCss({
-  "body, *::before, *::after": {
+  body: {
     fontFamily: "$inter",
     backgroundColor: "$loContrast",
     color: "$hiContrast",
+    transition: "all 250ms",
+  },
+  "*::before, *::after": {
     transition: "all 250ms",
   },
 
