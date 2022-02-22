@@ -33,6 +33,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
         <Dot
           css={{
             backgroundColor: props.color,
+            boxShadow: `0 0 5px 0px ${props.color}`,
             marginRight: "12px",
           }}
         />

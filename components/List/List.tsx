@@ -39,6 +39,7 @@ export const List: React.FC<ListProps> = (props) => {
               className={idx === selected ? "selected" : ""}
               css={{
                 backgroundColor: category.color,
+                boxShadow: `0 0 5px 0px ${category.color}`,
               }}
             />
             <Title
