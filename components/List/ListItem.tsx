@@ -55,8 +55,8 @@ const Dot = styled("div", {
   height: "8px",
 });
 
-const Title = styled(motion.h4, {
-  height: "100%",
+export const Title = styled(motion.p, {
+  // lineHeight: "16px",
   textOverflow: "ellipsis",
   overflow: "hidden",
   whiteSpace: "nowrap",
@@ -86,7 +86,7 @@ export const ListItemWrapper = styled(motion.a, {
   marginTop: "-1px",
   width: "100%",
   height: "60px",
-  lineHeight: "60px",
+  // lineHeight: "60px",
   transition: "opacity 0.25s",
   transformOrigin: "top",
   cursor: "pointer",
