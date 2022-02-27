@@ -9,7 +9,7 @@ export const { styled, getCssText, createTheme, globalCss } = createStitches({
   },
 });
 
-export const lightTheme = createTheme({
+export const lightTheme = createTheme("light-theme", {
   colors: {
     ...gray,
     ...slate,
@@ -21,7 +21,7 @@ export const lightTheme = createTheme({
   },
 });
 
-export const darkTheme = createTheme({
+export const darkTheme = createTheme("dark-theme", {
   colors: {
     ...grayDark,
     ...slateDark,
