@@ -34,6 +34,7 @@ export const List: React.FC<ListProps> = (props) => {
             key={idx}
             className={idx === selected ? "selected" : ""}
             onClick={() => setSelected(idx)}
+            tabIndex={1}
           >
             <Dot
               className={idx === selected ? "selected" : ""}
@@ -96,7 +97,7 @@ const Title = styled("h4", {
 const ListWrapper = styled("div", {
   width: "100%",
 
-  [`&:hover ${ListItemWrapper}`]: {
+  [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
     opacity: "0.3",
   },
 });
@@ -109,7 +110,7 @@ const CategoryItem = styled("div", {
   flexShrink: "1",
   minWidth: "0",
 
-  "&:hover": {
+  "&:hover, &:focus": {
     opacity: "1 !important",
   },
 });

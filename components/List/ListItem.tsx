@@ -19,7 +19,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   );
 
   return (
-    <Link href={`/posts/${props.slug}`}>
+    <Link href={`/posts/${props.slug}`} passHref={true}>
       <ListItemWrapper
         initial={{ scaleY: 0, height: 0 }}
         animate={{ scaleY: 1, height: 60 }}
@@ -29,6 +29,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
           bounce: 0,
           duration: 0.5,
         }}
+        tabIndex={2}
       >
         <Dot
           css={{
@@ -87,6 +88,8 @@ export const ListItemWrapper = styled(motion.a, {
   transformOrigin: "top",
   cursor: "pointer",
   position: "relative",
+  textDecoration: "none",
+  color: "inherit",
 
   // borderTop: "1px solid $gray5",
   // boxShadow: "inset 0 -1px 0 0 $gray5",
@@ -102,15 +105,15 @@ export const ListItemWrapper = styled(motion.a, {
     top: "100%",
   },
 
-  "&:hover": {
+  "&:hover, &:focus": {
     opacity: "1 !important",
   },
-  [`&:hover ${Expand}`]: {
+  [`&:hover ${Expand}, &:focus ${Expand}`]: {
     width: "22px",
     opacity: "1",
     marginLeft: "2px",
   },
-  [`&:hover ${DatePublished}`]: {
+  [`&:hover ${DatePublished}, &:focus ${DatePublished}`]: {
     opacity: "1",
   },
 });
