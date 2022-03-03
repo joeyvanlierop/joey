@@ -56,21 +56,22 @@ export const globalStyles = globalCss({
     fontWeight: "normal",
   },
 
-  "@font-face": [
-    {
-      fontFamily: "Inter var",
-      fontStyle: "normal",
-      fontWeight: "100 900",
-      fontDisplay: "swap",
-      src: "url(/fonts/Inter-roman.latin.var.woff2) format('woff2')",
-    },
-    {
-      fontFamily: "Inter var",
-      fontStyle: "italic",
-      fontWeight: "100 900",
-      fontDisplay: "swap",
-      src: "url(/fonts/Inter-italic.latin.var.woff2) format('woff2')",
-      // fontNamedInstance: "Italic",
-    },
-  ],
+  // https://github.com/modulz/stitches-site/blob/0852969e0361d16f853c70979367cece2d5b65df/pages/_app.tsx#L11-L35
+  // "@font-face": [
+  //   {
+  //     fontFamily: "Inter var",
+  //     fontStyle: "normal",
+  //     fontWeight: "100 900",
+  //     fontDisplay: "swap",
+  //     src: "url(/fonts/Inter-roman.latin.var.woff2) format('woff2')",
+  //   },
+  //   {
+  //     fontFamily: "Inter var",
+  //     fontStyle: "italic",
+  //     fontWeight: "100 900",
+  //     fontDisplay: "swap",
+  //     src: "url(/fonts/Inter-italic.latin.var.woff2) format('woff2')",
+  //     // fontNamedInstance: "Italic",
+  //   },
+  // ],
 });
