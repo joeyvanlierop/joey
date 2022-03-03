@@ -45,11 +45,11 @@ export const globalStyles = globalCss({
     fontFamily: "$inter",
     backgroundColor: "$loContrast",
     color: "$hiContrast",
-    // transition: "all 250ms",
+    transition: "all 250ms",
   },
-  // "*::before, *::after": {
-  //   transition: "all 250ms",
-  // },
+  "*::before, *::after": {
+    transition: "all 250ms",
+  },
 
   h4: {
     fontSize: "16px",
