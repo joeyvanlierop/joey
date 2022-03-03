@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "build:sitemap": "next-sitemap --config next-sitemap.config.js",
+    "postbuild": "yarn build:sitemap",
     "start": "next start"
   },
   "dependencies": {
@@ -24,6 +26,7 @@
     "@types/mdx": "^2.0.1",
     "@types/node": "^15.12.0",
     "@types/react": "^17.0.38",
+    "next-sitemap": "^2.5.4",
     "typescript": "^4.3.2"
   }
 }
