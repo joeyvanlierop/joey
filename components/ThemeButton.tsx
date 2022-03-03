@@ -18,7 +18,7 @@ export const ThemeButton: React.FC = () => {
       onClick={() =>
         theme.setTheme(theme.resolvedTheme === "light" ? "dark" : "light")
       }
-      tabIndex={2}
+      tabIndex={0}
     />
   );
 };

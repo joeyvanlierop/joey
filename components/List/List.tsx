@@ -34,7 +34,7 @@ export const List: React.FC<ListProps> = (props) => {
             key={idx}
             className={idx === selected ? "selected" : ""}
             onClick={() => setSelected(idx)}
-            tabIndex={1}
+            tabIndex={0}
           >
             <Dot
               className={idx === selected ? "selected" : ""}

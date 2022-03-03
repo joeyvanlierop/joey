@@ -29,7 +29,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
           bounce: 0,
           duration: 0.5,
         }}
-        tabIndex={2}
+        tabIndex={0}
       >
         <Dot
           css={{
