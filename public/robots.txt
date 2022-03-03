@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.joeyvanlierop.com
-
-# Sitemaps
-Sitemap: https://www.joeyvanlierop.com/sitemap.xml
