@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
-        disableTransitionOnChange={false}
+        // disableTransitionOnChange={mounted}
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimatePresence exitBeforeEnter>
