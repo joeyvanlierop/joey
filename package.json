@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "build:sitemap": "next-sitemap --config next-sitemap.config.js",
-    "postbuild": "yarn build:sitemap",
+    "build": "next build && next export && next-sitemap --config next-sitemap.config.js",
     "start": "next start"
   },
   "dependencies": {
