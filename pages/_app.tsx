@@ -1,9 +1,10 @@
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { darkTheme, globalStyles, lightTheme } from "../stitches.config";
 import "../styles/reset.css";
 
@@ -20,7 +21,6 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
-        disableTransitionOnChange={true}
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
         <AnimatePresence exitBeforeEnter>
