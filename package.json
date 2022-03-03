@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:sitemap": "next-sitemap --config next-sitemap.config.js",
-    "postbuild": "yarn build:sitemap && next export",
+    "build:static": "next export",
+    "postbuild": "yarn build:sitemap && yarn build:static",
     "start": "next start"
   },
   "dependencies": {
