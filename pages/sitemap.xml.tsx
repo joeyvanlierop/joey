@@ -27,7 +27,7 @@ export default function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export async function getInitialProps({ res }) {
+export async function getStaticProps({ res }) {
   // We make an API call to gather the URLs for our site
   const posts = getPostSlugs();
 
