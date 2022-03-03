@@ -11,7 +11,7 @@ import {
 export const { styled, getCssText, createTheme, globalCss } = createStitches({
   theme: {
     fonts: {
-      inter: "Inter, sans-serif",
+      inter: "Inter var, sans-serif",
     },
   },
 });
@@ -55,4 +55,22 @@ export const globalStyles = globalCss({
     fontSize: "16px",
     fontWeight: "normal",
   },
+
+  "@font-face": [
+    {
+      fontFamily: "Inter var",
+      fontStyle: "normal",
+      fontWeight: "100 900",
+      fontDisplay: "block",
+      src: "url(/fonts/Inter-roman.latin.var.woff2) format('woff2')",
+    },
+    {
+      fontFamily: "Inter var",
+      fontStyle: "italic",
+      fontWeight: "100 900",
+      fontDisplay: "block",
+      src: "url(/fonts/Inter-italic.latin.var.woff2) format('woff2')",
+      // fontNamedInstance: "Italic",
+    },
+  ],
 });
