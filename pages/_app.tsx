@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         defaultTheme="system"
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter initial={false}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>

@@ -27,7 +27,16 @@ export const List: React.FC<ListProps> = (props) => {
   }, [selected]);
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{
+        opacity: 0,
+        transition: {
+          duration: 0.25,
+        },
+      }}
+    >
       <CategoryWrapper>
         {props.categories.map((category, idx) => (
           <CategoryItem
@@ -73,7 +82,7 @@ export const List: React.FC<ListProps> = (props) => {
           })}
         </AnimatePresence>
       </ListWrapper>
-    </>
+    </motion.div>
   );
 };
 
