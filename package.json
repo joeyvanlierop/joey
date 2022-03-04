@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:robots": "ts-node ./lib/build-helpers/generate-robots.ts",
-    "build:sitemap": "ts-node ./lib/build-helpers/generate-sitemap.ts",
+    "build:robots": "ts-node ./build-helpers/generate-robots.ts",
+    "build:sitemap": "ts-node ./build-helpers/generate-sitemap.ts",
     "prebuild": "yarn build:robots && yarn build:sitemap",
     "build": "next build && next export",
     "start": "next start"

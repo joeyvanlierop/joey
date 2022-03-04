@@ -1,7 +1,5 @@
-import fs from "fs";
-import path from "path";
-import { getPostSlugs } from "../Post";
-import { getUrl } from "./common";
+import { getPostSlugs } from "../lib/Post";
+import { getUrl, writePublicFile } from "./utils";
 
 const generateSitemap = () => {
   const url = getUrl();
@@ -14,9 +12,6 @@ const generateSitemap = () => {
     <loc>${url}</loc>
     <changefreq>weekly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://jsonplaceholder.typicode.com/guide</loc>
   </url>
   <!--Posts-->
   ${postSlugs
@@ -31,7 +26,7 @@ const generateSitemap = () => {
     .join("")}
 </urlset>`;
 
-  fs.writeFileSync(path.join("public", "sitemap.xml"), sitemap);
+  writePublicFile(sitemap, "sitemap.xml");
 };
 
 generateSitemap();

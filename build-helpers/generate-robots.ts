@@ -1,6 +1,4 @@
-import fs from "fs";
-import path from "path";
-import { getUrl } from "./common";
+import { getUrl, writePublicFile } from "./utils";
 
 const generateRobots = () => {
   const url = getUrl();
@@ -13,7 +11,7 @@ Allow: /
 Sitemap: ${url}/sitemap.xml
 `;
 
-  fs.writeFileSync(path.join("public", "robots.txt"), robots);
+  writePublicFile(robots, "robots.txt");
 };
 
 generateRobots();
