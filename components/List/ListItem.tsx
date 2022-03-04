@@ -65,7 +65,7 @@ export const Title = styled(motion.p, {
 });
 
 const DatePublished = styled("h4", {
-  opacity: "0.3",
+  opacity: "$faded",
   transition: "opacity 0.25s",
   marginLeft: "auto",
 });

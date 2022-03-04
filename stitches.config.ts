@@ -1,17 +1,17 @@
-import { createStitches } from "@stitches/react";
-import {
-  gray,
-  slate,
-  mauve,
-  slateDark,
-  grayDark,
-  mauveDark,
-} from "@radix-ui/colors";
+import { gray, grayDark, mauveDark, slate, slateDark } from "@radix-ui/colors";
+import { createStitches, defaultThemeMap } from "@stitches/react";
 
 export const { styled, getCssText, createTheme, globalCss } = createStitches({
+  themeMap: {
+    ...defaultThemeMap,
+    opacity: "opacity",
+  },
   theme: {
     fonts: {
       inter: "Inter var, sans-serif",
+    },
+    opacity: {
+      faded: "0.3",
     },
   },
 });

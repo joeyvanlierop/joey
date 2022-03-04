@@ -98,7 +98,7 @@ const ListWrapper = styled("div", {
   width: "100%",
 
   [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
-    opacity: "0.3",
+    opacity: "$faded",
   },
 });
 
@@ -124,6 +124,6 @@ const CategoryWrapper = styled("div", {
   width: "100%",
 
   "> :not(.selected)": {
-    opacity: "0.3",
+    opacity: "$faded",
   },
 });
