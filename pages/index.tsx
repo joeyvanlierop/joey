@@ -1,7 +1,6 @@
-import { styled } from "../stitches.config";
 import { List } from "../components/List/List";
 import { Category, getPosts } from "../lib/Post";
-import { ThemeButton } from "../components/ThemeButton";
+import { styled } from "../stitches.config";
 
 const categories: Category[] = [
   { name: "All", color: "#d4d4d4" },
@@ -16,9 +15,6 @@ export default function Home({ posts }) {
       <Column>
         <List posts={posts} categories={categories} />
       </Column>
-      <TopRight>
-        <ThemeButton />
-      </TopRight>
     </Center>
   );
 }
@@ -48,10 +44,4 @@ const Column = styled("div", {
   width: "50%",
   position: "absolute",
   top: "30%",
-});
-
-const TopRight = styled("div", {
-  position: "absolute",
-  top: "50px",
-  right: "50px",
 });

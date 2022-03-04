@@ -1,11 +1,16 @@
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { darkTheme, globalStyles, lightTheme } from "../stitches.config";
+import { ThemeButton } from "../components/ThemeButton";
+import {
+  darkTheme,
+  globalStyles,
+  lightTheme,
+  styled,
+} from "../stitches.config";
 import "../styles/reset.css";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
@@ -23,10 +28,19 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         defaultTheme="system"
         value={{ light: lightTheme.className, dark: darkTheme.className }}
       >
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <TopRight>
+          <ThemeButton />
+        </TopRight>
+        <AnimatePresence exitBeforeEnter={true} initial={false}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>
     </>
   );
 }
+
+const TopRight = styled("div", {
+  position: "absolute",
+  top: "50px",
+  right: "50px",
+});
