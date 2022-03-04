@@ -23,3 +23,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# dynamic robots.txt/sitemap.xml
+robots.txt
+sitemap.xml

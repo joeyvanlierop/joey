@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:sitemap": "next-sitemap --config next-sitemap.config.js",
-    "build:static": "next export",
-    "postbuild": "yarn build:sitemap && yarn build:static",
+    "build:robots": "ts-node ./lib/build-helpers/generate-robots.ts",
+    "build:sitemap": "ts-node ./lib/build-helpers/generate-sitemap.ts",
+    "prebuild": "yarn build:robots && yarn build:sitemap",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "@types/mdx": "^2.0.1",
     "@types/node": "^15.12.0",
     "@types/react": "^17.0.38",
-    "next-sitemap": "^2.5.4",
+    "ts-node": "^10.6.0",
     "typescript": "^4.3.2"
   }
 }
