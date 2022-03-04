@@ -14,6 +14,11 @@ export const { styled, getCssText, createTheme, globalCss } = createStitches({
       faded: "0.3",
     },
   },
+  media: {
+    bp1: "(max-width: 640px)",
+    bp2: "(max-width: 768px)",
+    bp3: "(max-width: 1024px)",
+  },
 });
 
 export const lightTheme = createTheme("light-theme", {

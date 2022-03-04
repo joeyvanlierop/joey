@@ -44,4 +44,8 @@ const Column = styled("div", {
   width: "50%",
   position: "absolute",
   top: "30%",
+
+  "@bp2": {
+    width: "90%",
+  },
 });
