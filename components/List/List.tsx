@@ -56,14 +56,14 @@ export const List: React.FC<ListProps> = (props) => {
       </CategoryWrapper>
       <ListWrapper>
         <AnimatePresence initial={false}>
-          {posts.map((post, idx) => {
+          {posts.map((post) => {
             const category = props.categories.find(
               (category) => category.name === post.category
             );
 
             return (
               <ListItem
-                key={`${post.title}-${idx}`}
+                key={`${post.title}-${post.date}`}
                 color={category.color}
                 title={post.title}
                 date={post.date}
