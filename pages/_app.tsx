@@ -15,16 +15,8 @@ import {
 import "../styles/reset.css";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
   globalStyles();
   dayjs.extend(advancedFormat);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <>
