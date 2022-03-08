@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { ThemeButton } from "../components/ThemeButton";
 import {
   darkTheme,
@@ -14,8 +15,14 @@ import {
 import "../styles/reset.css";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
   globalStyles();
   dayjs.extend(advancedFormat);
+
+  console.log("Mounted:", mounted);
 
   return (
     <>
