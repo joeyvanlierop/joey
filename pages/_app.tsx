@@ -22,7 +22,9 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
   globalStyles();
   dayjs.extend(advancedFormat);
 
-  console.log("Mounted:", mounted);
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
