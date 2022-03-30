@@ -25,8 +25,9 @@ export const ThemeButton: React.FC = () => {
 };
 
 const IconContainer = styled("div", {
-  transform: "scale(1.5)",
   svg: {
-    fill: "$hiContrast",
+    width: "24px",
+    height: "24px",
+    color: "$hiContrast",
   },
 });
