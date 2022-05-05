@@ -24,8 +24,8 @@ export default function Post({ data, source }: PostProps) {
     >
       <Center>
         <Title
-          // layoutId={data.title}
-          // layout="position"
+          layoutId={data.title}
+          layout="position"
           css={{
             position: "absolute",
             top: 150,

@@ -4,7 +4,6 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import { ThemeButton } from "../components/ThemeButton";
 import {
   darkTheme,
@@ -22,7 +21,6 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     <>
       <Head>
         <title>Joey</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <ThemeProvider
         attribute="class"
@@ -32,7 +30,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <TopRight>
           <ThemeButton />
         </TopRight>
-        <AnimatePresence exitBeforeEnter={true} initial={false}>
+        <AnimatePresence exitBeforeEnter={false} initial={false}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>
