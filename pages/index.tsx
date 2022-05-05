@@ -5,7 +5,7 @@ import { styled } from "../stitches.config";
 const categories: Category[] = [
   { name: "All", color: "#d4d4d4" },
   { name: "Random", color: "#ff9aa2" },
-  { name: "Ratings", color: "#85e3ff" },
+  { name: "Something", color: "#85e3ff" },
   { name: "Etcetera", color: "#ffdb65" },
 ];
 
