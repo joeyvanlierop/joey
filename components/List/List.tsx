@@ -130,8 +130,18 @@ const CategoryWrapper = styled("div", {
   height: "60px",
   lineHeight: "60px",
   width: "100%",
+  position: "relative",
 
   "> :not(.selected)": {
     opacity: "$faded",
+  },
+
+  "&::after": {
+    content: "",
+    height: "1px",
+    backgroundColor: "$gray5",
+    width: "100%",
+    position: "absolute",
+    top: "100%",
   },
 });

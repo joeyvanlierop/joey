@@ -99,15 +99,12 @@ export const ListItemWrapper = styled(motion.a, {
 
   // borderTop: "1px solid $gray5",
   // boxShadow: "inset 0 -1px 0 0 $gray5",
-  "&::before, &::after": {
+  "&::after": {
     content: "",
     height: "1px",
     backgroundColor: "$gray5",
     width: "100%",
     position: "absolute",
-    top: "0%",
-  },
-  "&::after": {
     top: "100%",
   },
 
