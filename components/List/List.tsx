@@ -53,7 +53,7 @@ export const List: React.FC<ListProps> = (props) => {
           duration: 10,
         }}
       >
-        <AnimatePresence initial={true}>
+        <AnimatePresence initial={false}>
           {posts.map((post, index) => {
             const category = props.categories.find(
               (category) => category.name === post.category
