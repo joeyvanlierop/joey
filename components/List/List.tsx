@@ -1,4 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useIsPresent,
+  usePresence,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import { Category, PostData } from "../../lib/Post";
 import { styled } from "../../stitches.config";
@@ -10,33 +15,12 @@ interface ListProps {
 }
 
 export const List: React.FC<ListProps> = (props) => {
+  const [isPresent, safeToRemove] = usePresence();
   const [selected, setSelected] = useState(0);
   const [posts, setPosts] = useState(props.posts);
 
-  useEffect(() => {
-    let newPosts: PostData[];
-    if (selected === 0) {
-      newPosts = props.posts;
-    } else {
-      const selectedCategory = props.categories[selected];
-      newPosts = props.posts.filter((post) => {
-        return post.category === selectedCategory.name;
-      });
-    }
-    setPosts(newPosts);
-  }, [selected]);
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.25,
-        },
-      }}
-    >
+    <>
       <CategoryWrapper>
         {props.categories.map((category, idx) => (
           <CategoryItem
@@ -63,12 +47,26 @@ export const List: React.FC<ListProps> = (props) => {
           </CategoryItem>
         ))}
       </CategoryWrapper>
-      <ListWrapper>
-        <AnimatePresence initial={false}>
-          {posts.map((post) => {
+      <ListWrapper
+        transition={{
+          staggerChildren: 2,
+          duration: 10,
+        }}
+      >
+        <AnimatePresence initial={true}>
+          {posts.map((post, index) => {
             const category = props.categories.find(
               (category) => category.name === post.category
             );
+
+            if (!isPresent) {
+              setTimeout(safeToRemove, 1000);
+              return null;
+            }
+
+            if (props.categories[selected] !== category && selected !== 0) {
+              return null;
+            }
 
             return (
               <ListItem
@@ -77,12 +75,13 @@ export const List: React.FC<ListProps> = (props) => {
                 title={post.title}
                 date={post.date}
                 slug={post.slug}
+                delay={index * 0.05}
               />
             );
           })}
         </AnimatePresence>
       </ListWrapper>
-    </motion.div>
+    </>
   );
 };
 
@@ -103,7 +102,7 @@ const Title = styled("h4", {
   marginRight: "16px",
 });
 
-const ListWrapper = styled("div", {
+const ListWrapper = styled(motion.div, {
   width: "100%",
 
   [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {

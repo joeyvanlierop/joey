@@ -1,7 +1,6 @@
-import matter from "gray-matter";
 import fs from "fs";
+import matter from "gray-matter";
 import path from "path";
-import dayjs from "dayjs";
 
 export interface Category {
   name: string;
@@ -13,6 +12,7 @@ export interface PostData {
   date: string;
   category: string;
   slug: string;
+  published: boolean;
 }
 
 export interface Post {
@@ -35,5 +35,7 @@ export function getPost(slug: string): Post {
 }
 
 export function getPosts(): Post[] {
-  return getPostSlugs().map((slug) => getPost(slug));
+  return getPostSlugs()
+    .map((slug) => getPost(slug))
+    .filter((post) => post.data.published);
 }

@@ -1,17 +1,31 @@
+import { motion, Variants } from "framer-motion";
 import { List } from "../components/List/List";
 import { Category, getPosts } from "../lib/Post";
 import { styled } from "../stitches.config";
 
 const categories: Category[] = [
-  { name: "All", color: "#d4d4d4" },
-  { name: "Random", color: "#ff9aa2" },
-  { name: "Something", color: "#85e3ff" },
-  { name: "Etcetera", color: "#ffdb65" },
+  { name: "all", color: "#d4d4d4" },
+  { name: "random", color: "#ff9aa2" },
+  { name: "something", color: "#85e3ff" },
+  { name: "etcetera", color: "#ffdb65" },
 ];
+
+const variants: Variants = {
+  open: { opacity: 1 },
+  closed: { opacity: 0 },
+};
 
 export default function Home({ posts }) {
   return (
-    <Center>
+    <Center
+      variants={variants}
+      initial={"closed"}
+      animate={"open"}
+      exit={"closed"}
+      transition={{
+        duration: 1,
+      }}
+    >
       <Column>
         <List posts={posts} categories={categories} />
       </Column>
@@ -31,7 +45,7 @@ export async function getStaticProps() {
   };
 }
 
-export const Center = styled("div", {
+export const Center = styled(motion.div, {
   width: "100vw",
   height: "100vh",
   display: "flex",
@@ -40,11 +54,13 @@ export const Center = styled("div", {
   alignItems: "center",
 });
 
-const Column = styled("div", {
+export const Column = styled(motion.div, {
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  marginTop: "10rem",
   width: "50%",
-  position: "absolute",
-  top: "30%",
-
   "@bp2": {
     width: "90%",
   },

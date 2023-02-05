@@ -30,7 +30,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <TopRight>
           <ThemeButton />
         </TopRight>
-        <AnimatePresence exitBeforeEnter={false} initial={false}>
+        <AnimatePresence mode="wait" initial={false}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ThemeProvider>

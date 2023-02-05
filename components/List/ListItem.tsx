@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useIsPresent, usePresence, Variants } from "framer-motion";
 import { useMemo } from "react";
 import { styled } from "../../stitches.config";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
@@ -10,24 +10,32 @@ interface ListItemProps {
   date: string;
   color: string;
   slug: string;
+  delay: number;
 }
+
+const variants: Variants = {
+  open: { scaleY: 1, opacity: 1, height: 60 },
+  closed: { scaleY: 0, opacity: 0, height: 0 },
+};
 
 export const ListItem: React.FC<ListItemProps> = (props) => {
   const dateNumber = useMemo(
-    () => dayjs(props.date).format("Do"),
+    () => dayjs(props.date).format("MMMM Do").toLowerCase(),
     [props.date]
   );
 
   return (
     <Link href={`/posts/${props.slug}`} passHref={true}>
       <ListItemWrapper
-        initial={{ scaleY: 0, height: 0 }}
-        animate={{ scaleY: 1, height: 60 }}
-        exit={{ scaleY: 0, height: 0 }}
+        variants={variants}
+        initial={"closed"}
+        animate={"open"}
+        exit={"closed"}
         transition={{
           type: "spring",
           bounce: 0,
-          duration: 0.5,
+          duration: 0.75,
+          delay: props.delay,
         }}
         tabIndex={0}
       >
@@ -38,9 +46,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
             marginRight: "12px",
           }}
         />
-        <Title layout="position" layoutId={props.title}>
-          {props.title}
-        </Title>
+        <Title>{props.title}</Title>
         <DatePublished>{dateNumber}</DatePublished>
         <Expand />
       </ListItemWrapper>
@@ -57,7 +63,7 @@ const Dot = styled("div", {
   height: "8px",
 });
 
-export const Title = styled(motion.p, {
+const Title = styled("p", {
   textOverflow: "ellipsis",
   overflow: "hidden",
   whiteSpace: "nowrap",

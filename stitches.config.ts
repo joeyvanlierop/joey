@@ -37,7 +37,7 @@ export const darkTheme = createTheme("dark-theme", {
   colors: {
     ...grayDark,
     ...slateDark,
-    loContrast: mauveDark.mauve1,
+    loContrast: "#111010",
     hiContrast: "$slate12",
   },
   shadows: {
