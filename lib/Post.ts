@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -37,5 +38,6 @@ export function getPost(slug: string): Post {
 export function getPosts(): Post[] {
   return getPostSlugs()
     .map((slug) => getPost(slug))
-    .filter((post) => post.data.published);
+    .filter((post) => post.data.published)
+    .sort((postA, postB) => dayjs(postB.data.date).diff(postA.data.date));
 }
