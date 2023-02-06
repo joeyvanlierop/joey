@@ -53,11 +53,26 @@ export const List: React.FC<ListProps> = (props) => {
           duration: 10,
         }}
       >
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           {posts.map((post, index) => {
             const category = props.categories.find(
               (category) => category.name === post.category
             );
+
+            /**
+             * Holy shit this is disgusting
+             * Please fix this in the future
+             */
+            const filtered = posts.filter((post) => {
+              const category2 = props.categories.find(
+                (category) => category.name === post.category
+              );
+              return props.categories[selected] === category2 || selected === 0;
+            });
+            const actualIndex = filtered.findIndex(
+              (post2) => post2.title === post.title
+            );
+            const delay = actualIndex / filtered.length;
 
             if (!isPresent) {
               setTimeout(safeToRemove, 1000);
@@ -75,7 +90,7 @@ export const List: React.FC<ListProps> = (props) => {
                 title={post.title}
                 date={post.date}
                 slug={post.slug}
-                delay={index * 0.05}
+                delay={delay * 0.5}
               />
             );
           })}

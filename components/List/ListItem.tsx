@@ -73,7 +73,10 @@ const Title = styled("p", {
 const DatePublished = styled("h4", {
   opacity: "$faded",
   transition: "opacity 0.25s",
+  textOverflow: "ellipsis",
   marginLeft: "auto",
+  overflow: "hidden",
+  whiteSpace: "nowrap",
 });
 
 const Expand = styled(ArrowTopRightIcon, {
