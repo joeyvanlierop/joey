@@ -93,7 +93,8 @@ export const ListItemWrapper = styled(motion.a, {
   alignItems: "center",
   width: "100%",
   height: "60px",
-  transition: "opacity 250ms",
+  // Flickers on iOS
+  // transition: "opacity 250ms",
   transformOrigin: "top",
   cursor: "pointer",
   position: "relative",
