@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
-import { List } from "../components/List/List";
-import { Category, getPosts } from "../lib/Post";
+import { List } from "../components/list";
+import { Category, getPosts } from "../lib/post";
 import { styled } from "../stitches.config";
 
 const categories: Category[] = [

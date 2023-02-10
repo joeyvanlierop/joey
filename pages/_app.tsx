@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ThemeButton } from "../components/ThemeButton";
+import { ThemeButton } from "../components/themeButton";
 import {
   darkTheme,
   globalStyles,
@@ -12,6 +12,7 @@ import {
   styled,
 } from "../stitches.config";
 import "../styles/reset.css";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   globalStyles();

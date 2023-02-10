@@ -1,4 +1,4 @@
-import { getPostSlugs } from "../lib/Post";
+import { getPostSlugs } from "../lib/post";
 import { getUrl, writePublicFile } from "./utils";
 
 const generateSitemap = () => {

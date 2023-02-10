@@ -1,6 +1,6 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getPost, getPostSlugs, PostData } from "../../lib/Post";
+import { getPost, getPostSlugs, PostData } from "../../lib/post";
 import { Center, Column } from "../index";
 import { motion } from "framer-motion";
 import { styled } from "@stitches/react";

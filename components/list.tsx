@@ -5,9 +5,10 @@ import {
   usePresence,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Category, PostData } from "../../lib/Post";
-import { styled } from "../../stitches.config";
-import { ListItem, ListItemWrapper } from "./ListItem";
+import { Category, PostData } from "../lib/post";
+import { styled } from "../stitches.config";
+import { Dot } from "./dot";
+import { ListItem, ListItemWrapper } from "./listItem";
 
 interface ListProps {
   posts: PostData[];
@@ -22,32 +23,43 @@ export const List: React.FC<ListProps> = (props) => {
   return (
     <>
       <CategoryWrapper>
-        {props.categories.map((category, idx) => (
-          <CategoryItem
-            key={idx}
-            className={idx === selected ? "selected" : ""}
-            onClick={() => setSelected(idx)}
-            tabIndex={0}
-          >
-            <Dot
+        {props.categories.map((category, idx) => {
+          return (
+            <CategoryItem
+              key={idx}
               className={idx === selected ? "selected" : ""}
-              css={{
-                backgroundColor: category.color,
-                boxShadow: `0 0 5px 0px ${category.color}`,
-              }}
-            />
-            <Title
-              css={{
-                marginLeft: "12px",
-                marginRight: "24px",
-              }}
+              onClick={() => setSelected(idx)}
+              tabIndex={0}
             >
-              {category.name}
-            </Title>
-          </CategoryItem>
-        ))}
+              <Dot
+                className={idx === selected ? "selected" : ""}
+                style={{
+                  backgroundColor: category.color,
+                  boxShadow: `0 0 5px 0px ${category.color}`,
+                }}
+              />
+              <h4
+                className="h-full text-ellipsis overflow-hidden whitespace-nowrap mr-4"
+                style={{
+                  marginLeft: "12px",
+                  marginRight: "24px",
+                }}
+              >
+                {category.name}
+              </h4>
+            </CategoryItem>
+          );
+        })}
       </CategoryWrapper>
-      <ListWrapper
+      <motion.div
+        /**
+       * width: "100%",
+
+        [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
+          opacity: "$faded",
+        },
+       */
+        className="group w-full"
         transition={{
           staggerChildren: 2,
           duration: 10,
@@ -95,35 +107,18 @@ export const List: React.FC<ListProps> = (props) => {
             );
           })}
         </AnimatePresence>
-      </ListWrapper>
+      </motion.div>
     </>
   );
 };
 
-const Dot = styled("div", {
-  backgroundColor: "black",
-  borderRadius: "50%",
-  minWidth: "8px",
-  minHeight: "8px",
-  width: "8px",
-  height: "8px",
-});
+// const ListWrapper = styled(motion.div, {
+//   width: "100%",
 
-const Title = styled("h4", {
-  height: "100%",
-  textOverflow: "ellipsis",
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  marginRight: "16px",
-});
-
-const ListWrapper = styled(motion.div, {
-  width: "100%",
-
-  [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
-    opacity: "$faded",
-  },
-});
+//   [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
+//     opacity: "$faded",
+//   },
+// });
 
 const CategoryItem = styled("div", {
   display: "flex",
@@ -142,8 +137,8 @@ const CategoryWrapper = styled("div", {
   display: "flex",
   justifyContent: "start",
   alignItems: "center",
-  height: "60px",
-  lineHeight: "60px",
+  height: "64px",
+  lineHeight: "64px",
   width: "100%",
   position: "relative",
 
