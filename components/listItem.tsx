@@ -1,9 +1,8 @@
-import { motion, useIsPresent, usePresence, Variants } from "framer-motion";
-import { useMemo } from "react";
-import { styled } from "../stitches.config";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { useMemo } from "react";
 import { Dot } from "./dot";
 
 interface ListItemProps {
@@ -45,13 +44,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
         }}
         tabIndex={0}
       >
-        <Dot
-          className="mr-3"
-          style={{
-            backgroundColor: props.color,
-            boxShadow: `0 0 5px 0px ${props.color}`,
-          }}
-        />
+        <Dot className="mr-3" color={props.color} />
         <p className="text-ellipsis overflow-hidden whitespace-nowrap mr-4">
           {props.title}
         </p>

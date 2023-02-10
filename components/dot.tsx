@@ -1,10 +1,8 @@
-import { CSSProperties } from "react";
-
-export function Dot(props: { className?: string; style?: CSSProperties }) {
+export function Dot(props: { className?: string; color: string }) {
+  console.log(props.color);
   return (
     <div
-      className={`${props.className} bg-black rounded-full w-2 h-2`}
-      style={props.style}
+      className={`${props.className} bg-black rounded-full min-w-[8px] min-h-[8px] shadow-dot shadow-[${props.color}] bg-[${props.color}]`}
     />
   );
 }

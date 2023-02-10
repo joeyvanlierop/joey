@@ -28,10 +28,7 @@ export const List: React.FC<ListProps> = (props) => {
             >
               <Dot
                 className={idx === selected ? "selected" : ""}
-                style={{
-                  backgroundColor: category.color,
-                  boxShadow: `0 0 5px 0px ${category.color}`,
-                }}
+                color={category.color}
               />
               <h4
                 className="h-full text-ellipsis overflow-hidden whitespace-nowrap mr-4"
