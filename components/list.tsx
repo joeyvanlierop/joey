@@ -19,38 +19,34 @@ export const List: React.FC<ListProps> = (props) => {
     <>
       <CategoryWrapper>
         {props.categories.map((category, idx) => {
+          const isSelected = selected == idx;
+
           return (
-            <CategoryItem
+            <div
+              /**
+             *  display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                transition: "opacity 0.25s",
+                flexShrink: "1",
+                minWidth: "0",
+             */
               key={idx}
-              className={idx === selected ? "selected" : ""}
               onClick={() => setSelected(idx)}
               tabIndex={0}
+              className={`flex min-w-0 flex-shrink cursor-pointer items-center transition-opacity hover:opacity-100 ${
+                !isSelected ? "opacity-30" : ""
+              }`}
             >
-              <Dot
-                className={idx === selected ? "selected" : ""}
-                color={category.color}
-              />
-              <h4
-                className="h-full text-ellipsis overflow-hidden whitespace-nowrap mr-4"
-                style={{
-                  marginLeft: "12px",
-                  marginRight: "24px",
-                }}
-              >
+              <Dot color={category.color} />
+              <h4 className="ml-3 mr-6 h-full overflow-hidden text-ellipsis whitespace-nowrap">
                 {category.name}
               </h4>
-            </CategoryItem>
+            </div>
           );
         })}
       </CategoryWrapper>
       <motion.div
-        /**
-       * width: "100%",
-
-        [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
-          opacity: "$faded",
-        },
-       */
         className="group w-full"
         transition={{
           staggerChildren: 2,
@@ -104,27 +100,6 @@ export const List: React.FC<ListProps> = (props) => {
   );
 };
 
-// const ListWrapper = styled(motion.div, {
-//   width: "100%",
-
-//   [`&:hover ${ListItemWrapper}, &:focus-within ${ListItemWrapper}`]: {
-//     opacity: "$faded",
-//   },
-// });
-
-const CategoryItem = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  cursor: "pointer",
-  transition: "opacity 0.25s",
-  flexShrink: "1",
-  minWidth: "0",
-
-  "&:hover, &:focus": {
-    opacity: "1 !important",
-  },
-});
-
 const CategoryWrapper = styled("div", {
   display: "flex",
   justifyContent: "start",
@@ -133,10 +108,6 @@ const CategoryWrapper = styled("div", {
   lineHeight: "64px",
   width: "100%",
   position: "relative",
-
-  "> :not(.selected)": {
-    opacity: "$faded",
-  },
 
   "&::after": {
     content: "",

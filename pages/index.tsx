@@ -4,10 +4,10 @@ import { Category, getPosts } from "../lib/post";
 import { styled } from "../stitches.config";
 
 const categories: Category[] = [
-  { name: "all", color: "#d4d4d4" },
-  { name: "random", color: "#ff9aa2" },
-  { name: "something", color: "#85e3ff" },
-  { name: "etcetera", color: "#ffdb65" },
+  { name: "all", color: "bg-[#d4d4d4] shadow-[#d4d4d4]" },
+  { name: "random", color: "bg-[#ff9aa2] shadow-[#ff9aa2]" },
+  { name: "something", color: "bg-[#85e3ff] shadow-[#85e3ff]" },
+  { name: "etcetera", color: "bg-[#ffdb65] shadow-[#ffdb65]" },
 ];
 
 const variants: Variants = {
