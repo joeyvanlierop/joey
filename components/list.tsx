@@ -1,14 +1,9 @@
-import {
-  AnimatePresence,
-  motion,
-  useIsPresent,
-  usePresence,
-} from "framer-motion";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion, usePresence } from "framer-motion";
+import { useState } from "react";
 import { Category, PostData } from "../lib/post";
 import { styled } from "../stitches.config";
 import { Dot } from "./dot";
-import { ListItem, ListItemWrapper } from "./listItem";
+import { ListItem } from "./listItem";
 
 interface ListProps {
   posts: PostData[];
