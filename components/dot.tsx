@@ -1,7 +1,7 @@
 export function Dot(props: { className?: string; color: string }) {
   return (
     <div
-      className={`${props.className} bg-black rounded-full min-w-[8px] min-h-[8px] shadow-dot ${props.color}`}
+      className={`${props.className} min-h-[8px] min-w-[8px] rounded-full shadow-dot ${props.color}`}
     />
   );
 }

@@ -23,14 +23,6 @@ export const List: React.FC<ListProps> = (props) => {
 
           return (
             <div
-              /**
-             *  display: "flex",
-                alignItems: "center",
-                cursor: "pointer",
-                transition: "opacity 0.25s",
-                flexShrink: "1",
-                minWidth: "0",
-             */
               key={idx}
               onClick={() => setSelected(idx)}
               tabIndex={0}
