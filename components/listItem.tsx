@@ -29,8 +29,9 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
       <motion.div
         className="group/item w-100 seperated relative flex h-16 origin-top cursor-pointer items-center
                     justify-start border-t-[1px]
-                    border-t-transparent transition-[opacity,border-top] hover:border-t-[#2e2e2e]
-                    hover:!opacity-100 group-hover:opacity-30"
+                    border-t-transparent transition-[opacity,border-top] hover:border-t-[#e8e8e8]
+                    hover:!opacity-100 group-hover:opacity-30
+                    dark:hover:border-t-[#2e2e2e]"
         variants={variants}
         initial={"closed"}
         animate={"open"}
