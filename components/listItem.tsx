@@ -25,7 +25,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   );
 
   return (
-    <Link href={`/posts/${props.slug}`} passHref={true}>
+    <Link href={`/posts/${props.slug}`}>
       <motion.div
         className="group/item w-100 seperated relative flex h-16 origin-top cursor-pointer items-center
                     justify-start border-t-[1px]
