@@ -26,7 +26,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
 
   return (
     <Link href={`/posts/${props.slug}`} passHref={true}>
-      <motion.a
+      <motion.div
         className="group/item w-100 seperated relative flex h-16 origin-top cursor-pointer items-center
                     justify-start border-t-[1px]
                     border-t-transparent transition-[opacity,border-top] hover:border-t-[#2e2e2e]
@@ -54,7 +54,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
           className="expand h-full w-0 bg-bottom opacity-0 transition-all
                       group-hover/item:ml-[2px] group-hover/item:w-[22px] group-hover/item:opacity-100"
         />
-      </motion.a>
+      </motion.div>
     </Link>
   );
 };
