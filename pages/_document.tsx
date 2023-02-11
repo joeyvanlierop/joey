@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
           />
           <meta name="description" content="Stuff I made" />
           <link rel="icon" href="/favicon.ico" />
-          <link
+          {/*<link
             rel="preload"
             href="/fonts/Inter-roman.latin.var.woff2"
             as="font"
@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
-          <style
+           <style
             dangerouslySetInnerHTML={{
               __html: `
 @font-face {
@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
 }
 `,
             }}
-          />
+          /> */}
         </Head>
         <body>
           <Main />

@@ -5,14 +5,15 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeButton } from "../components/themeButton";
-import {
-  darkTheme,
-  globalStyles,
-  lightTheme,
-  styled,
-} from "../stitches.config";
-import "../styles/reset.css";
+import { globalStyles } from "../stitches.config";
 import "../styles/globals.css";
+import "../styles/reset.css";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   globalStyles();
@@ -23,24 +24,16 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Joey</title>
       </Head>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        value={{ light: lightTheme.className, dark: darkTheme.className }}
-      >
-        <TopRight>
-          <ThemeButton />
-        </TopRight>
-        <AnimatePresence mode="wait" initial={false}>
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
+      <ThemeProvider attribute="class" defaultTheme="system">
+        <main className={`${inter.variable} font-sans`}>
+          <div className="absolute top-16 right-16">
+            <ThemeButton />
+          </div>
+          <AnimatePresence mode="wait" initial={false}>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+        </main>
       </ThemeProvider>
     </>
   );
 }
-
-const TopRight = styled("div", {
-  position: "absolute",
-  top: "50px",
-  right: "50px",
-});
