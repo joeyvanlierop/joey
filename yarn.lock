@@ -1371,10 +1371,10 @@ next-mdx-remote@4.3.0:
     vfile "^5.3.0"
     vfile-matter "^3.0.1"
 
-next-themes@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
-  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+next-themes@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.1.0.tgz#b06e0a8a51d41882188f1b5c9ac05ec788ee174d"
+  integrity sha512-ZegYm66ruv/KFEIM28sMXcSOyqFjkc/5wM+vnPKAzIPzuIog/zUpgWZ9fwNoKrWkWygUxqJOZ8DItkARYSN//g==
 
 next@13.1.6:
   version "13.1.6"
