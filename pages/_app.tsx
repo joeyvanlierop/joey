@@ -12,12 +12,14 @@ import { Inter, Kaisei_Tokumin } from "@next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  preload: true,
   display: "swap",
 });
 const kaisei = Kaisei_Tokumin({
   weight: "700",
   subsets: ["latin"],
   variable: "--font-kaisei",
+  preload: true,
   display: "swap",
 });
 
