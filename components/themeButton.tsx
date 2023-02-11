@@ -20,6 +20,9 @@ export const ThemeButton: React.FC = () => {
       tabIndex={0}
     >
       <Expand duration={750} toggled={isDark} />
+      <p className="text-2xl text-blue-500 dark:text-red-500">
+        This is a test WOOWOWOOW
+      </p>
     </div>
   );
 };
