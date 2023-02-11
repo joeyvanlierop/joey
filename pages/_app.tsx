@@ -7,11 +7,18 @@ import Head from "next/head";
 import { ThemeButton } from "../components/themeButton";
 import "../styles/globals.css";
 import "../styles/reset.css";
-import { Inter } from "@next/font/google";
+import { Inter, Kaisei_Tokumin } from "@next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+const kaisei = Kaisei_Tokumin({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-kaisei",
+  display: "swap",
 });
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
@@ -23,7 +30,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <title>Joey</title>
       </Head>
       <ThemeProvider attribute="class" defaultTheme="system">
-        <main className={`${inter.variable} font-sans`}>
+        <main className={`${inter.variable} ${kaisei.variable} font-sans`}>
           <div className="absolute top-16 right-16">
             <ThemeButton />
           </div>

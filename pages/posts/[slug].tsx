@@ -24,7 +24,8 @@ export default function Post({ data, source }: PostProps) {
       }}
     >
       <Column className="mt-40">
-        <h3>{data.title}</h3>
+        <h1 className="font-title text-3xl font-bold">{data.title}</h1>
+        <div className="my-6 h-[2px] w-full bg-[#e8e8e8] dark:bg-[#2e2e2e]" />
         <MDXRemote {...source} />
       </Column>
     </motion.div>
