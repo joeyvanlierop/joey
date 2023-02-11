@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-white text-[#121212] dark:bg-[#121212] dark:text-white;
-  }
-}
-
 @layer components {
   .seperated {
     @apply after:absolute after:top-full after:h-[1px] after:w-full after:bg-[#e8e8e8] dark:after:bg-[#2e2e2e];

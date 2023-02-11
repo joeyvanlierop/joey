@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
           <meta name="description" content="Stuff I made" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <body>
+        <body className="dark:text-white; bg-white text-[#121212] dark:bg-[#121212]">
           <Main />
           <NextScript />
         </body>
