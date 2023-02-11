@@ -16,10 +16,7 @@ export const List: React.FC<ListProps> = (props) => {
 
   return (
     <>
-      <div
-        className="relative flex h-16 w-full items-center justify-start leading-[64px]
-                    after:absolute after:top-full after:h-[1px] after:w-full after:bg-[#2e2e2e]"
-      >
+      <div className="seperated relative flex h-16 w-full items-center justify-start leading-[64px]">
         {props.categories.map((category, idx) => {
           const isSelected = selected == idx;
 

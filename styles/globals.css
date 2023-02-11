@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#121212];
+  }
+}
+
+@layer components {
+  .seperated {
+    @apply after:absolute after:top-full after:h-[1px] after:w-full after:bg-[#e8e8e8] dark:after:bg-[#2e2e2e];
+  }
+}

@@ -5,7 +5,6 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeButton } from "../components/themeButton";
-import { globalStyles } from "../stitches.config";
 import "../styles/globals.css";
 import "../styles/reset.css";
 import { Inter } from "@next/font/google";
@@ -16,7 +15,6 @@ const inter = Inter({
 });
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
-  globalStyles();
   dayjs.extend(advancedFormat);
 
   return (

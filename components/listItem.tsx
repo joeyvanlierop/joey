@@ -27,11 +27,10 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   return (
     <Link href={`/posts/${props.slug}`} passHref={true}>
       <motion.a
-        className="group/item w-100 relative flex h-16 origin-top cursor-pointer items-center justify-start
-                    border-t-[1px] border-t-transparent
-                    transition-[opacity,border-top] after:absolute after:top-full
-                    after:h-[1px] after:w-full after:bg-[#2e2e2e] hover:border-t-[#2e2e2e] hover:!opacity-100
-                    group-hover:opacity-30"
+        className="group/item w-100 seperated relative flex h-16 origin-top cursor-pointer items-center
+                    justify-start border-t-[1px]
+                    border-t-transparent transition-[opacity,border-top] hover:border-t-[#2e2e2e]
+                    hover:!opacity-100 group-hover:opacity-30"
         variants={variants}
         initial={"closed"}
         animate={"open"}
