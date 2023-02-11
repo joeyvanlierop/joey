@@ -14,8 +14,8 @@ interface ListItemProps {
 }
 
 const variants: Variants = {
-  open: { scaleY: 1, height: 64 },
-  closed: { scaleY: 0, height: 0 },
+  open: { scaleY: 1, opacity: null, height: 64 },
+  closed: { scaleY: 0, opacity: 0, height: 0 },
 };
 
 export const ListItem: React.FC<ListItemProps> = (props) => {
