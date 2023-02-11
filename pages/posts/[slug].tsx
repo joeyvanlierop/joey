@@ -1,9 +1,8 @@
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getPost, getPostSlugs, PostData } from "../../lib/post";
-import { Center, Column } from "../index";
 import { motion } from "framer-motion";
-import { styled } from "@stitches/react";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import { Column } from "../../components/column";
+import { getPost, getPostSlugs, PostData } from "../../lib/post";
 
 interface PostProps {
   data: PostData;
@@ -12,7 +11,8 @@ interface PostProps {
 
 export default function Post({ data, source }: PostProps) {
   return (
-    <Center
+    <motion.div
+      className="flex w-full justify-center"
       initial={{
         opacity: 0,
       }}
@@ -23,20 +23,13 @@ export default function Post({ data, source }: PostProps) {
         opacity: 0,
       }}
     >
-      <Column>
-        <Title>{data.title}</Title>
+      <Column className="mt-40">
+        <h3>{data.title}</h3>
         <MDXRemote {...source} />
       </Column>
-    </Center>
+    </motion.div>
   );
 }
-
-const Title = styled("p", {
-  textOverflow: "ellipsis",
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  marginRight: "16px",
-});
 
 export async function getStaticProps(context): Promise<{ props: PostProps }> {
   const post = getPost(context.params.slug);

@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
+import { Column } from "../components/column";
 import { List } from "../components/list";
 import { Category, getPosts } from "../lib/post";
-import { styled } from "../stitches.config";
 
 const categories: Category[] = [
   { name: "all", color: "bg-[#d4d4d4] shadow-[#d4d4d4]" },
@@ -17,7 +17,8 @@ const variants: Variants = {
 
 export default function Home({ posts }) {
   return (
-    <Center
+    <motion.div
+      className="flex h-screen w-screen flex-col items-center justify-center"
       variants={variants}
       initial={"closed"}
       animate={"open"}
@@ -26,10 +27,10 @@ export default function Home({ posts }) {
         duration: 1,
       }}
     >
-      <Column>
+      <Column className="mt-40">
         <List posts={posts} categories={categories} />
       </Column>
-    </Center>
+    </motion.div>
   );
 }
 
@@ -44,24 +45,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export const Center = styled(motion.div, {
-  width: "100vw",
-  height: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-});
-
-export const Column = styled(motion.div, {
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  marginTop: "10rem",
-  width: "50%",
-  "@bp2": {
-    width: "90%",
-  },
-});

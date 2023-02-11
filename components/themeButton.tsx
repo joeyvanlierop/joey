@@ -2,7 +2,6 @@ import { Expand } from "@theme-toggles/react";
 import "@theme-toggles/react/css/Expand.css";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { styled } from "../stitches.config";
 
 export const ThemeButton: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -15,19 +14,12 @@ export const ThemeButton: React.FC = () => {
   if (!mounted) return null;
 
   return (
-    <IconContainer
+    <div
+      className="[&_svg]:h-6 [&_svg]:w-6 [&_svg]:text-slate-900 dark:[&_svg]:text-slate-100"
       onClick={() => theme.setTheme(isDark ? "light" : "dark")}
       tabIndex={0}
     >
       <Expand duration={750} toggled={isDark} />
-    </IconContainer>
+    </div>
   );
 };
-
-const IconContainer = styled("div", {
-  svg: {
-    width: "24px",
-    height: "24px",
-    color: "$hiContrast",
-  },
-});

@@ -1,7 +1,6 @@
 import { AnimatePresence, motion, usePresence } from "framer-motion";
 import { useState } from "react";
 import { Category, PostData } from "../lib/post";
-import { styled } from "../stitches.config";
 import { Dot } from "./dot";
 import { ListItem } from "./listItem";
 
@@ -17,7 +16,10 @@ export const List: React.FC<ListProps> = (props) => {
 
   return (
     <>
-      <CategoryWrapper>
+      <div
+        className="relative flex h-16 w-full items-center justify-start leading-[64px]
+                    after:absolute after:top-full after:h-[1px] after:w-full after:bg-[#2e2e2e]"
+      >
         {props.categories.map((category, idx) => {
           const isSelected = selected == idx;
 
@@ -37,7 +39,7 @@ export const List: React.FC<ListProps> = (props) => {
             </div>
           );
         })}
-      </CategoryWrapper>
+      </div>
       <motion.div
         className="group w-full"
         transition={{
@@ -91,22 +93,3 @@ export const List: React.FC<ListProps> = (props) => {
     </>
   );
 };
-
-const CategoryWrapper = styled("div", {
-  display: "flex",
-  justifyContent: "start",
-  alignItems: "center",
-  height: "64px",
-  lineHeight: "64px",
-  width: "100%",
-  position: "relative",
-
-  "&::after": {
-    content: "",
-    height: "1px",
-    backgroundColor: "$gray5",
-    width: "100%",
-    position: "absolute",
-    top: "100%",
-  },
-});
