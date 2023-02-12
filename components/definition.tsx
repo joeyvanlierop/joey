@@ -6,7 +6,7 @@ export function Definition(props: {
   example: string;
 }) {
   return (
-    <section className="rounded-lg bg-zinc-900 p-4">
+    <section className="rounded-lg bg-zinc-100 p-4 dark:bg-zinc-900">
       <h4 className="my-0">{props.name}</h4>
       <p className="my-0">{props.phoenetic}</p>
       <p className="my-0 text-neutral-500 dark:text-neutral-400">
