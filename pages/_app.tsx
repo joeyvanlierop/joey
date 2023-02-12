@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "../styles/reset.css";
 
 import { Definition } from "../components/definition";
+import { Center } from "../components/center";
 import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -26,7 +27,7 @@ const kaisei = localFont({
 });
 
 // MDX Components
-const components = { Definition };
+const components = { Definition, Center };
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   dayjs.extend(advancedFormat);
