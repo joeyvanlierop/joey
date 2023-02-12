@@ -1,6 +1,6 @@
 import "../styles/globals.css";
-import "../styles/reset.css";
 
+import { Spacer } from "../components/spacer";
 import { Definition } from "../components/definition";
 import { Center } from "../components/center";
 import { MDXProvider } from "@mdx-js/react";
@@ -27,7 +27,7 @@ const kaisei = localFont({
 });
 
 // MDX Components
-const components = { Definition, Center };
+const components = { Definition, Center, Spacer };
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   dayjs.extend(advancedFormat);

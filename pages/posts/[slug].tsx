@@ -9,6 +9,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { useEffect } from "react";
 import { Column } from "../../components/column";
+import { Spacer } from "../../components/spacer";
 import { getPost, getPostSlugs, PostData } from "../../lib/post";
 
 interface PostProps {
@@ -22,7 +23,7 @@ const transition: Transition = {
   duration: 1,
 };
 const motionProps = (delay: number, exitDelay: number): MotionProps => ({
-  initial: { opacity: 0, y: -20 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { ...transition, delay: delay } },
   exit: { opacity: 0, y: 20, transition: { ...transition, delay: exitDelay } },
 });
@@ -47,13 +48,16 @@ export default function Post({ data, source }: PostProps) {
               >
                 {data.title}
               </motion.h1>
-              <motion.div
-                className="my-6 h-[2px] w-full bg-[#e8e8e8] dark:bg-[#2e2e2e]"
-                {...motionProps(0.1, 0.1)}
-              />
-              <motion.div {...motionProps} {...motionProps(0.2, 0)}>
-                <MDXRemote {...source} />
+              <motion.div {...motionProps(0.1, 0.1)}>
+                <Spacer />
               </motion.div>
+              <motion.article
+                {...motionProps}
+                {...motionProps(0.2, 0)}
+                className="prose max-w-none dark:prose-invert"
+              >
+                <MDXRemote {...source} />
+              </motion.article>
             </>
           )}
         </AnimatePresence>
