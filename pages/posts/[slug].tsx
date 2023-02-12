@@ -10,6 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { useEffect } from "react";
 import { Column } from "../../components/column";
 import { Spacer } from "../../components/spacer";
+import { ThemeButton } from "../../components/themeButton";
 import { getPost, getPostSlugs, PostData } from "../../lib/post";
 
 interface PostProps {
@@ -43,7 +44,7 @@ export default function Post({ data, source }: PostProps) {
           {isPresent && (
             <>
               <motion.h1
-                className="font-title text-5xl font-bold"
+                className="flex justify-between font-title text-5xl font-bold"
                 {...motionProps(0, 0.2)}
               >
                 {data.title}

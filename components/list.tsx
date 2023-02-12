@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Category, PostData } from "../lib/post";
 import { Dot } from "./dot";
 import { ListItem } from "./listItem";
+import { ThemeButton } from "./themeButton";
 
 interface ListProps {
   posts: PostData[];

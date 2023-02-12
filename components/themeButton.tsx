@@ -13,7 +13,7 @@ export const ThemeButton: React.FC = () => {
 
   return (
     <div
-      className="[&_svg]:h-6 [&_svg]:w-6 [&_svg]:fill-slate-900 dark:[&_svg]:fill-slate-100"
+      className="[&_svg]:h-8 [&_svg]:w-8 [&_svg]:fill-slate-900 dark:[&_svg]:fill-slate-100"
       onClick={() => theme.setTheme(isDark ? "light" : "dark")}
       tabIndex={0}
     >
