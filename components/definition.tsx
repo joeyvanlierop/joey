@@ -6,8 +6,8 @@ export function Definition(props: {
   example: string;
 }) {
   return (
-    <>
-      <h4 className="mb-0">{props.name}</h4>
+    <section className="rounded-lg bg-zinc-900 p-4">
+      <h4 className="my-0">{props.name}</h4>
       <p className="my-0">{props.phoenetic}</p>
       <p className="my-0 text-neutral-500 dark:text-neutral-400">
         {props.type}
@@ -18,6 +18,6 @@ export function Definition(props: {
       <p className="my-0 ml-5 italic text-neutral-500 dark:text-neutral-400">
         {props.example}
       </p>
-    </>
+    </section>
   );
 }
