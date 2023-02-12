@@ -4,7 +4,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   darkMode: "class",
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./posts/**/*.mdx",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -22,5 +22,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };

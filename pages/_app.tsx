@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "../styles/reset.css";
 
+import { Definition } from "../components/definition";
+import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { AnimatePresence } from "framer-motion";
@@ -10,6 +12,7 @@ import Head from "next/head";
 import { ThemeButton } from "../components/themeButton";
 import localFont from "@next/font/local";
 
+// Fonts
 const inter = localFont({
   src: "../public/fonts/Inter-roman.latin.var.woff2",
   variable: "--font-inter",
@@ -22,6 +25,9 @@ const kaisei = localFont({
   display: "swap",
 });
 
+// MDX Components
+const components = { Definition };
+
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   dayjs.extend(advancedFormat);
 
@@ -31,14 +37,16 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
         <title>Joey</title>
       </Head>
       <ThemeProvider attribute="class" defaultTheme="system">
-        <main className={`${inter.variable} ${kaisei.variable} font-sans`}>
-          <div className="absolute top-16 right-16">
-            <ThemeButton />
-          </div>
-          <AnimatePresence mode="wait" initial={false}>
-            <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
-        </main>
+        <MDXProvider components={components}>
+          <main className={`${inter.variable} ${kaisei.variable} font-sans`}>
+            <div className="absolute top-16 right-16">
+              <ThemeButton />
+            </div>
+            <AnimatePresence mode="wait" initial={false}>
+              <Component {...pageProps} key={router.route} />
+            </AnimatePresence>
+          </main>
+        </MDXProvider>
       </ThemeProvider>
     </>
   );

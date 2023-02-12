@@ -30,14 +30,14 @@ export const List: React.FC<ListProps> = (props) => {
               }`}
             >
               <Dot color={category.color} />
-              <h4 className="ml-3 mr-6 h-full overflow-hidden text-ellipsis whitespace-nowrap">
+              <p className="ml-3 mr-6 h-full overflow-hidden text-ellipsis whitespace-nowrap">
                 {category.name}
-              </h4>
+              </p>
             </div>
           );
         })}
       </div>
-      <motion.div
+      <motion.ol
         className="group w-full"
         transition={{
           staggerChildren: 2,
@@ -66,7 +66,7 @@ export const List: React.FC<ListProps> = (props) => {
             const delay = actualIndex / filtered.length;
 
             if (!isPresent) {
-              setTimeout(safeToRemove, 1000);
+              setTimeout(safeToRemove, 1250);
               return null;
             }
 
@@ -78,15 +78,13 @@ export const List: React.FC<ListProps> = (props) => {
               <ListItem
                 key={`${post.title}-${post.date}`}
                 color={category.color}
-                title={post.title}
-                date={post.date}
-                slug={post.slug}
+                {...post}
                 delay={delay * 0.5}
               />
             );
           })}
         </AnimatePresence>
-      </motion.div>
+      </motion.ol>
     </>
   );
 };

@@ -13,6 +13,7 @@ export interface PostData {
   date: string;
   category: string;
   slug: string;
+  redirect?: string;
   published: boolean;
 }
 

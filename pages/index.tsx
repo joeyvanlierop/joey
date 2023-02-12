@@ -4,10 +4,10 @@ import { List } from "../components/list";
 import { Category, getPosts } from "../lib/post";
 
 const categories: Category[] = [
-  { name: "all", color: "bg-[#d4d4d4] shadow-[#d4d4d4]" },
-  { name: "random", color: "bg-[#ff9aa2] shadow-[#ff9aa2]" },
-  { name: "something", color: "bg-[#85e3ff] shadow-[#85e3ff]" },
-  { name: "etcetera", color: "bg-[#ffdb65] shadow-[#ffdb65]" },
+  { name: "all", color: "bg-neutral-300 shadow-neutral-300" },
+  { name: "random", color: "bg-red-300 shadow-red-300" },
+  { name: "plants", color: "bg-green-300 shadow-green-300" },
+  { name: "skiing", color: "bg-cyan-300 shadow-cyan-300" },
 ];
 
 const variants: Variants = {
