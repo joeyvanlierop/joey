@@ -11,6 +11,8 @@ export const ThemeButton: React.FC = () => {
   // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
   useEffect(() => setMounted(true), []);
 
+  if (!mounted) return null;
+
   return (
     <div
       className="[&_svg]:h-6 [&_svg]:w-6 [&_svg]:fill-slate-900 dark:[&_svg]:fill-slate-100"
