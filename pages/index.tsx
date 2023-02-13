@@ -7,7 +7,7 @@ const categories: Category[] = [
   { name: "all", color: "bg-neutral-300 shadow-neutral-300" },
   { name: "random", color: "bg-red-300 shadow-red-300" },
   { name: "plants", color: "bg-green-300 shadow-green-300" },
-  { name: "skiing", color: "bg-cyan-300 shadow-cyan-300" },
+  { name: "travel", color: "bg-indigo-300 shadow-indigo-300" },
 ];
 
 const variants: Variants = {
@@ -35,7 +35,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getPosts().map((post) => {
+  const posts = getPosts(true).map((post) => {
     return post.data;
   });
 

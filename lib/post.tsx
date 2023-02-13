@@ -36,9 +36,9 @@ export function getPost(slug: string): Post {
   return post;
 }
 
-export function getPosts(): Post[] {
+export function getPosts(all?: boolean): Post[] {
   return getPostSlugs()
     .map((slug) => getPost(slug))
-    .filter((post) => post.data.published)
+    .filter((post) => all || post.data.published)
     .sort((postA, postB) => dayjs(postB.data.date).diff(postA.data.date));
 }
