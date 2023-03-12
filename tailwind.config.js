@@ -20,6 +20,23 @@ module.exports = {
       boxShadow: {
         dot: "0 0 5px 0px rgba(0, 0, 0, 0.3)",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "ul.contains-task-list": {
+              margin: 0,
+              padding: 0,
+            },
+            "li.task-list-item": {
+              listStyleType: "none",
+            },
+            "input[type='checkbox']": {
+              margin: 0,
+              marginRight: "0.25rem",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

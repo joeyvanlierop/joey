@@ -10,8 +10,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import { useEffect } from "react";
 import { Column } from "../../components/column";
 import { Spacer } from "../../components/spacer";
-import { ThemeButton } from "../../components/themeButton";
 import { getPost, getPostSlugs, PostData } from "../../lib/post";
+import remarkGfm from "remark-gfm";
 
 interface PostProps {
   data: PostData;
@@ -69,7 +69,11 @@ export default function Post({ data, source }: PostProps) {
 
 export async function getStaticProps(context): Promise<{ props: PostProps }> {
   const post = getPost(context.params.slug);
-  const mdxSource = await serialize(post.content);
+  const mdxSource = await serialize(post.content, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+    },
+  });
   return {
     props: {
       data: post.data,

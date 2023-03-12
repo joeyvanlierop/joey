@@ -18,7 +18,7 @@ const variants: Variants = {
 
 export const ListItem: React.FC<ListItemProps> = (props) => {
   const dateNumber = useMemo(
-    () => dayjs(props.date).format("MMMM Do").toLowerCase(),
+    () => dayjs(props.date).format("MMMM Do"),
     [props.date]
   );
 
@@ -45,7 +45,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
                 dark:hover:border-t-[#2e2e2e]"
       >
         <Dot className="mr-3" color={props.color} />
-        <p className="mr-4 overflow-hidden text-ellipsis whitespace-nowrap lowercase">
+        <p className="mr-4 overflow-hidden text-ellipsis whitespace-nowrap">
           {props.title}
         </p>
         <p className="ml-auto overflow-hidden text-ellipsis whitespace-nowrap opacity-30 transition-opacity group-hover:!opacity-100">

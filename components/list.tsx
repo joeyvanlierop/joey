@@ -31,7 +31,7 @@ export const List: React.FC<ListProps> = (props) => {
               }`}
             >
               <Dot color={category.color} />
-              <p className="ml-3 mr-6 h-full overflow-hidden text-ellipsis whitespace-nowrap">
+              <p className="ml-3 mr-6 h-full overflow-hidden text-ellipsis whitespace-nowrap capitalize">
                 {category.name}
               </p>
             </div>
