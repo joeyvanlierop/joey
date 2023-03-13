@@ -55,7 +55,7 @@ export default function Post({ data, source }: PostProps) {
               <motion.article
                 {...motionProps}
                 {...motionProps(0.2, 0)}
-                className="prose max-w-none dark:prose-invert"
+                className="prose dark:prose-invert"
               >
                 <MDXRemote {...source} />
               </motion.article>
