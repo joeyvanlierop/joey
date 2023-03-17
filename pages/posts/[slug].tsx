@@ -4,6 +4,7 @@ import {
   MotionProps,
   Transition,
   usePresence,
+  Variants,
 } from "framer-motion";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -21,13 +22,30 @@ interface PostProps {
 const transition: Transition = {
   type: "spring",
   bounce: 0,
-  duration: 1,
+  duration: 0.5,
 };
-const motionProps = (delay: number, exitDelay: number): MotionProps => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { ...transition, delay: delay } },
-  exit: { opacity: 0, y: 20, transition: { ...transition, delay: exitDelay } },
-});
+
+const segmentProps: Variants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  animate: { opacity: 1, y: 0, transition: transition },
+  exit: {
+    opacity: 0,
+    y: 10,
+    transition: transition,
+  },
+};
+
+const parentProps: Variants = {
+  animate: {
+    transition: { ...transition, staggerChildren: 0.1, staggerDirection: 1 },
+  },
+  exit: {
+    transition: { ...transition, staggerChildren: 0.1, staggerDirection: -1 },
+  },
+};
 
 export default function Post({ data, source }: PostProps) {
   const [isPresent, safeToRemove] = usePresence();
@@ -40,26 +58,30 @@ export default function Post({ data, source }: PostProps) {
   return (
     <div className="flex w-full justify-center">
       <Column className="mt-40">
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {isPresent && (
-            <>
+            <motion.div
+              variants={parentProps}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
               <motion.h1
                 className="flex justify-between font-title text-5xl font-bold"
-                {...motionProps(0, 0.2)}
+                variants={segmentProps}
               >
                 {data.title}
               </motion.h1>
-              <motion.div {...motionProps(0.1, 0.1)}>
+              <motion.div variants={segmentProps}>
                 <Spacer />
               </motion.div>
               <motion.article
-                {...motionProps}
-                {...motionProps(0.2, 0)}
+                variants={segmentProps}
                 className="prose dark:prose-invert"
               >
                 <MDXRemote {...source} />
               </motion.article>
-            </>
+            </motion.div>
           )}
         </AnimatePresence>
       </Column>

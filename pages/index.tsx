@@ -1,6 +1,8 @@
 import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 import { Column } from "../components/column";
 import { List } from "../components/list";
+import { Nav } from "../components/nav";
 import { Category, getPosts } from "../lib/post";
 
 const categories: Category[] = [
@@ -16,6 +18,8 @@ const variants: Variants = {
 };
 
 export default function Home({ posts }) {
+  const [selected, setSelected] = useState(0);
+
   return (
     <motion.div
       className="flex h-screen w-screen flex-col items-center justify-center"
@@ -27,8 +31,13 @@ export default function Home({ posts }) {
         duration: 1,
       }}
     >
-      <Column className="mt-40">
-        <List posts={posts} categories={categories} />
+      <Column className="relative mt-[35vh]">
+        <List posts={posts} categories={categories} selected={selected} />
+        <Nav
+          categories={categories}
+          selected={selected}
+          setSelected={setSelected}
+        />
       </Column>
     </motion.div>
   );
