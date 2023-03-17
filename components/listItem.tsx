@@ -38,17 +38,15 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
     >
       <Link
         href={`/posts/${props.slug}`}
-        className="group/item w-100 seperated relative flex h-16 origin-top cursor-pointer items-center
-                  justify-start border-t-[1px]
-                  border-t-transparent transition-[opacity,border-top] hover:border-t-[#e8e8e8]
-                  hover:!opacity-100 focus:!opacity-100 group-hover:opacity-30 group-focus:opacity-30
-                dark:hover:border-t-[#2e2e2e]"
+        className="group/item w-100 relative flex h-16 origin-top cursor-pointer items-center
+                  justify-start transition-[opacity] hover:!opacity-100 focus:!opacity-100 group-hover:opacity-30 group-focus:opacity-30"
       >
         <Dot className="mr-3" color={props.color} />
         <p className="mr-4 overflow-hidden text-ellipsis whitespace-nowrap">
           {props.title}
         </p>
-        <p className="ml-auto overflow-hidden text-ellipsis whitespace-nowrap opacity-30 transition-opacity group-hover:!opacity-100">
+        <hr className="grow border-neutral-700" />
+        <p className="ml-4 overflow-hidden text-ellipsis whitespace-nowrap opacity-30 transition-opacity group-hover:!opacity-100">
           {dateNumber}
         </p>
         <ArrowTopRightIcon

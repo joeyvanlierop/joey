@@ -23,7 +23,6 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: "none",
             "ul.contains-task-list": {
               margin: 0,
               padding: 0,
