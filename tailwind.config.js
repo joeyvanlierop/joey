@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        screen: ["100vh", "100svh"],
+      },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         title: ["var(--font-kaisei)", fontFamily.serif],
