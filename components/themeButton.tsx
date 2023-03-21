@@ -1,6 +1,6 @@
 import { Expand } from "@theme-toggles/react";
 import "@theme-toggles/react/css/Expand.css";
-import { useTheme } from "next-themes";
+import { useTheme } from "../lib/next-themes";
 import { useEffect, useState } from "react";
 
 export const ThemeButton: React.FC = () => {
