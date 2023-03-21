@@ -23,7 +23,7 @@ export const List: React.FC<ListProps> = (props) => {
         duration: 10,
       }}
     >
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {posts.map((post) => {
           const category = props.categories.find(
             (category) => category.name === post.category

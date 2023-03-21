@@ -32,8 +32,8 @@
   }
 }
 
-@layer components {
-  .seperated {
-    @apply after:absolute after:top-full after:h-[1px] after:w-full after:bg-[#e8e8e8] dark:after:bg-[#2e2e2e];
+@layer utilities {
+  .decoration-skip-none {
+    text-decoration-skip-ink: none;
   }
 }

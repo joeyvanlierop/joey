@@ -58,7 +58,7 @@ export default function Post({ data, source }: PostProps) {
   return (
     <div className="flex w-full justify-center">
       <Column className="mt-40">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           {isPresent && (
             <motion.div
               variants={parentProps}
