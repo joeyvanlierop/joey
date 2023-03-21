@@ -40,7 +40,7 @@ export default function Home({ posts }) {
       }}
     >
       <Column className="relative">
-        <div className="flex h-[25%] shrink-0 flex-col justify-end gap-3 pb-12">
+        <div className="flex min-h-[25svh] shrink-0 flex-col justify-end gap-3 pb-12">
           <h1 className="mb-0">Oh hi there.</h1>
           <p className="">I'm Joey. This is where I write stuff.</p>
           <p>
