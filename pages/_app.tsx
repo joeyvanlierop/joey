@@ -42,9 +42,9 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider attribute="class" defaultTheme="system">
         <MDXProvider components={components}>
           <main className={`${inter.variable} ${kaisei.variable} font-sans`}>
-            <div className="absolute top-10 right-10">
+            {/* <div className="absolute top-10 right-10">
               <ThemeButton />
-            </div>
+            </div> */}
             <AnimatePresence mode="wait" initial={false}>
               <Component {...pageProps} key={router.route} />
             </AnimatePresence>
