@@ -9,7 +9,7 @@ import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { AnimatePresence } from "framer-motion";
-import { ThemeProvider } from "../lib/next-themes";
+import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeButton } from "../components/themeButton";
