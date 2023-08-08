@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, usePresence } from "framer-motion";
 import { useState } from "react";
-import { Category, PostData } from "../lib/post";
+import { Category, PostData } from "@lib/post";
 import { ListItem } from "./listItem";
 
 interface ListProps {

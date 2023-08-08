@@ -1,9 +1,9 @@
 import { motion, Variants } from "framer-motion";
 import { FormEvent, useRef, useState } from "react";
-import { Column } from "../components/column";
-import { List } from "../components/list";
-import { Nav } from "../components/nav";
-import { Category, getPosts } from "../lib/post";
+import { Column } from "@components/column";
+import { List } from "@components/list";
+import { Nav } from "@components/nav";
+import { Category, getPosts } from "@lib/post";
 
 const categories: Category[] = [
   { name: "all", color: "bg-neutral-300 shadow-neutral-300" },

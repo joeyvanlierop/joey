@@ -9,9 +9,9 @@ import {
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { useEffect } from "react";
-import { Column } from "../../components/column";
-import { Spacer } from "../../components/spacer";
-import { getPost, getPostSlugs, PostData } from "../../lib/post";
+import { Column } from "@components/column";
+import { Spacer } from "@components/spacer";
+import { getPost, getPostSlugs, PostData } from "@lib/post";
 import remarkGfm from "remark-gfm";
 
 interface PostProps {

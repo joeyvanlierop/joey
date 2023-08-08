@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useMemo } from "react";
-import { PostData } from "../lib/post";
+import { PostData } from "@lib/post";
 import { Dot } from "./dot";
 
 type ListItemProps = PostData & {

@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 
-import { Stack } from "../components/stack";
-import { Image } from "../components/image";
-import { Spacer } from "../components/spacer";
-import { Definition } from "../components/definition";
-import { Center } from "../components/center";
+import { Stack } from "@components/stack";
+import { Image } from "@components/image";
+import { Spacer } from "@components/spacer";
+import { Definition } from "@components/definition";
+import { Center } from "@components/center";
 import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -12,7 +12,7 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ThemeButton } from "../components/themeButton";
+import { ThemeButton } from "@components/themeButton";
 import localFont from "@next/font/local";
 
 // Fonts

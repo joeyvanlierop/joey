@@ -1,5 +1,5 @@
 import { ImageProps } from "next/image";
-import { Image } from "./image";
+import { Image } from "@components/image";
 
 export function Stack(props: { images: ImageProps[] }) {
   return (

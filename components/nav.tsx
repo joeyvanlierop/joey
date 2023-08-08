@@ -1,4 +1,4 @@
-import { Dot } from "./dot";
+import { Dot } from "@components/dot";
 
 export function Nav(props) {
   return (
