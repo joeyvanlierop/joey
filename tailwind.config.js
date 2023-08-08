@@ -14,8 +14,9 @@ module.exports = {
         screen: ["100vh", "100svh"],
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
-        title: ["var(--font-kaisei)", fontFamily.serif],
+        header: ["var(--font-inter)", ...fontFamily.sans],
+        serif: ["var(--font-kaisei)", fontFamily.serif],
+        sans: ["var(--font-sohne)", fontFamily.sans],
       },
       transitionDuration: {
         DEFAULT: "275ms",

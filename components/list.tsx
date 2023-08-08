@@ -1,72 +1,52 @@
-import { AnimatePresence, motion, usePresence } from "framer-motion";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Category, PostData } from "@lib/post";
 import { ListItem } from "./listItem";
+import dayjs from "dayjs";
+import { ListSection } from "./listSection";
 
 interface ListProps {
   posts: PostData[];
   categories: Category[];
-  selected: number;
 }
 
 export const List: React.FC<ListProps> = (props) => {
-  const [isPresent, safeToRemove] = usePresence();
-  const [posts, setPosts] = useState(props.posts);
+  const groupedPosts = useMemo(() => groupPosts(props.posts), [props.posts]);
+  console.log(groupedPosts);
 
   return (
-    <motion.ol
-      className="group w-full"
-      transition={{
-        staggerChildren: 2,
-        duration: 10,
-      }}
-    >
-      <AnimatePresence initial={false}>
-        {posts.map((post) => {
-          const category = props.categories.find(
-            (category) => category.name === post.category
-          );
-
-          /**
-           * Holy shit this is disgusting
-           * Please fix this in the future
-           */
-          const filtered = posts.filter((post) => {
-            const category2 = props.categories.find(
+    <div className="group w-full">
+      {Object.entries(groupedPosts).map(([year, posts]) => (
+        <ListSection year={year}>
+          {posts.map((post) => {
+            const category = props.categories.find(
               (category) => category.name === post.category
             );
+
             return (
-              props.categories[props.selected] === category2 ||
-              props.selected === 0
+              <ListItem
+                key={`${post.title}-${post.date}`}
+                color={category.color}
+                {...post}
+              />
             );
-          });
-          const actualIndex = filtered.findIndex(
-            (post2) => post2.title === post.title
-          );
-          const delay = actualIndex / filtered.length;
-
-          if (!isPresent) {
-            setTimeout(safeToRemove, 1250);
-            return null;
-          }
-
-          if (
-            props.categories[props.selected] !== category &&
-            props.selected !== 0
-          ) {
-            return null;
-          }
-
-          return (
-            <ListItem
-              key={`${post.title}-${post.date}`}
-              color={category.color}
-              {...post}
-              delay={delay * 0.5}
-            />
-          );
-        })}
-      </AnimatePresence>
-    </motion.ol>
+          })}
+        </ListSection>
+      ))}
+    </div>
   );
+};
+
+const groupPosts = (posts: PostData[]) => {
+  const newPosts: Record<number, PostData[]> = {};
+
+  posts.forEach((post) => {
+    const year = dayjs(post.date).year();
+    if (year in newPosts) {
+      newPosts[year].push(post);
+    } else {
+      newPosts[year] = [post];
+    }
+  });
+
+  return newPosts;
 };
