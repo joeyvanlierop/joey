@@ -37,3 +37,37 @@
     text-decoration-skip-ink: none;
   }
 }
+
+/* Scrollbar */
+
+:root {
+  --scrollbar-size: 16px;
+  --scrollbar-size-min: 44px;
+  --scrollbar-color: #343434;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 44px;
+  min-width: 44px;
+  background-color: #343434;
+  border-radius: 16px;
+  border: 5px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3e3e3e;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #8f8f8f;
+}

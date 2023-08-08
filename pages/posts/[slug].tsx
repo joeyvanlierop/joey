@@ -13,9 +13,9 @@ interface PostProps {
 export default function Post({ data, source }: PostProps) {
   return (
     <div className="flex w-full justify-center">
-      <Column className="mt-40">
+      <Column>
         <div>
-          <h1 className="flex justify-between font-title text-5xl font-bold">
+          <h1 className="flex justify-between font-title font-bold font-header">
             {data.title}
           </h1>
           <div>
