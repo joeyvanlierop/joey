@@ -21,9 +21,9 @@ export default function Home({ posts }) {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <Column className="relative">
-        <div className="flex min-h-[25svh] shrink-0 flex-col justify-end gap-3 pb-12 font-header">
+        <div className="flex shrink-0 flex-col justify-end gap-3 pb-12 font-header">
           <h1 className="mb-0">Oh hi there.</h1>
           <textarea
             ref={sendMessageRef}
@@ -33,7 +33,6 @@ export default function Home({ posts }) {
           />
         </div>
         <List posts={posts} categories={categories} />
-        <div className="fixed bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-[#121212]" />
       </Column>
     </div>
   );

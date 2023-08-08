@@ -11,27 +11,14 @@ interface ListProps {
 
 export const List: React.FC<ListProps> = (props) => {
   const groupedPosts = useMemo(() => groupPosts(props.posts), [props.posts]);
-  console.log(groupedPosts);
 
   return (
     <div className="group w-full">
-      {Object.entries(groupedPosts).map(([year, posts]) => (
-        <ListSection year={year}>
-          {posts.map((post) => {
-            const category = props.categories.find(
-              (category) => category.name === post.category
-            );
-
-            return (
-              <ListItem
-                key={`${post.title}-${post.date}`}
-                color={category.color}
-                {...post}
-              />
-            );
-          })}
-        </ListSection>
-      ))}
+      {Object.entries(groupedPosts)
+        .reverse()
+        .map(([year, posts]) => (
+          <ListSection year={year} posts={posts} key={year} />
+        ))}
     </div>
   );
 };

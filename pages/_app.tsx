@@ -2,6 +2,7 @@ import "../styles/globals.css";
 
 import { Center } from "@components/center";
 import { Definition } from "@components/definition";
+import { Footer } from "@components/footer";
 import { Image } from "@components/image";
 import { Spacer } from "@components/spacer";
 import { Stack } from "@components/stack";
@@ -56,9 +57,10 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider attribute="class" defaultTheme="system">
         <MDXProvider components={components}>
           <main
-            className={`${inter.variable} ${kaisei.variable} ${sohne.variable} font-sans`}
+            className={`${inter.variable} ${kaisei.variable} ${sohne.variable} font-sans py-32 min-h-screen relative`}
           >
             <Component {...pageProps} key={router.route} />
+            <Footer />
           </main>
         </MDXProvider>
       </ThemeProvider>

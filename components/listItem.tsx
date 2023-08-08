@@ -1,15 +1,9 @@
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { PostData } from "@lib/post";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { useMemo } from "react";
-import { PostData } from "@lib/post";
-import { Dot } from "./dot";
 
-type ListItemProps = PostData & {
-  color: string;
-};
-
-export const ListItem: React.FC<ListItemProps> = (props) => {
+export const ListItem: React.FC<PostData> = (props) => {
   const dateNumber = useMemo(
     () => dayjs(props.date).format("MM/DD"),
     [props.date]
