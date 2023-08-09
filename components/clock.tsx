@@ -1,38 +1,61 @@
 import { useEffect, useState } from "react";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import dayjs from "dayjs";
 
 export function Clock() {
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState(dayjs().tz("America/Edmonton"));
 
   useEffect(() => {
+    setNow(dayjs().tz("America/Edmonton"));
     const interval = setInterval(() => {
-      setNow(new Date());
+      setNow(dayjs().tz("America/Edmonton"));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div
-      style={{
-        ["--now-h" as string]: now.getHours(),
-        ["--now-m" as string]: now.getMinutes(),
-        ["--now-s" as string]: now.getSeconds(),
-        ["--deg-h" as string]:
-          "calc(((var(--now-h) / 12) * 360) + ((var(--now-m) / 60) * 30))",
-        ["--deg-m" as string]:
-          "calc(((var(--now-m) / 60) * 360) + ((var(--now-s) / 60) * 6))",
-        ["--deg-s" as string]: "calc((var(--now-s) / 60) * 360)",
-      }}
-      className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180 transition-transform"
-    >
-      <div
-        className={`h-[8px] w-[0.5px] rotate-[calc(var(--deg-s)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top`}
-      />
-      <div
-        className={`h-[7px] w-[1px] rotate-[calc(var(--deg-m)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top`}
-      />
-      <div
-        className={`h-[5px] w-[1px] rotate-[calc(var(--deg-h)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top`}
-      />
-    </div>
+    <Tooltip.Provider skipDelayDuration={0}>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <div
+            style={{
+              ["--now-h" as string]: now.hour(),
+              ["--now-m" as string]: now.minute(),
+              ["--now-s" as string]: now.second(),
+              ["--deg-h" as string]:
+                "calc(((var(--now-h) / 12) * 360) + ((var(--now-m) / 60) * 30))",
+              ["--deg-m" as string]:
+                "calc(((var(--now-m) / 60) * 360) + ((var(--now-s) / 60) * 6))",
+              ["--deg-s" as string]: "calc((var(--now-s) / 60) * 360)",
+            }}
+            className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180"
+          >
+            <div
+              className={`h-[8px] w-[0.5px] rotate-[calc(var(--deg-s)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top ${
+                now.second() === 0 ? "" : "transition-transform"
+              }`}
+            />
+            <div
+              className={`h-[7px] w-[1px] rotate-[calc(var(--deg-m)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform ${
+                now.minute() === 0 ? "" : "transition-transform"
+              }`}
+            />
+            <div
+              className={`h-[5px] w-[1px] rotate-[calc(var(--deg-h)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform ${
+                now.hour() === 0 ? "" : "transition-transform"
+              }`}
+            />
+          </div>
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Content
+            className="border border-[#2e2e2e] bg-[#1a1a1a] px-2 py-1 rounded-lg"
+            sideOffset={5}
+          >
+            {now.format("hh:mm:ss A [MST]")}
+          </Tooltip.Content>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
   );
 }

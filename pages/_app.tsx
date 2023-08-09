@@ -9,6 +9,8 @@ import { Stack } from "@components/stack";
 import { MDXProvider } from "@mdx-js/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
@@ -48,6 +50,8 @@ const components = { Definition, Center, Spacer, Image, Stack };
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   dayjs.extend(advancedFormat);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
 
   return (
     <>
