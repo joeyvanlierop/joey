@@ -1,12 +1,11 @@
-import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
 export function Clock() {
-  const [now, setNow] = useState(dayjs());
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setNow(dayjs());
+      setNow(new Date());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -14,16 +13,16 @@ export function Clock() {
   return (
     <div
       style={{
-        ["--now-h" as string]: now.hour(),
-        ["--now-m" as string]: now.minute(),
-        ["--now-s" as string]: now.second(),
+        ["--now-h" as string]: now.getHours(),
+        ["--now-m" as string]: now.getMinutes(),
+        ["--now-s" as string]: now.getSeconds(),
         ["--deg-h" as string]:
           "calc(((var(--now-h) / 12) * 360) + ((var(--now-m) / 60) * 30))",
         ["--deg-m" as string]:
           "calc(((var(--now-m) / 60) * 360) + ((var(--now-s) / 60) * 6))",
         ["--deg-s" as string]: "calc((var(--now-s) / 60) * 360)",
       }}
-      className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180"
+      className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180 transition-transform"
     >
       <div
         className={`h-[8px] w-[0.5px] rotate-[calc(var(--deg-s)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top`}
