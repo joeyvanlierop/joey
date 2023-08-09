@@ -23,6 +23,7 @@ module.exports = {
       },
       boxShadow: {
         dot: "0 0 5px 0px rgba(0, 0, 0, 0.3)",
+        dark: "0 0 20px 0px rgba(0, 0, 0, 0.5)",
       },
       typography: {
         DEFAULT: {
@@ -39,6 +40,20 @@ module.exports = {
               marginRight: "0.25rem",
             },
           },
+        },
+      },
+      animation: {
+        "tooltip-in": "tooltipIn 100ms forwards",
+        "tooltip-out": "tooltipOut 100ms forwards",
+      },
+      keyframes: {
+        tooltipIn: {
+          from: { opacity: 0, transform: "scale(0.9)" },
+          to: { opacity: 1, transform: "scale(1)" },
+        },
+        tooltipOut: {
+          from: { opacity: 1, transform: "scale(1)" },
+          to: { opacity: 0, transform: "scale(0.9)" },
         },
       },
     },

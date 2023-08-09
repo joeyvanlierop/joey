@@ -6,7 +6,6 @@ export function Clock() {
   const [now, setNow] = useState(dayjs().tz("America/Edmonton"));
 
   useEffect(() => {
-    setNow(dayjs().tz("America/Edmonton"));
     const interval = setInterval(() => {
       setNow(dayjs().tz("America/Edmonton"));
     }, 1000);
@@ -47,14 +46,12 @@ export function Clock() {
             />
           </div>
         </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Content
-            className="border border-[#2e2e2e] bg-[#1a1a1a] px-2 py-1 rounded-lg"
-            sideOffset={5}
-          >
-            {now.format("hh:mm:ss A [MST]")}
-          </Tooltip.Content>
-        </Tooltip.Portal>
+        <Tooltip.Content
+          className="border border-[#2e2e2e] bg-[#1a1a1a] px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-dark text-white tabular-nums"
+          sideOffset={10}
+        >
+          {now.format("hh:mm:ss A [MST]")}
+        </Tooltip.Content>
       </Tooltip.Root>
     </Tooltip.Provider>
   );
