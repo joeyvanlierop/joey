@@ -24,13 +24,13 @@ export default function Home({ posts }) {
     <div className="flex flex-col items-center justify-center">
       <Column className="relative">
         <div className="flex shrink-0 flex-col justify-end gap-3 pb-12 font-header">
-          <h1 className="mb-0">Oh hi there.</h1>
+          {/* <h1 className="mb-0">Oh hi there.</h1>
           <textarea
             ref={sendMessageRef}
             onInput={onMessageInput}
             className="h-12 w-full resize-none overflow-hidden rounded-md p-3 align-text-top focus:outline-none"
             placeholder="Write me a message"
-          />
+          /> */}
         </div>
         <List posts={posts} categories={categories} />
       </Column>

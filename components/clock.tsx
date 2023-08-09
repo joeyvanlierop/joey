@@ -13,7 +13,7 @@ export function Clock() {
   }, []);
 
   return (
-    <Tooltip.Provider skipDelayDuration={0}>
+    <Tooltip.Provider delayDuration={300} skipDelayDuration={0}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <div
