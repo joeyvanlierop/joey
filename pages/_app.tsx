@@ -57,7 +57,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ThemeProvider attribute="class" defaultTheme="system">
         <MDXProvider components={components}>
           <main
-            className={`${inter.variable} ${kaisei.variable} ${sohne.variable} font-sans py-32 min-h-screen relative`}
+            className={`${inter.variable} ${kaisei.variable} ${sohne.variable} font-sans md:py-32 min-h-screen relative`}
           >
             <Component {...pageProps} key={router.route} />
             <Footer />
