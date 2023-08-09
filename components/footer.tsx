@@ -1,5 +1,5 @@
+import { Clock } from "./clock";
 import { Column } from "./column";
-import { ClockIcon } from "@radix-ui/react-icons";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       <Column className="justify-center">
         <div className="flex justify-between items-center">
           <span>I am the footer</span>
-          <ClockIcon />
+          <Clock />
         </div>
       </Column>
     </footer>
