@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Clock } from "./clock";
 import { Column } from "./column";
 
@@ -21,7 +20,7 @@ function Git() {
   const owner = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER;
   const slug = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
   const message = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE;
-  const href = "https://github.com/" + owner + "/" + slug + "/tree/" + sha;
+  const href = "https://github.com/" + owner + "/" + slug + "/commit/" + sha;
 
   return (
     <span>
