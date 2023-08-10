@@ -1,4 +1,4 @@
-import { getUrl } from "@lib/utils";
+import { getUrl } from "@lib/url";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
