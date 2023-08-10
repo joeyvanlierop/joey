@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build:robots": "ts-node ./build-helpers/generate-robots.ts",
     "build:sitemap": "ts-node ./build-helpers/generate-sitemap.ts",
-    "prebuild": "yarn build:robots",
     "build": "next build",
     "start": "next start",
     "update": "yarn upgrade-interactive --latest --exact"

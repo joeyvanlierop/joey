@@ -1,9 +1,19 @@
-import { getUrl, writePublicFile } from "@lib/utils";
+import { getUrl } from "@lib/utils";
+import { MetadataRoute } from "next";
 
-const generateRobots = () => {
+export default function robots(): MetadataRoute.Robots {
   const url = getUrl();
 
-  const robots = `#                           ....                                                                                                                                
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: `${url}/sitemap.xml`,
+  };
+}
+
+const cat = `#                           ....                                                                                                                                
 #                          ..ZZ+. .                                                                                                                             
 #                          .$...D ....                    ........                                                                                              
 #                          .$  ..+.         ..     .    .   77. .                                                                                               
@@ -72,17 +82,4 @@ const generateRobots = () => {
 #                      ... .ODDNDDDDNDM8? .........                                                                                                              
 #                        . ..:NDND7.......  ...                                                                                                                  
 #                         .............                                                                                                                          
-#                         ..    . 
-  
-# Allow all crawlers
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: ${url}/sitemap.xml
-`;
-
-  writePublicFile(robots, "robots.txt");
-};
-
-generateRobots();
+#                         ..    . `;
