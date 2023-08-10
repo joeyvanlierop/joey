@@ -3,11 +3,19 @@ import { Spacer } from "@components/spacer";
 import { getPost, getPostSlugs } from "@lib/post";
 import { ResetIcon } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
-import { MDXRemote } from "next-mdx-remote";
+import { Metadata, ResolvingMetadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
+
+export function generateMetadata({ params }): Metadata {
+  const post = getPost(params.slug);
+
+  return {
+    title: post.data.title,
+  };
+}
 
 export default async function Post({ params }) {
   const post = await fetchPost(params);

@@ -1,6 +1,12 @@
 import { Column } from "@components/column";
 import { List } from "@components/list";
 import { getPosts } from "@lib/post";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Joey Van Lierop",
+  description: "A bit of my brain",
+};
 
 export default async function Home() {
   const posts = await fetchPosts();
