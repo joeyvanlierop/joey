@@ -1,10 +1,12 @@
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import { Column } from "@components/column";
 import { Spacer } from "@components/spacer";
-import { getPost, getPostSlugs, PostData } from "@lib/post";
+import { PostData, getPost, getPostSlugs } from "@lib/post";
+import { ResetIcon } from "@radix-ui/react-icons";
+import dayjs from "dayjs";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import Link from "next/link";
 import remarkGfm from "remark-gfm";
-
 interface PostProps {
   data: PostData;
   source: MDXRemoteSerializeResult;
@@ -15,9 +17,17 @@ export default function Post({ data, source }: PostProps) {
     <div className="flex w-full justify-center">
       <Column>
         <div>
-          <h1 className="flex justify-between font-title font-bold font-header">
-            {data.title}
-          </h1>
+          <div className="flex flex-col">
+            <div className="flex justify-between items-center ">
+              <h3 className="font-title font-bold font-header">{data.title}</h3>
+              <Link href={"/"}>
+                <ResetIcon className="w-6 h-6 " />
+              </Link>
+            </div>
+            <time className="font-header text-[#a0a0a0]">
+              {dayjs(data.date).format("MMMM Do[,] YYYY")}
+            </time>
+          </div>
           <div>
             <Spacer />
           </div>

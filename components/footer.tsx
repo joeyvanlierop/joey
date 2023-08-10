@@ -16,7 +16,7 @@ export function Footer() {
 
 function Git() {
   const sha = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA;
-  const shortSha = sha.substring(0, 7);
+  const shortSha = sha?.substring(0, 7);
   const owner = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER;
   const slug = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
   const message = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE;
@@ -28,7 +28,7 @@ function Git() {
         {shortSha}
       </a>
       {": "}
-      {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_MESSAGE}
+      {message}
     </span>
   );
 }
