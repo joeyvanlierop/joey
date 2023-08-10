@@ -12,7 +12,8 @@ const components = { Definition, Center, Spacer, Image, Stack };
 
 export default function Providers({ children }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system">
+    // TODO: Use system style
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <MDXProvider components={components}>{children}</MDXProvider>
     </ThemeProvider>
   );

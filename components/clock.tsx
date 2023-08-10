@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Dot } from "./dot";
+import { Git } from "./git";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -58,10 +59,7 @@ export function Clock() {
           className="border border-[#2e2e2e] bg-[#1a1a1a] px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-dark text-white tabular-nums"
           sideOffset={10}
         >
-          <div className="font-title flex items-center gap-2">
-            <Dot className="bg-yellow-400 shadow-yellow-300 animate-pulse shadow-dot" />
-            <p>Currently busy on the West Coast Trail, back in a bit</p>
-          </div>
+          <Git />
         </Tooltip.Content>
       </Tooltip.Root>
     </Tooltip.Provider>
