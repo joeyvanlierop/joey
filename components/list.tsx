@@ -1,7 +1,6 @@
-import { useMemo, useState } from "react";
-import { Category, PostData } from "@lib/post";
-import { ListItem } from "./listItem";
+import { PostData } from "@lib/post";
 import dayjs from "dayjs";
+import { useMemo } from "react";
 import { ListSection } from "./listSection";
 
 interface ListProps {
