@@ -6,7 +6,6 @@ import { ListSection } from "./listSection";
 
 interface ListProps {
   posts: PostData[];
-  categories: Category[];
 }
 
 export const List: React.FC<ListProps> = (props) => {

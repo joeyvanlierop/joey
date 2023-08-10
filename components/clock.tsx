@@ -1,6 +1,13 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export function Clock() {
   const [now, setNow] = useState(dayjs().tz("America/Edmonton"));
