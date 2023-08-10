@@ -13,7 +13,7 @@ export default async function Home() {
   );
 }
 
-export async function fetchPosts() {
+async function fetchPosts() {
   return getPosts(true).map((post) => {
     return post.data;
   });
