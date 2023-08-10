@@ -1,4 +1,4 @@
-import { getUrl, writePublicFile } from "./utils";
+import { getUrl, writePublicFile } from "@lib/utils";
 
 const generateRobots = () => {
   const url = getUrl();

@@ -11,6 +11,7 @@ export interface Category {
 export interface PostData {
   title: string;
   date: string;
+  updated: string;
   category: string;
   slug: string;
   redirect?: string;
