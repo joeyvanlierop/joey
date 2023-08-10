@@ -17,7 +17,6 @@ export function Nav(props) {
               !isSelected ? "opacity-30" : ""
             } z-20`}
           >
-            <Dot color={category.color} />
             <p className="ml-3 overflow-hidden text-ellipsis whitespace-nowrap capitalize">
               {category.name}
             </p>
