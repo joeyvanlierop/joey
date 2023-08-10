@@ -8,6 +8,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+
+dayjs.extend(advancedFormat);
 
 export function generateMetadata({ params }): Metadata {
   const post = getPost(params.slug);
@@ -64,6 +67,6 @@ async function fetchPost(params) {
 
 export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({
-    slug: slug,
+    slug,
   }));
 }

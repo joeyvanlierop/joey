@@ -1,4 +1,5 @@
 import { Column } from "@components/column";
+import { Dot } from "@components/dot";
 import { List } from "@components/list";
 import { getPosts } from "@lib/post";
 import { Metadata } from "next";
@@ -12,7 +13,7 @@ export default async function Home() {
   const posts = await fetchPosts();
   return (
     <div className="flex flex-col items-center justify-center">
-      <Column className="relative">
+      <Column className="flex flex-col relative">
         <List posts={posts} />
       </Column>
     </div>
