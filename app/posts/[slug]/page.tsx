@@ -64,6 +64,6 @@ async function fetchPost(params) {
 
 export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({
-    id: slug,
+    slug: slug,
   }));
 }
