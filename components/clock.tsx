@@ -1,17 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { Dot } from "./dot";
-import { Git } from "./git";
+import { useEffect, useState } from "react";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export function Clock() {
+export function Clock({ children }) {
   const [now, setNow] = useState(dayjs().tz("America/Edmonton"));
 
   useEffect(() => {
@@ -59,7 +57,7 @@ export function Clock() {
           className="border border-[#2e2e2e] bg-[#1a1a1a] px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-dark text-white tabular-nums"
           sideOffset={10}
         >
-          <Git />
+          {children}
         </Tooltip.Content>
       </Tooltip.Root>
     </Tooltip.Provider>

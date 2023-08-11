@@ -1,5 +1,6 @@
 import { Clock } from "./clock";
 import { Column } from "./column";
+import { Deployments } from "./deployments";
 import { Git } from "./git";
 import { Status } from "./status";
 
@@ -9,7 +10,9 @@ export function Footer() {
       <Column className="justify-center">
         <div className="flex justify-between items-center">
           <Status />
-          <Clock />
+          <Clock>
+            <Deployments />
+          </Clock>
         </div>
       </Column>
     </footer>

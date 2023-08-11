@@ -1,4 +1,19 @@
-export function Git() {
+export function Git({ sha, message, url }) {
+  const shortSha = sha?.substring(0, 7);
+  const vercel_href = `https://${url}`;
+
+  return (
+    <span>
+      <a href={vercel_href} target="blank" className="underline">
+        {shortSha}
+      </a>
+      {": "}
+      {message}
+    </span>
+  );
+}
+
+export function EnvGit() {
   const sha = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA;
   const shortSha = sha?.substring(0, 7);
   const owner = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER;
