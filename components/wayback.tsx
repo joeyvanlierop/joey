@@ -1,7 +1,11 @@
 import { Git } from "./git";
 
-export async function Deployments() {
+export async function Wayback() {
   const deployments = await fetchDeployments();
+
+  if (deployments.length == 0) {
+    return <p>Deplyment machine broke</p>;
+  }
 
   return (
     <ol className="flex flex-col">

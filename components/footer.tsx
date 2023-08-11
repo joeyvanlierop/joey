@@ -1,8 +1,7 @@
 import { Clock } from "./clock";
 import { Column } from "./column";
-import { Deployments } from "./deployments";
-import { Git } from "./git";
 import { Status } from "./status";
+import { Wayback } from "./wayback";
 
 export function Footer() {
   return (
@@ -11,7 +10,7 @@ export function Footer() {
         <div className="flex justify-between items-center">
           <Status />
           <Clock>
-            <Deployments />
+            <Wayback />
           </Clock>
         </div>
       </Column>
