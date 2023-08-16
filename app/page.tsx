@@ -21,7 +21,7 @@ export default async function Home() {
 }
 
 async function fetchPosts() {
-  return getPosts(true).map((post) => {
+  return getPosts(false).map((post) => {
     return post.data;
   });
 }

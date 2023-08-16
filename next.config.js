@@ -5,4 +5,7 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+  images: {
+    unoptimized: process.env.NODE_ENV === "development" ? true : false,
+  },
 };

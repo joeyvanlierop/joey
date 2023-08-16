@@ -35,9 +35,14 @@ const sohne = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`dark:bg-[#101010] ${inter.variable} ${kaisei.variable} ${sohne.variable}`}
+    >
       <body
-        className={`${inter.variable} ${kaisei.variable} ${sohne.variable} font-sans bg-[#f2f2f2] text-[#1a1a1a] dark:bg-[#1a1a1a] dark:text-[#f2f2f2] h-full relative`}
+        className={
+          "font-sans text-[#1a1a1a]  dark:text-[#f2f2f2] h-full relative"
+        }
       >
         <Providers>
           <main className="md:py-32 pb-24 min-h-[100dvh] relative">

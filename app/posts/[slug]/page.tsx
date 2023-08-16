@@ -1,7 +1,7 @@
 import { Column } from "@components/column";
 import { Spacer } from "@components/spacer";
 import { getPost, getPostSlugs } from "@lib/post";
-import { ResetIcon } from "@radix-ui/react-icons";
+import { ChevronLeftIcon, ArrowLeftIcon } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
 import { Metadata, ResolvingMetadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
@@ -25,28 +25,21 @@ export default async function Post({ params }) {
 
   return (
     <div className="flex w-full justify-center">
-      <Column>
-        <div>
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center ">
-              <h3 className="font-title font-bold font-header">
-                {post.data.title}
-              </h3>
-              <Link href={"/"}>
-                <ResetIcon className="w-6 h-6 " />
-              </Link>
-            </div>
-            <time className="font-header text-[#a0a0a0]">
-              {dayjs(post.data.date).format("MMMM Do[,] YYYY")}
-            </time>
+      <Column className="gap-10">
+        <div className="flex flex-col justify-center items-start">
+          <div className="flex items-center justify-start">
+            <Link href={"/"}>
+              <ArrowLeftIcon className="w-5 h-5 -ml-8" />
+            </Link>
+            <h4 className="font-bold font-header mb-0">{post.data.title}</h4>
           </div>
-          <div>
-            <Spacer />
-          </div>
-          <article className="prose dark:prose-invert">
-            <MdxContent source={post.source} />
-          </article>
+          <time className="font-header text-[#a0a0a0]">
+            {dayjs(post.data.date).format("MMMM Do[,] YYYY")}
+          </time>
         </div>
+        <article className="prose dark:prose-invert prose-headings:font-header">
+          <MdxContent source={post.source} />
+        </article>
       </Column>
     </div>
   );
