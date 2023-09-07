@@ -15,9 +15,8 @@ export default async function Home() {
           <h1>Joey Van Lierop</h1>
 
           <p>
-            Crafting interfaces. Building polished software and web experiences.
-            Experimenting with magical details in user interfaces. Webmaster at
-            Linear.
+            Making things, climbing mountains, and hiking oceans. Everything is
+            all over the place which is exactly where it needs to be.
           </p>
 
           <p className="mb-8">
