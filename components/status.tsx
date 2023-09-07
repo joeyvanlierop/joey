@@ -1,6 +1,6 @@
 import { Dot } from "./dot";
 
-const message = `Getting ready for the West Coast Trail`;
+const message = `Back to the grind`;
 
 export function Status() {
   return (

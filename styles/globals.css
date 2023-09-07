@@ -9,26 +9,17 @@
   h4,
   h5,
   h6 {
-    @apply mb-1 font-bold;
+    @apply font-medium;
+  }
+}
+
+@layer base {
+  a {
+    @apply underline underline-offset-[2.5px] decoration-neutral-600 transition decoration-1;
   }
 
-  h1 {
-    @apply text-4xl;
-  }
-  h2 {
-    @apply text-3xl;
-  }
-  h3 {
-    @apply text-2xl;
-  }
-  h4 {
-    @apply text-xl;
-  }
-  h5 {
-    @apply text-lg;
-  }
-  h6 {
-    @apply text-base;
+  a:hover {
+    @apply decoration-neutral-400;
   }
 }
 

@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...postSlugs.map((slug) => {
       return {
-        url: `${url}/posts/${slug}`,
+        url: `${url}/writing/${slug}`,
         lastModified: getPost(slug).data.updated,
       };
     }),
