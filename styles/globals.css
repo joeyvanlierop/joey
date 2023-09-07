@@ -13,19 +13,17 @@
   }
 }
 
-@layer base {
-  a {
-    @apply underline underline-offset-[2.5px] decoration-neutral-600 transition decoration-1;
-  }
-
-  a:hover {
-    @apply decoration-neutral-400;
-  }
-}
-
 @layer utilities {
   .decoration-skip-none {
     text-decoration-skip-ink: none;
+  }
+
+  .underline-fancy {
+    @apply underline underline-offset-[2.5px] decoration-neutral-600 transition decoration-1;
+  }
+
+  .underline-fancy:hover {
+    @apply decoration-neutral-400;
   }
 }
 

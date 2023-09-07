@@ -35,20 +35,22 @@ export default async function Home() {
               <p className="text-sm text-neutral-400 pb-4">Writing</p>
               <div className="flex flex-col gap-4">
                 <Showoff
-                  title="Having Hiked the West Coast Trail"
-                  description={"Shenanigans and tomfoolery."}
-                  href={"/writing/to-hike-the-west-coast-trail"}
+                  title="Post Hike Clarity"
+                  description={
+                    "Shenanigans and tomfoolery on the West Coast Trail."
+                  }
+                  href={"/writing/post-hike-clarity"}
                 />
                 <Showoff
-                  title="To Hiked the West Coast Trail"
+                  title="The Panic"
                   description={"Getting in way over my head."}
-                  href={"/writing/having-hiked-the-west-coast-trail"}
+                  href={"/writing/the-panic"}
                 />
                 {/* TODO: Make the dots jump */}
                 <Showoff
                   title="...read more"
                   description={"A messy collection of my infrequent ."}
-                  href={"/writing/to-hike-the-west-coast-trail"}
+                  href={"/writing/"}
                 />
               </div>
             </section>
