@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import { Footer } from "@components/footer";
+import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import Providers from "./providers";
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
