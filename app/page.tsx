@@ -29,7 +29,7 @@ export default async function Home() {
             </a>
           </p>
 
-          <div className="flex gap-8 mb-8">
+          <div className="flex gap-8 mb-8 overflow-scroll">
             <section className="min-w-[200px]">
               <p className="text-sm text-neutral-400 pb-4">Writing</p>
               <div className="flex flex-col gap-4">
