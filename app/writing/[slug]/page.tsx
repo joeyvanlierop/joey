@@ -31,7 +31,7 @@ export default async function Post({ params }) {
             <Link href={"/"}>
               <ArrowLeftIcon className="w-5 h-5 -ml-8" />
             </Link>
-            <h4 className="font-bold font-header mb-0">{post.data.title}</h4>
+            <h1 className="font-header mb-0">{post.data.title}</h1>
           </div>
           <time className="font-header text-[#a0a0a0]">
             {dayjs(post.data.date).format("MMMM Do[,] YYYY")}

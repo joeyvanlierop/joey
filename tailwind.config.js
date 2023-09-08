@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -44,10 +45,15 @@ module.exports = {
         },
       },
       animation: {
+        enter: "enter 600ms both",
         "tooltip-in": "tooltipIn 100ms forwards",
         "tooltip-out": "tooltipOut 100ms forwards",
       },
       keyframes: {
+        enter: {
+          from: { opacity: 0, transform: "translateY(10px)" },
+          to: { opacity: 1, transform: "none" },
+        },
         tooltipIn: {
           from: { opacity: 0, transform: "scale(0.9)" },
           to: { opacity: 1, transform: "scale(1)" },
@@ -59,7 +65,23 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animate-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),
+  ],
   future: {
     hoverOnlyWhenSupported: true,
   },

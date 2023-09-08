@@ -12,14 +12,14 @@ export default async function Home() {
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
         <article className="prose-invert prose-headings:font-header flex flex-col gap-8">
-          <h1>Joey Van Lierop</h1>
+          <h1 className="animate-enter">Joey Van Lierop</h1>
 
-          <p>
+          <p className="animate-enter animate-delay-[120ms]">
             Making things, climbing mountains, and hiking oceans. Everything is
             all over the place which is exactly where it needs to be.
           </p>
 
-          <p className="mb-8">
+          <p className="mb-8 animate-enter animate-delay-[240ms]">
             Currently studying computer science while developing{" "}
             <a
               className="underline underline-offset-[2.5px]"
@@ -29,7 +29,7 @@ export default async function Home() {
             </a>
           </p>
 
-          <div className="flex gap-8 mb-8">
+          <div className="flex gap-8 mb-8 animate-enter animate-delay-[360ms]">
             <section className="min-w-[200px]">
               <p className="text-sm text-neutral-400 pb-4">Writing</p>
               <div className="flex flex-col gap-4">
@@ -82,9 +82,9 @@ export default async function Home() {
             </section>
           </div>
 
-          <h1>Now</h1>
+          <h1 className="animate-enter animate-delay-[480ms]">Now</h1>
 
-          <p>
+          <p className="animate-enter animate-delay-[600ms]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit
             laoreet id donec ultrices tincidunt arcu non. Neque volutpat ac
@@ -93,7 +93,7 @@ export default async function Home() {
             molestie nunc non. Lacus vel facilisis volutpat est.
           </p>
 
-          <p>
+          <p className="animate-enter animate-delay-[740ms]">
             Aliquam ut porttitor leo a diam sollicitudin. Purus in massa tempor
             nec feugiat nisl pretium. Tristique et egestas quis ipsum. Ante
             metus dictum at tempor commodo ullamcorper a. Gravida arcu ac tortor
