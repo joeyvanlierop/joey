@@ -35,7 +35,7 @@ export default async function Home() {
           </p>
 
           <div
-            className="w-screen overflow-x-auto pl-10 relative left-1/2 ml-[-50vw]"
+            className="w-screen overflow-x-auto pl-10 -ml-10"
             style={{
               WebkitMaskImage:
                 "linear-gradient(to right, transparent 0%, #000 24px, #000 80%, transparent 100%)",
@@ -44,7 +44,7 @@ export default async function Home() {
             }}
           >
             <div className="flex gap-8 mb-8 animate-enter animate-delay-[360ms] after:min-w-[8px]">
-              <section className="min-w-[200px]">
+              <section className="min-w-[200px] max-w-[200px]">
                 <p className="text-sm text-neutral-400 pb-4">Writing</p>
                 <div className="flex flex-col gap-4">
                   <Showoff
@@ -67,7 +67,7 @@ export default async function Home() {
                   />
                 </div>
               </section>
-              <section className="min-w-[200px]">
+              <section className="min-w-[200px] max-w-[200px]">
                 <p className="text-sm text-neutral-400 pb-4">Projects</p>
                 <div className="flex flex-col gap-4">
                   <Showoff
@@ -84,7 +84,7 @@ export default async function Home() {
                   />
                 </div>
               </section>
-              <section className="min-w-[200px]">
+              <section className="min-w-[200px] max-w-[200px]">
                 <p className="text-sm text-neutral-400 pb-4">Todo</p>
                 <div className="flex flex-col gap-4">
                   <Showoff
