@@ -1,5 +1,6 @@
 export const getUrl = () => {
-  return process.env.VERCEL_ENV === "production"
-    ? "https://www.joeyvanlierop.com"
-    : `https://${process.env.VERCEL_URL}`;
+  if (process.env.VERCEL_ENV === undefined) return "localhost:3000";
+  if (process.env.VERCEL_ENV === "production")
+    return "https://www.joeyvanlierop.com";
+  return `https://${process.env.VERCEL_URL}`;
 };

@@ -4,8 +4,13 @@ import { getPosts } from "@lib/post";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Joey Van Lierop",
-  description: "A bit of my brain",
+  title: "Writing",
+  description: "Written things",
+  openGraph: {
+    title: "Writing",
+    description: "Written things",
+    url: "https://joeyvanlierop.com/writing",
+  },
 };
 
 export default async function Home() {

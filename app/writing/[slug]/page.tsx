@@ -1,14 +1,14 @@
 import { Column } from "@components/column";
-import { Spacer } from "@components/spacer";
 import { getPost, getPostSlugs } from "@lib/post";
-import { ChevronLeftIcon, ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import dayjs from "dayjs";
-import { Metadata, ResolvingMetadata } from "next";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
-import advancedFormat from "dayjs/plugin/advancedFormat";
+import { getUrl } from "@lib/url";
 
 dayjs.extend(advancedFormat);
 
@@ -17,6 +17,14 @@ export function generateMetadata({ params }): Metadata {
 
   return {
     title: post.data.title,
+    // TODO: Define a description in each post
+    description: post.data.title,
+    openGraph: {
+      title: post.data.title,
+      // TODO: Here too
+      description: post.data.title,
+      url: `${getUrl()}/writing/${post.data.slug}`,
+    },
   };
 }
 
