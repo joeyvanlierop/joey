@@ -34,57 +34,67 @@ export default async function Home() {
             </a>
           </p>
 
-          <div className="flex gap-8 mb-8 animate-enter animate-delay-[360ms]">
-            <section className="min-w-[200px]">
-              <p className="text-sm text-neutral-400 pb-4">Writing</p>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="Post Hike Clarity"
-                  description={
-                    "Shenanigans and tomfoolery on the West Coast Trail."
-                  }
-                  href={"/writing/post-hike-clarity"}
-                />
-                <Showoff
-                  title="The Panic"
-                  description={"Getting in way over my head."}
-                  href={"/writing/the-panic"}
-                />
-                {/* TODO: Make the dots jump */}
-                <Showoff
-                  title="...read more"
-                  description={"A messy collection of my infrequent ."}
-                  href={"/writing/"}
-                />
-              </div>
-            </section>
-            <section className="min-w-[200px]">
-              <p className="text-sm text-neutral-400 pb-4">Projects</p>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="Ship It"
-                  description={"One of the game jams of all time."}
-                  href={"https://github.com/joeyvanlierop/ld-51"}
-                  external
-                />
-                <Showoff
-                  title="GoLF"
-                  description={"A language and compiler for a subset of Go."}
-                  href={"https://github.com/joeyvanlierop/golf"}
-                  external
-                />
-              </div>
-            </section>
-            <section className="min-w-[200px]">
-              <p className="text-sm text-neutral-400 pb-4">Todo</p>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="Replit"
-                  description={"Trying to make something cool."}
-                  href={"#"}
-                />
-              </div>
-            </section>
+          <div
+            className="w-screen overflow-x-auto px-10 relative left-1/2 ml-[-50vw]"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, #000 24px, #000 80%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, transparent 0%, #000 24px, #000 80%, transparent 100%)",
+            }}
+          >
+            <div className="flex gap-8 mb-8 animate-enter animate-delay-[360ms]">
+              <section className="min-w-[200px]">
+                <p className="text-sm text-neutral-400 pb-4">Writing</p>
+                <div className="flex flex-col gap-4">
+                  <Showoff
+                    title="Post Hike Clarity"
+                    description={
+                      "Shenanigans and tomfoolery on the West Coast Trail."
+                    }
+                    href={"/writing/post-hike-clarity"}
+                  />
+                  <Showoff
+                    title="The Panic"
+                    description={"Getting in way over my head."}
+                    href={"/writing/the-panic"}
+                  />
+                  {/* TODO: Make the dots jump */}
+                  <Showoff
+                    title="...read more"
+                    description={"A messy collection of my infrequent ."}
+                    href={"/writing/"}
+                  />
+                </div>
+              </section>
+              <section className="min-w-[200px]">
+                <p className="text-sm text-neutral-400 pb-4">Projects</p>
+                <div className="flex flex-col gap-4">
+                  <Showoff
+                    title="Ship It"
+                    description={"One of the game jams of all time."}
+                    href={"https://github.com/joeyvanlierop/ld-51"}
+                    external
+                  />
+                  <Showoff
+                    title="GoLF"
+                    description={"A language and compiler for a subset of Go."}
+                    href={"https://github.com/joeyvanlierop/golf"}
+                    external
+                  />
+                </div>
+              </section>
+              <section className="min-w-[200px]">
+                <p className="text-sm text-neutral-400 pb-4">Todo</p>
+                <div className="flex flex-col gap-4">
+                  <Showoff
+                    title="Replit"
+                    description={"Trying to make something cool."}
+                    href={"#"}
+                  />
+                </div>
+              </section>
+            </div>
           </div>
 
           <h1 className="animate-enter animate-delay-[480ms]">Now</h1>
