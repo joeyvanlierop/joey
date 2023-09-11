@@ -48,6 +48,7 @@ module.exports = {
         enter: "enter 600ms both",
         "tooltip-in": "tooltipIn 100ms forwards",
         "tooltip-out": "tooltipOut 100ms forwards",
+        pulse: "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         enter: {
