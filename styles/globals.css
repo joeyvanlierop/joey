@@ -3,20 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-medium;
-  }
-
   a {
-    @apply underline underline-offset-[2.5px] !decoration-neutral-600 transition decoration-1;
+    @apply underline underline-offset-[2.5px] !decoration-mono-400 transition decoration-1;
   }
 
   a:hover {
-    @apply !decoration-neutral-400;
+    @apply !decoration-mono-200;
   }
 }

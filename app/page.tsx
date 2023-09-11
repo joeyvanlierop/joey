@@ -18,7 +18,7 @@ export default async function Home() {
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
         <article className="prose-invert prose-headings:font-header flex flex-col gap-8">
-          <h1 className="animate-enter">Joey Van Lierop</h1>
+          <h1 className="animate-enter font-medium">Joey Van Lierop</h1>
 
           <p className="animate-enter animate-delay-[120ms]">
             Making things, climbing mountains, and hiking oceans. Boundless
@@ -45,7 +45,7 @@ export default async function Home() {
             }}
           >
             <section className="min-w-[192px] max-w-[192px]">
-              <p className="text-sm text-neutral-400 pb-4">Writing</p>
+              <h3 className="text-sm text-mono-200 pb-4">Writing</h3>
               <div className="flex flex-col gap-4">
                 <Showoff
                   title="After"
@@ -68,7 +68,7 @@ export default async function Home() {
               </div>
             </section>
             <section className="min-w-[192px] max-w-[192px] ml-8">
-              <p className="text-sm text-neutral-400 pb-4">Projects</p>
+              <h3 className="text-sm text-mono-200 pb-4">Projects</h3>
               <div className="flex flex-col gap-4">
                 <Showoff
                   title="GoLF"
@@ -85,7 +85,7 @@ export default async function Home() {
               </div>
             </section>
             <section className="min-w-[192px] max-w-[192px] ml-8">
-              <p className="text-sm text-neutral-400 pb-4">Todo</p>
+              <h3 className="text-sm text-mono-200 pb-4">Todo</h3>
               <div className="flex flex-col gap-4">
                 <Showoff
                   title="Something"
@@ -96,13 +96,15 @@ export default async function Home() {
             </section>
           </div>
 
-          <h1 className="animate-enter animate-delay-[480ms]">Now</h1>
+          <h2 className="animate-enter animate-delay-[480ms] font-medium">
+            Now
+          </h2>
 
           <p className="animate-enter animate-delay-[600ms]">
-            I don't do a lot of public speaking, so I looked up a memorable
-            quote to start my speech, and this is what I found. OK, you're
-            staring at me blankly, but this whole thing is a quote. I know that
-            sounds confusing, but... you know what, never mind.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </p>
 
           <p className="animate-enter animate-delay-[740ms]">
@@ -126,7 +128,7 @@ function Showoff(props) {
           href={props.href}
           target={props.external ? "_blank" : undefined}
         >
-          {props.title}
+          <h4>{props.title}</h4>
         </a>
         {props.external && (
           <ArrowTopRightIcon
@@ -136,7 +138,7 @@ function Showoff(props) {
           />
         )}
       </span>
-      <p className="text-neutral-400 ">{props.description}</p>
+      <p className="text-mono-200 ">{props.description}</p>
     </div>
   );
 }
