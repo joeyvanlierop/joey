@@ -19,9 +19,9 @@ export const ListItem: React.FC<PostData> = (props) => {
         <p className="mr-4 w-full overflow-hidden text-ellipsis whitespace-nowrap">
           {props.title}
         </p>
-        <p className="flex-shrink-0 overflow-hidden text-ellipsis whitespace-nowrap font-header text-sm text-[#707070]">
+        <time className="flex-shrink-0 overflow-hidden text-ellipsis whitespace-nowrap font-header text-sm text-[#707070]">
           {dateNumber}
-        </p>
+        </time>
       </div>
     </Link>
   );

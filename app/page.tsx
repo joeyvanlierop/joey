@@ -35,15 +35,7 @@ export default async function Home() {
             </a>
           </p>
 
-          <div
-            className="flex mb-8 -mx-10 pl-10 animate-enter animate-delay-[360ms] overflow-x-auto"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)",
-              maskImage:
-                "linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)",
-            }}
-          >
+          <div className="flex mb-8 -mx-10 pl-10 animate-enter animate-delay-[360ms] overflow-x-auto mask">
             <section className="min-w-[192px] max-w-[192px]">
               <h3 className="text-sm text-mono-200 pb-4">Writing</h3>
               <div className="flex flex-col gap-4">
@@ -128,7 +120,7 @@ function Showoff(props) {
           href={props.href}
           target={props.external ? "_blank" : undefined}
         >
-          <h4>{props.title}</h4>
+          {props.title}
         </a>
         {props.external && (
           <ArrowTopRightIcon

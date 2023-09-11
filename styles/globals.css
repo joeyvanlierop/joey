@@ -11,3 +11,15 @@
     @apply !decoration-mono-200;
   }
 }
+
+@layer utilities {
+  .mask {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent 100%
+    );
+  }
+}
