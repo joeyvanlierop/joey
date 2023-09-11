@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url,
       lastModified: new Date(),
     },
+    {
+      url: `${url}/writing`,
+      lastModified: new Date(),
+    },
     ...postSlugs.map((slug) => {
       return {
         url: `${url}/writing/${slug}`,
