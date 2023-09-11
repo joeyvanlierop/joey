@@ -1,5 +1,6 @@
 import { Column } from "@components/column";
 import { getPosts } from "@lib/post";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,8 +21,8 @@ export default async function Home() {
           <h1 className="animate-enter">Joey Van Lierop</h1>
 
           <p className="animate-enter animate-delay-[120ms]">
-            Making things, climbing mountains, and hiking oceans. Everything is
-            all over the place which is exactly where it needs to be.
+            Making things, climbing mountains, and hiking oceans. Boundless
+            horizons, endless inspiration
           </p>
 
           <p className="mb-8 animate-enter animate-delay-[240ms]">
@@ -35,77 +36,73 @@ export default async function Home() {
           </p>
 
           <div
-            className="w-screen overflow-x-auto pl-10 -ml-10"
+            className="flex mb-8 -mx-10 pl-10 animate-enter animate-delay-[360ms] overflow-x-auto"
             style={{
               WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, #000 24px, #000 80%, transparent 100%)",
+                "linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)",
               maskImage:
-                "linear-gradient(to right, transparent 0%, #000 24px, #000 80%, transparent 100%)",
+                "linear-gradient(to right,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)",
             }}
           >
-            <div className="flex gap-8 mb-8 animate-enter animate-delay-[360ms] after:min-w-[8px]">
-              <section className="min-w-[200px] max-w-[200px]">
-                <p className="text-sm text-neutral-400 pb-4">Writing</p>
-                <div className="flex flex-col gap-4">
-                  <Showoff
-                    title="Post Hike Clarity"
-                    description={
-                      "Shenanigans and tomfoolery on the West Coast Trail."
-                    }
-                    href={"/writing/post-hike-clarity"}
-                  />
-                  <Showoff
-                    title="The Panic"
-                    description={"Getting in way over my head."}
-                    href={"/writing/the-panic"}
-                  />
-                  {/* TODO: Make the dots jump */}
-                  <Showoff
-                    title="...read more"
-                    description={"A messy collection of my infrequent ."}
-                    href={"/writing/"}
-                  />
-                </div>
-              </section>
-              <section className="min-w-[200px] max-w-[200px]">
-                <p className="text-sm text-neutral-400 pb-4">Projects</p>
-                <div className="flex flex-col gap-4">
-                  <Showoff
-                    title="Ship It"
-                    description={"One of the game jams of all time."}
-                    href={"https://github.com/joeyvanlierop/ld-51"}
-                    external
-                  />
-                  <Showoff
-                    title="GoLF"
-                    description={"A language and compiler for a subset of Go."}
-                    href={"https://github.com/joeyvanlierop/golf"}
-                    external
-                  />
-                </div>
-              </section>
-              <section className="min-w-[200px] max-w-[200px]">
-                <p className="text-sm text-neutral-400 pb-4">Todo</p>
-                <div className="flex flex-col gap-4">
-                  <Showoff
-                    title="Replit"
-                    description={"Trying to make something cool."}
-                    href={"#"}
-                  />
-                </div>
-              </section>
-            </div>
+            <section className="min-w-[192px] max-w-[192px]">
+              <p className="text-sm text-neutral-400 pb-4">Writing</p>
+              <div className="flex flex-col gap-4">
+                <Showoff
+                  title="After"
+                  description={
+                    "Shenanigans and tomfoolery on the West Coast Trail."
+                  }
+                  href={"/writing/after"}
+                />
+                <Showoff
+                  title="Before"
+                  description={"Getting in way over my head."}
+                  href={"/writing/before"}
+                />
+                {/* TODO: Make the dots jump */}
+                <Showoff
+                  title="...read more"
+                  description={"A messy collection of my infrequent thoughts."}
+                  href={"/writing/"}
+                />
+              </div>
+            </section>
+            <section className="min-w-[192px] max-w-[192px] ml-8">
+              <p className="text-sm text-neutral-400 pb-4">Projects</p>
+              <div className="flex flex-col gap-4">
+                <Showoff
+                  title="GoLF"
+                  description={"A language and compiler for a subset of Go."}
+                  href={"https://github.com/joeyvanlierop/golf"}
+                  external
+                />
+                <Showoff
+                  title="Ship It"
+                  description={"One of the game jams of all time."}
+                  href={"https://github.com/joeyvanlierop/ld-51"}
+                  external
+                />
+              </div>
+            </section>
+            <section className="min-w-[192px] max-w-[192px] ml-8">
+              <p className="text-sm text-neutral-400 pb-4">Todo</p>
+              <div className="flex flex-col gap-4">
+                <Showoff
+                  title="Something"
+                  description={"Cool thing that I am building."}
+                  href={"#soon"}
+                />
+              </div>
+            </section>
           </div>
 
           <h1 className="animate-enter animate-delay-[480ms]">Now</h1>
 
           <p className="animate-enter animate-delay-[600ms]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit
-            laoreet id donec ultrices tincidunt arcu non. Neque volutpat ac
-            tincidunt vitae semper quis lectus. Risus viverra adipiscing at in
-            tellus integer. Pretium lectus quam id leo in. Elementum nibh tellus
-            molestie nunc non. Lacus vel facilisis volutpat est.
+            I don't do a lot of public speaking, so I looked up a memorable
+            quote to start my speech, and this is what I found. OK, you're
+            staring at me blankly, but this whole thing is a quote. I know that
+            sounds confusing, but... you know what, never mind.
           </p>
 
           <p className="animate-enter animate-delay-[740ms]">
@@ -123,13 +120,22 @@ export default async function Home() {
 function Showoff(props) {
   return (
     <div>
-      <a
-        className="underline underline-offset-[2.5px]"
-        href={props.href}
-        target={props.external ? "_blank" : undefined}
-      >
-        {props.title}
-      </a>
+      <span className="flex items-center gap-1">
+        <a
+          className="underline underline-offset-[2.5px]"
+          href={props.href}
+          target={props.external ? "_blank" : undefined}
+        >
+          {props.title}
+        </a>
+        {props.external && (
+          <ArrowTopRightIcon
+            className="text-[#707070]"
+            width={16}
+            height={16}
+          />
+        )}
+      </span>
       <p className="text-neutral-400 ">{props.description}</p>
     </div>
   );
