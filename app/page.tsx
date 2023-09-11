@@ -30,62 +30,54 @@ export default async function Home() {
             <a
               className="underline underline-offset-[2.5px]"
               href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
+              target="_blank"
             >
               Fluid Planet
             </a>
           </p>
 
-          <div className="flex mb-8 -mx-10 pl-10 animate-enter animate-delay-[360ms] overflow-x-auto mask">
-            <section className="min-w-[192px] max-w-[192px]">
-              <h3 className="text-sm text-mono-200 pb-4">Writing</h3>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="After"
-                  description={
-                    "Shenanigans and tomfoolery on the West Coast Trail."
-                  }
-                  href={"/writing/after"}
-                />
-                <Showoff
-                  title="Before"
-                  description={"Getting in way over my head."}
-                  href={"/writing/before"}
-                />
-                {/* TODO: Make the dots jump */}
-                <Showoff
-                  title="...read more"
-                  description={"A messy collection of my infrequent thoughts."}
-                  href={"/writing/"}
-                />
-              </div>
-            </section>
-            <section className="min-w-[192px] max-w-[192px] ml-8">
-              <h3 className="text-sm text-mono-200 pb-4">Projects</h3>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="GoLF"
-                  description={"A language and compiler for a subset of Go."}
-                  href={"https://github.com/joeyvanlierop/golf"}
-                  external
-                />
-                <Showoff
-                  title="Ship It"
-                  description={"One of the game jams of all time."}
-                  href={"https://github.com/joeyvanlierop/ld-51"}
-                  external
-                />
-              </div>
-            </section>
-            <section className="min-w-[192px] max-w-[192px] ml-8">
-              <h3 className="text-sm text-mono-200 pb-4">Todo</h3>
-              <div className="flex flex-col gap-4">
-                <Showoff
-                  title="Something"
-                  description={"Cool thing that I am building."}
-                  href={"#soon"}
-                />
-              </div>
-            </section>
+          <div className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
+            <ShowoffSection title="Writing">
+              <Showoff
+                title="After"
+                description={
+                  "Shenanigans and tomfoolery on the West Coast Trail."
+                }
+                href={"/writing/after"}
+              />
+              <Showoff
+                title="Before"
+                description={"Getting in way over my head."}
+                href={"/writing/before"}
+              />
+              {/* TODO: Make the dots jump */}
+              <Showoff
+                title="read more"
+                description={"A messy collection of my infrequent thoughts."}
+                href={"/writing/"}
+              />
+            </ShowoffSection>
+            <ShowoffSection title="Projects">
+              <Showoff
+                title="GoLF"
+                description={"A language and compiler for a subset of Go."}
+                href={"https://github.com/joeyvanlierop/golf"}
+                external
+              />
+              <Showoff
+                title="Ship It"
+                description={"One of the game jams of all time."}
+                href={"https://github.com/joeyvanlierop/ld-51"}
+                external
+              />
+            </ShowoffSection>
+            <ShowoffSection title="Todo">
+              <Showoff
+                title="Something"
+                description={"Cool thing that I am building."}
+                href={"#soon"}
+              />
+            </ShowoffSection>
           </div>
 
           <h2 className="animate-enter animate-delay-[480ms] font-medium">
@@ -111,6 +103,15 @@ export default async function Home() {
   );
 }
 
+function ShowoffSection(props) {
+  return (
+    <section className="min-w-[192px] max-w-[192px]">
+      <h3 className="text-sm text-mono-200 pb-4">{props.title}</h3>
+      <div className="flex flex-col gap-4">{props.children}</div>
+    </section>
+  );
+}
+
 function Showoff(props) {
   return (
     <div>
@@ -133,10 +134,4 @@ function Showoff(props) {
       <p className="text-mono-200 ">{props.description}</p>
     </div>
   );
-}
-
-async function fetchPosts() {
-  return getPosts(false).map((post) => {
-    return post.data;
-  });
 }
