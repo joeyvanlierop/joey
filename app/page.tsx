@@ -22,7 +22,7 @@ export default async function Home() {
 
           <p className="animate-enter animate-delay-[120ms]">
             Making things, climbing mountains, and hiking oceans. Boundless
-            horizons, endless inspiration
+            horizons, endless inspiration.
           </p>
 
           <p className="mb-8 animate-enter animate-delay-[240ms]">
@@ -34,6 +34,7 @@ export default async function Home() {
             >
               Fluid Planet
             </a>
+            .
           </p>
 
           <div className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
@@ -52,7 +53,7 @@ export default async function Home() {
               />
               {/* TODO: Make the dots jump */}
               <Showoff
-                title="read more"
+                title="...read more"
                 description={"A messy collection of my infrequent thoughts."}
                 href={"/writing/"}
               />
