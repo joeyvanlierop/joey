@@ -18,7 +18,7 @@ export default async function Home() {
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
         <article className="prose-invert prose-headings:font-header flex flex-col gap-8">
-          <h1 className="animate-enter font-medium">Joey Van Lierop</h1>
+          <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
           <p className="animate-enter animate-delay-[120ms]">
             Making things, climbing mountains, and hiking oceans. Boundless
@@ -28,7 +28,6 @@ export default async function Home() {
           <p className="mb-8 animate-enter animate-delay-[240ms]">
             Currently studying computer science while developing{" "}
             <a
-              className="underline underline-offset-[2.5px]"
               href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
               target="_blank"
             >
@@ -40,16 +39,16 @@ export default async function Home() {
           <div className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
             <ShowoffSection title="Writing">
               <Showoff
-                title="After"
+                title="The Execution"
                 description={
                   "Shenanigans and tomfoolery on the West Coast Trail."
                 }
-                href={"/writing/after"}
+                href={"/writing/the-execution"}
               />
               <Showoff
-                title="Before"
+                title="The Plan"
                 description={"Getting in way over my head."}
-                href={"/writing/before"}
+                href={"/writing/the-plan"}
               />
               {/* TODO: Make the dots jump */}
               <Showoff
@@ -117,11 +116,7 @@ function Showoff(props) {
   return (
     <div>
       <span className="flex items-center gap-1">
-        <a
-          className="underline underline-offset-[2.5px]"
-          href={props.href}
-          target={props.external ? "_blank" : undefined}
-        >
+        <a href={props.href} target={props.external ? "_blank" : undefined}>
           {props.title}
         </a>
         {props.external && (

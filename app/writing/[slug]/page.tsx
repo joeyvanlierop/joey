@@ -35,17 +35,24 @@ export default async function Post({ params }) {
     <div className="flex w-full justify-center">
       <Column className="gap-10">
         <div className="flex flex-col justify-center items-start">
-          <div className="flex items-center justify-start">
-            <Link href={"/"}>
-              <ArrowLeftIcon className="w-5 h-5 -ml-8" />
-            </Link>
-            <h1 className="font-header mb-0">{post.data.title}</h1>
-          </div>
+          <Link
+            className="font-header font-medium text-mono-400 mb-4 no-underline"
+            href="/"
+          >
+            Joey Van Lierop
+          </Link>
+          <Link
+            className="font-header font-medium text-mono-400 mb-4 no-underline"
+            href="/writing"
+          >
+            Writing
+          </Link>
+          <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
           <time className="font-header text-[#a0a0a0]">
             {dayjs(post.data.date).format("MMMM Do[,] YYYY")}
           </time>
         </div>
-        <article className="prose dark:prose-invert prose-headings:font-header">
+        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
           <MdxContent source={post.source} />
         </article>
       </Column>
