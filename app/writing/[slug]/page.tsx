@@ -17,12 +17,10 @@ export function generateMetadata({ params }): Metadata {
 
   return {
     title: post.data.title,
-    // TODO: Define a description in each post
-    description: post.data.title,
+    description: post.data.description,
     openGraph: {
       title: post.data.title,
-      // TODO: Here too
-      description: post.data.title,
+      description: post.data.description,
       url: `${getUrl()}/writing/${post.data.slug}`,
     },
   };

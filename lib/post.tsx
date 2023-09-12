@@ -3,16 +3,11 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-export interface Category {
-  name: string;
-  color: string;
-}
-
 export interface PostData {
   title: string;
   date: string;
   updated: string;
-  category: string;
+  description: string;
   slug: string;
   redirect?: string;
   published: boolean;
