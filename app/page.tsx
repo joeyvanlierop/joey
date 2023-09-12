@@ -1,5 +1,5 @@
 import { Column } from "@components/column";
-import { getPosts } from "@lib/post";
+import { getPost } from "@lib/post";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
 
@@ -38,18 +38,9 @@ export default async function Home() {
 
           <div className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
             <ShowoffSection title="Writing">
-              <Showoff
-                title="The Execution"
-                description={
-                  "Shenanigans and tomfoolery on the West Coast Trail."
-                }
-                href={"/writing/the-execution"}
-              />
-              <Showoff
-                title="The Plan"
-                description={"Getting in way over my head."}
-                href={"/writing/the-plan"}
-              />
+              <WritingShowoff slug={"the-execution"} />
+              <WritingShowoff slug={"the-plan"} />
+
               {/* TODO: Make the dots jump */}
               <Showoff
                 title="...read more"
@@ -129,5 +120,16 @@ function Showoff(props) {
       </span>
       <p className="text-mono-200 ">{props.description}</p>
     </div>
+  );
+}
+
+function WritingShowoff(props) {
+  const post = getPost(props.slug);
+  return (
+    <Showoff
+      title={post.data.title}
+      description={post.data.description}
+      href={`/writing/${post.data.slug}`}
+    />
   );
 }
