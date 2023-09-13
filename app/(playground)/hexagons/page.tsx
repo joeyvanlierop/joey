@@ -27,6 +27,8 @@ export default function Home() {
           <Hexagon x={150} y={-87} />
         </svg>
       </figure>
+      <Honeycomb size={1} />
+      <Honeycomb size={2} />
       <Honeycomb size={3} />
     </div>
   );

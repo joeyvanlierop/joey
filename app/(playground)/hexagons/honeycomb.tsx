@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import { Hexagon } from "./hexagon";
 
 type Hex = {
@@ -10,9 +8,7 @@ type Hex = {
 };
 
 export function Honeycomb({ size }) {
-  const [board, setBoard] = useState<Set<Hex>>(new Set());
-
-  useEffect(() => {
+  const board = useMemo(() => {
     const newBoard = new Set<Hex>();
 
     for (let q = -size; q <= size; q++) {
@@ -25,8 +21,8 @@ export function Honeycomb({ size }) {
       }
     }
 
-    setBoard(newBoard);
-  }, []);
+    return newBoard;
+  }, [size]);
 
   return (
     <figure>
