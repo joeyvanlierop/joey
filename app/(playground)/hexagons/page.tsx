@@ -4,6 +4,7 @@ import { Column } from "@components/column";
 import { Metadata } from "next";
 import { Hexagon } from "./hexagon";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hexagons",
@@ -42,20 +43,20 @@ export default function Home() {
   }, []);
 
   return (
-    <Column className="gap-10">
-      <figure className="flex items-center justify-center">
+    <div className="flex flex-col items-center gap-5">
+      <figure>
         <svg viewBox="-100 -87 200 174" width={100} height={87 + 2}>
           <Hexagon x={0} y={0} />
         </svg>
       </figure>
-      <figure className="flex items-center justify-center">
+      <figure>
         <svg viewBox="-250 -174 500 261" width={250} height={87 * (3 / 2) + 2}>
           <Hexagon x={-150} y={-87} />
           <Hexagon x={0} y={0} />
           <Hexagon x={150} y={-87} />
         </svg>
       </figure>
-      <figure className="flex items-center justify-center">
+      <figure>
         <svg
           viewBox={`
           ${-100 - 150 * SIZE}
@@ -72,6 +73,6 @@ export default function Home() {
           })}
         </svg>
       </figure>
-    </Column>
+    </div>
   );
 }

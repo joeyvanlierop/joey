@@ -1,6 +1,4 @@
 import { Column } from "@components/column";
-import { MdxContent } from "app/writing/[slug]/mdx-content";
-import dayjs from "dayjs";
 import Link from "next/link";
 
 export default function PlaygroundLayout({ children }) {
@@ -14,7 +12,8 @@ export default function PlaygroundLayout({ children }) {
           >
             Joey Van Lierop
           </Link>
-          <h1 className="font-header font-medium mb-0">Title</h1>
+          {/* TODO: Dynamic title */}
+          <h1 className="font-header font-medium mb-0">Hexagons</h1>
         </div>
         {children}
       </Column>
