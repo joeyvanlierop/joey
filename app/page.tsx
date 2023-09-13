@@ -5,10 +5,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Joey",
-  description: "A bit of my brain",
+  description: "A bit of my brain.",
   openGraph: {
     title: "Joey",
-    description: "A bit of my brain",
+    description: "A bit of my brain.",
     url: "https://joeyvanlierop.com/",
   },
 };
