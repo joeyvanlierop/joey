@@ -62,11 +62,11 @@ export default async function Home() {
                 external
               />
             </ShowoffSection>
-            <ShowoffSection title="Todo">
+            <ShowoffSection title="Playground">
               <Showoff
-                title="Something"
-                description={"Cool thing that I am building."}
-                href={"#soon"}
+                title="Hexagons"
+                description={"They are the bestagons."}
+                href={"/hexagons"}
               />
             </ShowoffSection>
           </div>
