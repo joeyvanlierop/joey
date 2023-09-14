@@ -19,8 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "daily",
     },
-    // @ts-ignore
-    // TODO: Not sure why this is throwing an error
     ...postSlugs.map((slug) => ({
       url: `${url}/writing/${slug}`,
       lastModified: getPost(slug).data.updated,
