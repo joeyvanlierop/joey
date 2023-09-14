@@ -76,17 +76,26 @@ export default async function Home() {
           </h2>
 
           <p className="animate-enter animate-delay-[600ms]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Getting back into the flow of things. Learning how to learn again.
+            Going to finish the last year-ish of school strong.
           </p>
 
           <p className="animate-enter animate-delay-[740ms]">
-            Aliquam ut porttitor leo a diam sollicitudin. Purus in massa tempor
-            nec feugiat nisl pretium. Tristique et egestas quis ipsum. Ante
-            metus dictum at tempor commodo ullamcorper a. Gravida arcu ac tortor
-            dignissim.
+            Taking lots of inspiration from{" "}
+            <a href={"https://paco.me/"} target={"_blank"}>
+              Paco
+            </a>
+            ,{" "}
+            <a href={"https://www.notion.so/"} target={"_blank"}>
+              Notion
+            </a>
+            , and{" "}
+            <a href={"https://linear.app/"} target={"_blank"}>
+              Linear
+            </a>
+            . Detailed designs, elegant typography, and neoteric performance.
+            Trying to understand how to combine it all into a unparalleled,
+            unified experience. Buzzword buzzword buzzword.
           </p>
         </article>
       </Column>
