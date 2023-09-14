@@ -21,7 +21,7 @@ export default async function Home() {
           <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
           <p className="animate-enter animate-delay-[120ms]">
-            Making things, climbing mountains, and hiking oceans. Boundless
+            Climbing mountains, hiking oceans, and making things. Boundless
             horizons, endless inspiration.
           </p>
 
