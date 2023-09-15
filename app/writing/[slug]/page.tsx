@@ -50,6 +50,7 @@ export default async function Post({ params }) {
             {dayjs(post.data.date).format("MMMM Do[,] YYYY")}
           </time>
         </div>
+        {post.data.visibility === "ish" && <p>🚧 UNDER CONSTRUCTION 🚧</p>}
         <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
           <MdxContent source={post.source} />
         </article>

@@ -10,7 +10,7 @@ export interface PostData {
   description: string;
   slug: string;
   redirect?: string;
-  published: boolean;
+  visibility: "public" | "private" | "ish";
 }
 
 export interface Post {
@@ -32,9 +32,9 @@ export function getPost(slug: string): Post {
   return post;
 }
 
-export function getPosts(all?: boolean): Post[] {
+export function getPosts(ignoreVisibility?: boolean): Post[] {
   return getPostSlugs()
     .map((slug) => getPost(slug))
-    .filter((post) => all || post.data.published)
+    .filter((post) => ignoreVisibility || post.data.visibility !== "private")
     .sort((postA, postB) => dayjs(postB.data.date).diff(postA.data.date));
 }

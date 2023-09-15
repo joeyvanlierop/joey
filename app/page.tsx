@@ -17,26 +17,31 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
-        <article className="prose-invert prose-headings:font-header flex flex-col gap-8">
-          <h1 className="font-medium leading-6">Joey Van Lierop</h1>
+        <article className="prose-invert prose-headings:font-header flex flex-col gap-11">
+          {/* Introduction */}
+          <section className="flex flex-col gap-6">
+            <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
-          <p className="animate-enter animate-delay-[120ms]">
-            Climbing mountains, hiking oceans, and making things. Boundless
-            horizons, endless inspiration.
-          </p>
+            <p className="animate-enter animate-delay-[120ms]">
+              My little nook on the internet. This is where I get to post pure
+              garbage and no one can do anything about it.{" "}
+              <em className="fancy">Home</em>.
+            </p>
 
-          <p className="mb-8 animate-enter animate-delay-[240ms]">
-            Currently studying computer science while developing{" "}
-            <a
-              href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
-              target="_blank"
-            >
-              Fluid Planet
-            </a>
-            .
-          </p>
+            <p className="mb-8 animate-enter animate-delay-[240ms]">
+              Currently studying computer science while developing{" "}
+              <a
+                href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
+                target="_blank"
+              >
+                Fluid Planet
+              </a>
+              .
+            </p>
+          </section>
 
-          <div className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
+          {/* Pillars */}
+          <section className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
             <ShowoffSection title="Writing">
               <WritingShowoff slug={"the-execution"} />
               <WritingShowoff slug={"the-plan"} />
@@ -69,34 +74,40 @@ export default async function Home() {
                 href={"/hexagons"}
               />
             </ShowoffSection>
-          </div>
+          </section>
 
-          <h2 className="animate-enter animate-delay-[480ms] font-medium">
-            Now
-          </h2>
+          {/* Current events */}
+          <section className="flex flex-col gap-8">
+            <h2 className="animate-enter animate-delay-[480ms] font-medium">
+              Today
+            </h2>
 
-          <p className="animate-enter animate-delay-[600ms]">
-            Getting back into the flow of things. Learning how to learn again.
-            Going to finish the last year-ish of school strong.
-          </p>
+            <p className="animate-enter animate-delay-[600ms]">
+              Getting back into the flow of things. Learning how to learn again.
+              Finishing the last bit of school strong. The (ethical) hacking
+              class definitely has potential, but can it beat the{" "}
+              <em className="fancy">The Music of Led Zeppelin</em> with Ralph
+              Maier? Probably not.
+            </p>
 
-          <p className="animate-enter animate-delay-[740ms]">
-            Taking lots of inspiration from{" "}
-            <a href={"https://paco.me/"} target={"_blank"}>
-              Paco
-            </a>
-            ,{" "}
-            <a href={"https://www.notion.so/"} target={"_blank"}>
-              Notion
-            </a>
-            , and{" "}
-            <a href={"https://linear.app/"} target={"_blank"}>
-              Linear
-            </a>
-            . Detailed designs, elegant typography, and neoteric performance.
-            Trying to understand how to combine it all into a unparalleled,
-            unified experience. Buzzword buzzword buzzword.
-          </p>
+            <p className="animate-enter animate-delay-[740ms]">
+              Taking lots of inspiration from{" "}
+              <a href={"https://paco.me/"} target={"_blank"}>
+                Paco
+              </a>
+              ,{" "}
+              <a href={"https://www.notion.so/"} target={"_blank"}>
+                Notion
+              </a>
+              , and{" "}
+              <a href={"https://linear.app/"} target={"_blank"}>
+                Linear
+              </a>
+              . Learning how to make things detailed, elegant, and blazing
+              fast™. Trying to understand how to combine it all into a
+              unparalleled, unified experience. Buzzword buzzword buzzword.
+            </p>
+          </section>
         </article>
       </Column>
     </div>

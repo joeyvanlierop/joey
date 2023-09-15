@@ -22,6 +22,12 @@
       transparent 100%
     );
   }
+
+  .fancy {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-size: 18px;
+  }
 }
 
 html {

@@ -12,10 +12,10 @@ const inter = localFont({
   variable: "--font-inter",
   display: "swap",
 });
-const kaisei = localFont({
-  src: "../public/fonts/kaisei-tokumin-latin-700-normal.woff2",
-  weight: "700",
-  variable: "--font-kaisei",
+const newsreader = localFont({
+  src: "../public/fonts/newsreader-subset-0.woff2",
+  style: "italic",
+  variable: "--font-newsreader",
   display: "swap",
 });
 const sohne = localFont({
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`bg-[#1a1a1a] ${inter.variable} ${kaisei.variable} ${sohne.variable}`}
+      className={`bg-[#1a1a1a] ${inter.variable} ${newsreader.variable} ${sohne.variable}`}
     >
       <body className={"font-sans text-[#e5e5e5] h-full relative"}>
         <Providers>

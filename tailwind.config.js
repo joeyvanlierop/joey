@@ -30,7 +30,7 @@ module.exports = {
       },
       fontFamily: {
         header: ["var(--font-inter)", ...fontFamily.sans],
-        serif: ["var(--font-kaisei)", fontFamily.serif],
+        serif: ["var(--font-newsreader)", fontFamily.serif],
         sans: ["var(--font-sohne)", fontFamily.sans],
       },
       transitionDuration: {
