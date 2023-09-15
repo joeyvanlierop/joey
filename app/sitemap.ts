@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { getUrl } from "@lib/url";
 import { MetadataRoute } from "next";
-import { getPost, getPostSlugs } from "../lib/post";
+import { getPost, getPostSlugs, getPosts } from "../lib/post";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = getUrl();
@@ -11,17 +11,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url,
-      lastModified: new Date(),
+      lastModified: new Date().toLocaleDateString(),
       changeFrequency: "daily",
     },
     {
       url: `${url}/writing`,
-      lastModified: new Date(),
+      lastModified: "2023-09-14",
       changeFrequency: "weekly",
     },
-    ...postSlugs.map((slug) => ({
-      url: `${url}/writing/${slug}`,
-      lastModified: getPost(slug).data.updated,
+    ...getPosts().map((post) => ({
+      url: `${url}/writing/${post.data.slug}`,
+      lastModified: getPost(post.data.slug).data.updated,
       changeFrequency: "weekly",
     })),
     ...fs

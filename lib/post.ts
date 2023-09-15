@@ -38,3 +38,7 @@ export function getPosts(ignoreVisibility?: boolean): Post[] {
     .filter((post) => ignoreVisibility || post.data.visibility !== "private")
     .sort((postA, postB) => dayjs(postB.data.date).diff(postA.data.date));
 }
+
+export function getMostRecent(ignoreVisibility?: boolean): Post {
+  return getPosts(ignoreVisibility)[0];
+}

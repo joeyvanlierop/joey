@@ -28,6 +28,9 @@
     @apply italic;
     @apply text-[17px];
   }
+
+  .border {
+  }
 }
 
 html {
