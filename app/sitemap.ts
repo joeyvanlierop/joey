@@ -1,12 +1,11 @@
-import fs from "fs";
-import path from "path";
 import { getUrl } from "@lib/url";
+import fs from "fs";
 import { MetadataRoute } from "next";
-import { getPost, getPostSlugs, getPosts } from "../lib/post";
+import path from "path";
+import { getPost, getPosts } from "../lib/post";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = getUrl();
-  const postSlugs = getPostSlugs();
 
   return [
     {
