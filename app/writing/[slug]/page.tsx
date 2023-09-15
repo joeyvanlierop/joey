@@ -51,9 +51,13 @@ export default async function Post({ params }) {
           </time>
         </div>
         {post.data.visibility === "ish" && <p>🚧 UNDER CONSTRUCTION 🚧</p>}
-        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
-          <MdxContent source={post.source} />
-        </article>
+        <div
+          className={`${post.data.visibility === "ish" ? "opacity-50" : ""}`}
+        >
+          <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
+            <MdxContent source={post.source} />
+          </article>
+        </div>
       </Column>
     </div>
   );

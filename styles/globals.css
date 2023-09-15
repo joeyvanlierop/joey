@@ -24,9 +24,9 @@
   }
 
   .fancy {
-    font-family: "Newsreader", serif;
-    font-style: italic;
-    font-size: 18px;
+    @apply font-serif;
+    @apply italic;
+    @apply text-[17px];
   }
 }
 
