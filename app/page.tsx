@@ -23,8 +23,7 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My little nook on the internet. This is where I get to post pure
-              garbage and no one can do anything about it.{" "}
+              My little nook on the internet. Where I get to make whatever, whenever, however.{" "}
               <em className="fancy">Home</em>.
             </p>
 

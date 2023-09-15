@@ -1,4 +1,7 @@
-import { useMemo } from "react";
+"use client";
+
+import * as Slider from "@radix-ui/react-slider";
+import { useMemo, useState } from "react";
 import { Hexagon } from "./hexagon";
 
 type Hex = {
@@ -35,7 +38,7 @@ export function Honeycomb({ size }) {
         width={100 + 150 * size}
         height={87 * (size * 2 + 1)}
       >
-        {[...board].map((hex) => {
+        {[...board].map((hex, i) => {
           var x = 100 * ((3 / 2) * hex.q);
           var y = 100 * ((Math.sqrt(3) / 2) * hex.q + Math.sqrt(3) * hex.r);
           return <Hexagon key={[hex.q, hex.r, hex.s]} x={x} y={y} />;
