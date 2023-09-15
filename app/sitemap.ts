@@ -12,12 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
     },
     {
       url: `${url}/writing`,
       lastModified: new Date(),
-      changeFrequency: "daily",
+      changeFrequency: "weekly",
     },
     ...postSlugs.map((slug) => ({
       url: `${url}/writing/${slug}`,
