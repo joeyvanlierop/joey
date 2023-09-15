@@ -30,7 +30,7 @@ export default function Home() {
         {/* <figcaption>Aligning multiple hexagi</figcaption> */}
       </figure>
 
-      <Honeycomb />
+      <Honeycomb size={2} />
     </div>
   );
 }
