@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url,
-      lastModified: new Date().toLocaleDateString(),
+      lastModified: new Date().toLocaleDateString("en-CA"),
       changeFrequency: "daily",
     },
     {
