@@ -19,6 +19,7 @@ export default function Home() {
         <svg viewBox="-100 -87 200 174" width={100} height={87 + 2}>
           <Hexagon x={0} y={0} />
         </svg>
+        {/* <figcaption>One simple svg hexagon</figcaption> */}
       </figure>
       <figure>
         <svg viewBox="-250 -174 500 261" width={250} height={87 * (3 / 2) + 2}>
@@ -26,10 +27,10 @@ export default function Home() {
           <Hexagon x={0} y={0} />
           <Hexagon x={150} y={-87} />
         </svg>
+        {/* <figcaption>Aligning multiple hexagi</figcaption> */}
       </figure>
-      <Honeycomb size={1} />
-      <Honeycomb size={2} />
-      <Honeycomb size={3} />
+
+      <Honeycomb />
     </div>
   );
 }
