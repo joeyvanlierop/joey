@@ -23,8 +23,8 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My little nook on the internet. Where I get to make whatever, whenever, however.{" "}
-              <em className="fancy">Home</em>.
+              My little nook on the internet. Where I get to make whatever,
+              whenever, however. <em className="fancy">Home</em>.
             </p>
 
             <p className="mb-8 animate-enter animate-delay-[240ms]">
@@ -102,9 +102,9 @@ export default async function Home() {
               <a href={"https://linear.app/"} target={"_blank"}>
                 Linear
               </a>
-              . Learning how to make things detailed, elegant, and blazing
-              fast™. Trying to understand how to combine it all into a
-              unparalleled, unified experience. Buzzword buzzword buzzword.
+              . Learning how to make things detailed, elegant, and
+              blazingly-fast™. Trying to understand how to combine it all into
+              a unparalleled, unified experience. Buzzword buzzword buzzword.
             </p>
           </section>
         </article>
