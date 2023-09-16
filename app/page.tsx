@@ -1,3 +1,4 @@
+import { Nook } from "@components/home";
 import { Column } from "@components/column";
 import { getPost } from "@lib/post";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
@@ -24,7 +25,11 @@ export default async function Home() {
 
             <p className="animate-enter animate-delay-[120ms]">
               My little nook on the internet. Where I get to make whatever,
-              whenever, however. <em className="fancy">Home</em>.
+              whenever, however.{" "}
+              <Nook popup="🏠">
+                <em className="fancy cursor-auto">Home</em>
+              </Nook>
+              .
             </p>
 
             <p className="mb-8 animate-enter animate-delay-[240ms]">
@@ -85,8 +90,14 @@ export default async function Home() {
               Getting back into the flow of things. Learning how to learn again.
               Finishing the last bit of school strong. The (ethical) hacking
               class definitely has potential, but can it beat the{" "}
-              <em className="fancy">The Music of Led Zeppelin</em> with Ralph
-              Maier? Probably not.
+              <em className="fancy">The</em>
+              <Nook popup="🎶">
+                <em className="fancy">Music</em>
+              </Nook>{" "}
+              <Nook popup="🎸">
+                <em className="fancy">of Led Zeppelin</em>
+              </Nook>{" "}
+              with Ralph Maier? Probably not.
             </p>
 
             <p className="animate-enter animate-delay-[740ms]">
