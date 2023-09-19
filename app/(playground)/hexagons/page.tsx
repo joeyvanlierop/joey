@@ -1,14 +1,18 @@
 import { Metadata } from "next";
 import { Hexagon } from "./hexagon";
 import { Honeycomb } from "./honeycomb";
+import { getUrl } from "@lib/url";
 
 export const metadata: Metadata = {
   title: "Hexagons",
   description: "They are the bestagons.",
+  metadataBase: new URL(getUrl()),
   openGraph: {
     title: "Hexagons",
     description: "They are the bestagons.",
-    url: "https://joeyvanlierop.com/hive",
+    url: "https://joeyvanlierop.com/hexagons",
+    type: "website",
+    images: "/og.png",
   },
 };
 

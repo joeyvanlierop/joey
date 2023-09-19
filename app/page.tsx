@@ -1,16 +1,20 @@
-import { Nook } from "@components/home";
 import { Column } from "@components/column";
+import { Nook } from "@components/home";
 import { getPost } from "@lib/post";
+import { getUrl } from "@lib/url";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Joey",
   description: "A bit of my brain.",
+  metadataBase: new URL(getUrl()),
   openGraph: {
     title: "Joey",
     description: "A bit of my brain.",
-    url: "https://joeyvanlierop.com/",
+    url: "https://joeyvanlierop.com",
+    type: "website",
+    images: "/og.png",
   },
 };
 

@@ -3,9 +3,9 @@ import "../styles/scroll.css";
 
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 import localFont from "next/font/local";
 import Providers from "./providers";
-import { Metadata } from "next";
 
 const inter = localFont({
   src: "../public/fonts/Inter-roman.latin.var.woff2",
@@ -37,11 +37,7 @@ const sohne = localFont({
 
 export const metadata: Metadata = {
   themeColor: "#1c1c1c",
-  authors: { name: "Joey Van Lierop" },
-  openGraph: {
-    type: "website",
-    images: "https://joeyvanlierop.com/og.png",
-  },
+  authors: [{ name: "Joey Van Lierop" }, { name: "Joseph Van Lierop" }],
 };
 
 export default function RootLayout({ children }) {

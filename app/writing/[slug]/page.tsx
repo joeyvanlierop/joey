@@ -18,10 +18,16 @@ export function generateMetadata({ params }): Metadata {
   return {
     title: post.data.title,
     description: post.data.description,
+    metadataBase: new URL(getUrl()),
     openGraph: {
       title: post.data.title,
       description: post.data.description,
       url: `${getUrl()}/writing/${post.data.slug}`,
+      type: "article",
+      publishedTime: post.data.date,
+      modifiedTime: post.data.updated,
+      authors: ["Joey Van Lierop", "Joseph Van Lierop"],
+      images: "/og.png",
     },
   };
 }
