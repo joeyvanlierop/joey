@@ -4,14 +4,14 @@ export async function Wayback() {
   const deployments = await fetchDeployments();
 
   if (deployments.length == 0) {
-    return <p>Deplyment machine broke</p>;
+    return <p>Deployment machine broke</p>;
   }
 
   return (
-    <ol className="flex flex-col">
+    <ol className="flex flex-col max-h-96 overflow-y-scroll -mr-3">
       {deployments.map((deployment) => (
         <li
-          className="py-1 border-b last:border-b-0 border-[#2e2e2e]"
+          className="first:pt-0 py-2 border-b last:border-b-0 border-[#2e2e2e]"
           key={deployment.sha}
         >
           <Git
@@ -39,7 +39,7 @@ async function fetchDeployments() {
     },
   };
   const data = await fetch(
-    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=15",
+    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=100",
     options
   )
     .then((resp) => resp.json())
@@ -55,8 +55,7 @@ async function fetchDeployments() {
         message: deployment.meta.githubCommitMessage,
         sha: deployment.meta.githubCommitSha,
       }))
-    )
-    .then((deployments) => deployments.reverse());
+    );
 
   return data;
 }
