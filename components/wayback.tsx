@@ -38,9 +38,17 @@ async function fetchDeployments() {
       "Content-Type": "application/json",
     },
   };
-  const data = await fetch("https://api.vercel.com/v6/deployments", options)
+  const data = await fetch(
+    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=15",
+    options
+  )
     .then((resp) => resp.json())
     .then((json) => json.deployments)
+    .then((deployments) =>
+      deployments.filter((deployment) => ({
+        deployment,
+      }))
+    )
     .then((deployments) =>
       deployments.map((deployment) => ({
         url: deployment.url,
