@@ -4,7 +4,6 @@ export function Stars(props: { n: number; quote: string }) {
       <Star enabled={props.n >= 3} />
       <Star enabled={props.n >= 2} />
       <Star enabled={props.n >= 1} />
-      <td className="w-1" />
       <q>{props.quote}</q>
     </div>
   );
