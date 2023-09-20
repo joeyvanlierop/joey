@@ -2,7 +2,7 @@ export function Center(props: {
   x: boolean;
   y: false;
   className?: string;
-  children;
+  children: React.ReactNode;
 }) {
   return (
     <div
