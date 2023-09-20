@@ -1,6 +1,6 @@
 export function Stars(props: { n: number; quote: string }) {
   return (
-    <div className="mb-4 table -ml-[40px]">
+    <div className="mb-3 table -ml-[40px]">
       <Star enabled={props.n >= 3} />
       <Star enabled={props.n >= 2} />
       <Star enabled={props.n >= 1} />
