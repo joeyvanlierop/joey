@@ -94,7 +94,7 @@ export default async function Home() {
               Getting back into the flow of things. Learning how to learn again.
               Finishing the last bit of school strong. The (ethical) hacking
               class definitely has potential, but can it beat the{" "}
-              <em className="fancy">The</em>
+              <em className="fancy">The </em>
               <Nook popup="🎶">
                 <em className="fancy">Music</em>
               </Nook>{" "}

@@ -59,6 +59,7 @@ module.exports = {
       },
       animation: {
         enter: "enter 600ms both",
+        fade: "fade 1500ms both",
         "tooltip-in": "tooltipIn 100ms forwards",
         "tooltip-out": "tooltipOut 100ms forwards",
         pulse: "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
@@ -67,6 +68,10 @@ module.exports = {
         enter: {
           from: { opacity: 0, transform: "translateY(10px)" },
           to: { opacity: 1, transform: "none" },
+        },
+        fade: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
         tooltipIn: {
           from: { opacity: 0, transform: "scale(0.9)" },
