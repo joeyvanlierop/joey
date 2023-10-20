@@ -1,16 +1,16 @@
 export function Stars(props: { n: number; quote: string }) {
   return (
     <div className="mb-3 table -ml-[40px]">
-      <Star enabled={props.n >= 3} className="animate-fade animate-delay-300" />
-      <Star enabled={props.n >= 2} className="animate-fade animate-delay-150" />
-      <Star enabled={props.n >= 1} className="animate-fade animate-delay-0" />
+      <Star enabled={props.n >= 3} />
+      <Star enabled={props.n >= 2} />
+      <Star enabled={props.n >= 1} />
       <div className="w-1 table-cell" />
       <q>{props.quote}</q>
     </div>
   );
 }
 
-function Star(props: { enabled: boolean; className: string }) {
+function Star(props: { enabled: boolean; className?: string }) {
   return (
     <span
       className={`${props.enabled ? "visible" : "invisible"} ${
