@@ -4,6 +4,7 @@ import { getPost } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
+// import { useCallback, useState } from "react";
 
 export const metadata: Metadata = {
   title: "Joey",
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  // const stagger = 120;
+  // const [delay, setDelay] = useState(stagger);
+
+  // const getDelay = useCallback(() => {
+  //   setDelay((delay) => delay + stagger);
+  //   return delay;
+  // }, [delay]);
+
   return (
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
@@ -28,8 +37,8 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My little nook on the internet. Where I get to make whatever,
-              whenever, however.{" "}
+              My little nook on the internet. Infrequently updated, but
+              sometimes more frequently.{" "}
               <Nook popup="🏠">
                 <em className="fancy cursor-auto">Home</em>
               </Nook>
@@ -91,35 +100,46 @@ export default async function Home() {
             </h2>
 
             <p className="animate-enter animate-delay-[600ms]">
-              Getting back into the flow of things. Learning how to learn again.
-              Finishing the last bit of school strong. The (ethical) hacking
-              class definitely has potential, but can it beat the{" "}
-              <em className="fancy">The </em>
-              <Nook popup="🎶">
-                <em className="fancy">Music</em>
-              </Nook>{" "}
-              <Nook popup="🎸">
-                <em className="fancy">of Led Zeppelin</em>
-              </Nook>{" "}
-              with Ralph Maier? Probably not.
+              Back into the flow of things. School can be soul-crushing, but I
+              feel more inspired than ever. Need to get outside more, though.
+            </p>
+
+            <p className="animate-enter animate-delay-[600ms]">
+              The (ethical) hacking course is interesting, but some of the
+              exploits are just way too much. Nothing can quite beat{" "}
+              <a
+                target="_blank"
+                href="https://web.archive.org/web/20200702034239/https://scpa.ucalgary.ca/manageprofile/courses/w21/MUSI306.4"
+              >
+                {" "}
+                <em className="fancy">The </em>
+                <Nook popup="🎶">
+                  <em className="fancy">Music</em>
+                </Nook>{" "}
+                <Nook popup="🎸">
+                  <em className="fancy">of Led Zeppelin</em>
+                </Nook>{" "}
+                with Ralph Maier.
+              </a>
             </p>
 
             <p className="animate-enter animate-delay-[740ms]">
-              Taking lots of inspiration from{" "}
+              Borrowing design ideas from from{" "}
               <a href={"https://paco.me/"} target={"_blank"}>
                 Paco
               </a>
               ,{" "}
-              <a href={"https://www.notion.so/"} target={"_blank"}>
-                Notion
-              </a>
-              , and{" "}
               <a href={"https://linear.app/"} target={"_blank"}>
                 Linear
+              </a>
+              , and{" "}
+              <a href={"https://www.notion.so/"} target={"_blank"}>
+                Notion
               </a>
               . Learning how to make things detailed, elegant, and
               blazingly-fast™. Trying to understand how to combine it all into
               a unparalleled, unified experience. Buzzword buzzword buzzword.
+              Buzzword.
             </p>
           </section>
         </article>

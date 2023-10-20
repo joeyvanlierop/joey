@@ -1,6 +1,6 @@
 import { Dot } from "./dot";
 
-const message = `Back to the grind`;
+const message = `On the grind`;
 
 export function Status() {
   return (
