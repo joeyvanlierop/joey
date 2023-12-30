@@ -3,6 +3,7 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import dayjs from "dayjs";
 import { Dot } from "./dot";
+import { useState } from "react";
 
 type MoodMeta = { message: string; date: string };
 
@@ -13,11 +14,17 @@ export function Mood({
   current: MoodMeta;
   history: MoodMeta[];
 }) {
+  // https://github.com/radix-ui/primitives/issues/1573#issuecomment-1698975904
+  const [open, setOpen] = useState(false);
+
   return (
     <Tooltip.Provider delayDuration={100} skipDelayDuration={0}>
-      <Tooltip.Root>
+      <Tooltip.Root open={open} onOpenChange={setOpen}>
         <Tooltip.Trigger asChild>
-          <div className="font-title flex items-center gap-2">
+          <div
+            className="font-title flex items-center gap-2"
+            onClick={() => setOpen((open) => !open)}
+          >
             <Dot className="bg-yellow-500 shadow-yellow-500 animate-pulse shadow-dot" />
             <p className="text-sm -mt-0.5">{current.message}</p>
           </div>
@@ -30,7 +37,7 @@ export function Mood({
           <ol className="flex max-h-96 overflow-y-scroll -mr-3 flex-col-reverse">
             {history.map((message, index) => (
               <li
-                className="py-2 border-b first:border-b-0 border-[#2e2e2e]"
+                className="py-2 border-b first:border-b-0 border-[#2e2e2e] first:pb-0 last:pt-0"
                 key={index}
               >
                 <MoodEntry {...message} />

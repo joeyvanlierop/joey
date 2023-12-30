@@ -15,6 +15,8 @@ const degreesPerSecond = 360 / 60;
 
 export function Clock({ children }) {
   const [now, setNow] = useState(dayjs().tz("America/Edmonton"));
+  // https://github.com/radix-ui/primitives/issues/1573#issuecomment-1698975904
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,11 +33,12 @@ export function Clock({ children }) {
 
   return (
     <Tooltip.Provider delayDuration={100} skipDelayDuration={0}>
-      <Tooltip.Root>
+      <Tooltip.Root open={open} onOpenChange={setOpen}>
         <Tooltip.Trigger asChild>
           <div
             suppressHydrationWarning
             className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180"
+            onClick={() => setOpen((open) => !open)}
           >
             <div
               className={`h-[8px] w-[0.5px] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform`}
