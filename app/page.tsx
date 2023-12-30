@@ -60,7 +60,7 @@ export default async function Home() {
           {/* Pillars */}
           <section className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
             <ShowoffSection title="Writing">
-              <WritingShowoff slug={"the-west-coast-trail"} />
+              <WritingShowoff slug={"procrastination"} />
               <WritingShowoff slug={"ciao"} />
 
               {/* TODO: Make the dots jump */}
