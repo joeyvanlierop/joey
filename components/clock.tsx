@@ -24,6 +24,7 @@ export function Clock({ children }) {
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
           <div
+            suppressHydrationWarning
             style={{
               ["--now-h" as string]: now.hour(),
               ["--now-m" as string]: now.minute(),
@@ -40,6 +41,7 @@ export function Clock({ children }) {
               className={`h-[8px] w-[0.5px] rotate-[calc(var(--deg-s)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top ${
                 now.second() === 0 ? "" : "transition-transform"
               }`}
+              style={{}}
             />
             <div
               className={`h-[7px] w-[1px] rotate-[calc(var(--deg-m)*1deg)] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform ${

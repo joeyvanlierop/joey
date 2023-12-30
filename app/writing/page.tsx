@@ -29,7 +29,7 @@ export default async function Home() {
         >
           Joey Van Lierop
         </Link>
-        <p className="font-header font-medium pb-10">Writing</p>
+        <p className="font-header font-medium pb-14">Writing</p>
         <List posts={posts} />
       </Column>
     </div>

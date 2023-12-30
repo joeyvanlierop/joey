@@ -1,16 +1,12 @@
 import { Column } from "@components/column";
 import { getPost, getPostSlugs } from "@lib/post";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import dayjs from "dayjs";
-import advancedFormat from "dayjs/plugin/advancedFormat";
+import { getUrl } from "@lib/url";
 import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
-import { getUrl } from "@lib/url";
-
-dayjs.extend(advancedFormat);
+import { FancyDate } from "@components/fancy-date";
 
 export function generateMetadata({ params }): Metadata {
   const post = getPost(params.slug);
@@ -37,7 +33,7 @@ export default async function Post({ params }) {
 
   return (
     <div className="flex w-full justify-center">
-      <Column className="gap-10">
+      <Column className="gap-14">
         <div className="flex flex-col justify-center items-start">
           <Link
             className="font-header font-medium text-mono-400 mb-4 no-underline"
@@ -52,9 +48,7 @@ export default async function Post({ params }) {
             Writing
           </Link>
           <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
-          <time className="font-header text-[#a0a0a0]">
-            {dayjs(post.data.date).format("MMMM Do[,] YYYY")}
-          </time>
+          <FancyDate published={post.data.date} updated={post.data.updated} />
         </div>
         {post.data.visibility === "ish" && <p>🚧 UNDER CONSTRUCTION 🚧</p>}
         <div
