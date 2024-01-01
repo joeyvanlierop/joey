@@ -40,7 +40,7 @@ export default async function Home() {
               My little nook on the internet. Infrequently updated, but
               sometimes more frequently.{" "}
               <Nook popup="🏠">
-                <em className="fancy cursor-auto">Home</em>
+                <em className="fancy">Home</em>
               </Nook>
               .
             </p>
