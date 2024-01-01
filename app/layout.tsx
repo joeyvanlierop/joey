@@ -3,7 +3,7 @@ import "../styles/scroll.css";
 
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Providers from "./providers";
 
@@ -36,8 +36,11 @@ const sohne = localFont({
 });
 
 export const metadata: Metadata = {
-  themeColor: "#1c1c1c",
   authors: [{ name: "Joey Van Lierop" }, { name: "Joseph Van Lierop" }],
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1c1c1c",
 };
 
 export default function RootLayout({ children }) {
