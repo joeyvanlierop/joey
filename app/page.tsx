@@ -113,8 +113,7 @@ export default async function Home() {
               >
                 (ethical) hacking course with Ryan Henry
               </a>{" "}
-              was pretty good, and the padding oracle attack was especially
-              pretty fun to exploit.{" "}
+              showed me how evil code can be if you are clever enough.{" "}
               <a
                 target="_blank"
                 href="https://web.archive.org/web/20231202114757/https://hist.ucalgary.ca/manageprofile/courses/f23/HTST200"
@@ -122,8 +121,8 @@ export default async function Home() {
                 <em className="fancy">Events and Ideas that Shook the World</em>{" "}
                 with Paul Chastko
               </a>{" "}
-              was a fun chronological exploration of revolution over the past
-              300ish years. I will say that nothing can quite beat{" "}
+              was a fun chronological exploration of revolution. I will say that
+              nothing can quite beat{" "}
               <a
                 target="_blank"
                 href="https://web.archive.org/web/20200702034239/https://scpa.ucalgary.ca/manageprofile/courses/w21/MUSI306.4"
@@ -133,8 +132,9 @@ export default async function Home() {
                 <Nook popup="🎶">
                   <em className="fancy">Music</em>
                 </Nook>{" "}
+                of{" "}
                 <Nook popup="🎸">
-                  <em className="fancy">of Led Zeppelin</em>
+                  <em className="fancy">Led Zeppelin</em>
                 </Nook>{" "}
                 with Ralph Maier.
               </a>
