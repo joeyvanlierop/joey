@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
-import remarkMdxImages from "remark-mdx-images";
 import { MdxContent } from "./mdx-content";
 import { FancyDate } from "@components/fancy-date";
 
