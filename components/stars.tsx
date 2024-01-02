@@ -1,20 +1,45 @@
+import { HTMLAttributes, forwardRef, useState } from "react";
+
 export function Stars(props: { n: number; quote: string }) {
+  const [hopDelay] = useState(Math.random() * 30 * 1000);
+
+  const renderStar = (enabled: boolean, delay: number) => {
+    return (
+      <Star
+        enabled={enabled}
+        className={`${props.n > 1 ? "animate-hop" : ""}`}
+        style={{
+          animationDelay: `${delay + hopDelay}ms`,
+        }}
+      />
+    );
+  };
+
   return (
     <div className="mb-3 table -ml-[40px]">
-      <Star enabled={props.n >= 3} />
-      <Star enabled={props.n >= 2} />
-      <Star enabled={props.n >= 1} />
+      {renderStar(props.n >= 3, 160)}
+      {renderStar(props.n >= 2, 80)}
+      {renderStar(props.n >= 1, 0)}
       <div className="w-1 table-cell" />
       <q>{props.quote}</q>
     </div>
   );
 }
 
-function Star(props: { enabled: boolean; className?: string }) {
+interface StarProps extends HTMLAttributes<HTMLSpanElement> {
+  enabled: boolean;
+  className?: string;
+}
+
+const Star = forwardRef<HTMLSpanElement, StarProps>((props, ref) => {
+  const { enabled, className, ...otherProps } = props;
+
   return (
     <span
-      className={`${props.enabled ? "visible" : "invisible"} ${
-        props.className
+      {...otherProps}
+      ref={ref}
+      className={`${enabled ? "visible" : "invisible"} ${
+        className || ""
       } table-cell w-2 pr-1`}
     >
       <svg
@@ -28,4 +53,4 @@ function Star(props: { enabled: boolean; className?: string }) {
       </svg>
     </span>
   );
-}
+});
