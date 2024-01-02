@@ -4,6 +4,7 @@ import { Nook } from "@components/home";
 import * as Journal from "@components/journal";
 import { MDXRemote } from "next-mdx-remote";
 import NextImage from "next/image";
+import { forwardRef } from "react";
 
 const KnifeImage = () => (
   <NextImage
@@ -13,7 +14,11 @@ const KnifeImage = () => (
   />
 );
 
-const components = { Journal, Nook, KnifeImage };
+const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
+  <em className="fancy" ref={ref} {...props} />
+));
+
+const components = { Journal, Nook, KnifeImage, em: FancyItalics };
 
 export function MdxContent({ source }) {
   return <MDXRemote {...source} components={components} />;
