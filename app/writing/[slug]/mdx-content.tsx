@@ -14,7 +14,7 @@ const KnifeImage = () => {
       src={require("@public/images/DSC06435.jpg")}
       placeholder="blur"
       alt="Da boys with their knives"
-      className={blur ? "blur-[20px]" : "animate-unblur"}
+      className={blur ? "blur-[10px]" : "animate-unblur"}
       onLoadingComplete={() => setBlur(false)}
     />
   );
