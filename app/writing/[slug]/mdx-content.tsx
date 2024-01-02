@@ -7,7 +7,7 @@ import Image from "next/image";
 import knife from "@public/images/DSC06435.jpg";
 
 const ImageKnife = () => (
-  <Image src={knife} alt="Sunset on The West Coast Trail" />
+  <Image src={knife} alt="Sunset on The West Coast Trail" placeholder="blur" />
 );
 
 const components = { Journal, Nook, ImageKnife };
