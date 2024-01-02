@@ -22,7 +22,7 @@ function Entry(props: { time: string; children: React.ReactNode }) {
   return (
     <div
       className={
-        "flex flex-col [&>p]:m-0 [&>img]:my-2 [&>img]:rounded-md bg-[#242424] rounded-xl p-4"
+        "flex flex-col [&>p]:m-0 [&>img]:mt-2 [&>img]:mb-0 [&>img]:rounded-lg bg-[#232323] rounded-lg p-4"
       }
     >
       <time className="text-[#a0a0a0] font-semibold font-header text-sm mb-3">

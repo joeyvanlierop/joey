@@ -3,19 +3,16 @@
 import { Nook } from "@components/home";
 import * as Journal from "@components/journal";
 import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
-import knife from "@public/images/DSC06435.jpg";
+import NextImage from "next/image";
 
-const ImageKnife = () => (
-  <Image
-    className="transition-all"
-    src={knife}
-    alt="Sunset on The West Coast Trail"
+const KnifeImage = () => (
+  <NextImage
+    src={require("@public/images/DSC06435.jpg")}
     placeholder="blur"
+    alt="Da boys with their knives"
   />
 );
-
-const components = { Journal, Nook, ImageKnife };
+const components = { Journal, Nook, KnifeImage };
 
 export function MdxContent({ source }) {
   return <MDXRemote {...source} components={components} />;

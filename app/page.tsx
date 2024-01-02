@@ -37,8 +37,8 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My little nook on the internet. Infrequently updated, but
-              sometimes more frequently.{" "}
+              My little nook on the internet. Updated every now and then, but
+              mostly then.{" "}
               <Nook popup="🏠">
                 <em className="fancy">Home</em>
               </Nook>
