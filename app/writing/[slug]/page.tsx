@@ -68,8 +68,7 @@ async function fetchPost(params) {
   const post = getPost(params.slug);
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
-      //@ts-ignore
-      remarkPlugins: [remarkGfm, remarkMdxImages],
+      remarkPlugins: [remarkGfm],
     },
   });
   return {
