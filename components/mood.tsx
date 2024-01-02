@@ -25,7 +25,7 @@ export function Mood({
             className="font-title flex items-center gap-2"
             onClick={() => setOpen((open) => !open)}
           >
-            <Dot className="bg-yellow-500 shadow-yellow-500 animate-pulse shadow-dot" />
+            <Dot className="bg-yellow-500 shadow-yellow-500 animate-pulsate shadow-dot" />
             <p className="text-sm -mt-0.5">{current.message}</p>
           </div>
         </Tooltip.Trigger>
