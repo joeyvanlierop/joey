@@ -102,7 +102,7 @@ export default async function Home() {
             <p className="animate-enter animate-delay-[600ms]">
               Almost done school (ish). The fall semester was a bit of a grind
               at the end, but now its time to enjoy the holidays. If only it
-              would snow now...
+              would snow...
             </p>
 
             <p className="animate-enter animate-delay-[600ms]">
@@ -113,13 +113,14 @@ export default async function Home() {
               >
                 (ethical) hacking course with Ryan Henry
               </a>{" "}
-              was a pretty good course, and the padding oracle attack was
-              especially pretty fun to exploit.{" "}
+              was pretty good, and the padding oracle attack was especially
+              pretty fun to exploit.{" "}
               <a
                 target="_blank"
                 href="https://web.archive.org/web/20231202114757/https://hist.ucalgary.ca/manageprofile/courses/f23/HTST200"
               >
-                "Events and Ideas that Shook the World" with Paul Chastko
+                <em className="fancy">Events and Ideas that Shook the World</em>{" "}
+                with Paul Chastko
               </a>{" "}
               was a fun chronological exploration of revolution over the past
               300ish years. I will say that nothing can quite beat{" "}
