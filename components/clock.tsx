@@ -36,7 +36,6 @@ export function Clock({ children }) {
       <Tooltip.Root open={open} onOpenChange={setOpen}>
         <Tooltip.Trigger asChild>
           <div
-            suppressHydrationWarning
             className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180"
             onClick={() => setOpen((open) => !open)}
           >

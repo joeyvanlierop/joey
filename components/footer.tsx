@@ -1,5 +1,6 @@
+"use client";
+
 import { Clock } from "./clock";
-import { Column } from "./column";
 import { Mood } from "./mood";
 import { Wayback } from "./wayback";
 

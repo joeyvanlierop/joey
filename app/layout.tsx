@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`bg-[#1a1a1a] ${inter.variable} ${newsreader.variable} ${sohne.variable}`}
+      suppressHydrationWarning
     >
       <body className={"font-sans text-[#e5e5e5] h-full relative"}>
         <Providers>
