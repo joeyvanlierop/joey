@@ -168,7 +168,7 @@ export default async function Home() {
 function ShowoffSection(props) {
   return (
     <section className="min-w-[192px] max-w-[192px]">
-      <h3 className="text-sm text-mono-200 pb-4">{props.title}</h3>
+      <h3 className="text-sm text-mono-11 pb-4">{props.title}</h3>
       <div className="flex flex-col gap-4">{props.children}</div>
     </section>
   );
@@ -182,14 +182,10 @@ function Showoff(props) {
           {props.title}
         </a>
         {props.external && (
-          <ArrowTopRightIcon
-            className="text-[#707070]"
-            width={16}
-            height={16}
-          />
+          <ArrowTopRightIcon className="text-mono-9" width={16} height={16} />
         )}
       </span>
-      <p className="text-mono-200 ">{props.description}</p>
+      <p className="text-mono-11">{props.description}</p>
     </div>
   );
 }

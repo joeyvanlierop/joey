@@ -7,7 +7,7 @@ export default function PlaygroundLayout({ children }) {
       <Column className="gap-10">
         <div className="flex flex-col justify-center items-start">
           <Link
-            className="font-header font-medium text-mono-400 mb-4 no-underline"
+            className="font-header font-medium text-mono-9 mb-4 no-underline"
             href="/"
           >
             Joey Van Lierop

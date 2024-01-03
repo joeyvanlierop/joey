@@ -3,12 +3,12 @@
 :root {
   --scrollbar-size: 16px;
   --scrollbar-size-min: 44px;
-  --scrollbar-color: #343434;
+  --scrollbar-color: var(--mono6);
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
 }
 
 ::-webkit-scrollbar-track {
@@ -16,18 +16,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  min-height: 44px;
-  min-width: 44px;
-  background-color: #343434;
-  border-radius: 16px;
+  min-height: var(--scrollbar-size-min);
+  min-width: var(--scrollbar-size-min);
+  background-color: var(--scrollbar-color);
+  border-radius: var(--scrollbar-size);
   border: 5px solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3e3e3e;
+  background-color: var(--mono7);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #8f8f8f;
+  background-color: var(--mono9);
 }

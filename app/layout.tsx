@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/theme.css";
 import "../styles/scroll.css";
 
 import { Footer } from "@components/footer";
@@ -40,17 +41,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1c1c1c",
+  themeColor: "var(--gray2)",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`bg-[#1a1a1a] ${inter.variable} ${newsreader.variable} ${sohne.variable}`}
+      className={`bg-mono-1 ${inter.variable} ${newsreader.variable} ${sohne.variable}`}
       suppressHydrationWarning
     >
-      <body className={"font-sans text-[#e5e5e5] h-full relative"}>
+      <body className={"font-sans text-text h-full relative"}>
         <Providers>
           <main className="md:py-32 pb-24 min-h-[100dvh] relative">
             {children}

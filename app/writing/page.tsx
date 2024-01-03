@@ -24,7 +24,7 @@ export default async function Home() {
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative">
         <Link
-          className="font-header font-medium text-mono-400 no-underline mb-4"
+          className="font-header font-medium text-mono-9 no-underline mb-4"
           href="/"
         >
           Joey Van Lierop

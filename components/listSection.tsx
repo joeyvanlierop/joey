@@ -8,9 +8,9 @@ interface ListSectionProps {
 
 export const ListSection: React.FC<ListSectionProps> = (props) => {
   return (
-    <section className="border-t border-[#2e2e2e] relative">
+    <section className="border-t border-mono-5 relative">
       {/* Year label */}
-      <time className="text-[#707070] absolute top-3 font-header text-sm pointer-events-none">
+      <time className="text-mono-9 absolute top-3 font-header text-sm pointer-events-none">
         {props.year}
       </time>
       {/* Grouped posts */}

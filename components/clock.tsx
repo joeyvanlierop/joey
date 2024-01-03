@@ -36,25 +36,25 @@ export function Clock({ children }) {
       <Tooltip.Root open={open} onOpenChange={setOpen}>
         <Tooltip.Trigger asChild>
           <div
-            className="rounded-full w-5 h-5 border border-[#707070] flex items-center justify-center relative rotate-180"
+            className="rounded-full w-5 h-5 border border-mono-9 flex items-center justify-center relative rotate-180"
             onClick={() => setOpen((open) => !open)}
           >
             <div
-              className={`h-[8px] w-[0.5px] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform`}
+              className={`h-[8px] w-[0.5px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${secondDegrees}deg)`,
                 transitionProperty: now.second() === 0 ? "none" : undefined,
               }}
             />
             <div
-              className={`h-[7px] w-[1px] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform`}
+              className={`h-[7px] w-[1px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${minuteDegress}deg)`,
                 transitionProperty: now.minute() === 0 ? "none" : undefined,
               }}
             />
             <div
-              className={`h-[5px] w-[1px] bg-[#707070] absolute top-1/2 left-1/2 origin-top transition-transform`}
+              className={`h-[5px] w-[1px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${hourDegrees}deg)`,
                 transitionProperty: now.hour() === 0 ? "none" : undefined,
@@ -63,7 +63,7 @@ export function Clock({ children }) {
           </div>
         </Tooltip.Trigger>
         <Tooltip.Content
-          className="border border-[#2e2e2e] bg-[#1a1a1a] px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-dark text-white tabular-nums"
+          className="border border-mono-5 bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono text-text tabular-nums"
           sideOffset={10}
         >
           {children}

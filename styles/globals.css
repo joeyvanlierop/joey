@@ -4,11 +4,11 @@
 
 @layer base {
   a {
-    @apply underline underline-offset-2 !decoration-mono-400 transition decoration-1;
+    @apply underline underline-offset-2 !decoration-mono-9 transition-[text-decoration-color] decoration-1;
   }
 
   a:hover {
-    @apply !decoration-mono-200;
+    @apply !decoration-mono-11;
   }
 }
 

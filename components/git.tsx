@@ -4,7 +4,7 @@ export function Git({ sha, message, url }) {
 
   return (
     <span>
-      <a href={vercel_href} target="blank" className="underline">
+      <a href={vercel_href} target="blank" className="underline text-mono-11">
         {shortSha}
       </a>
       {": "}
@@ -23,7 +23,7 @@ export function EnvGit() {
 
   return (
     <span>
-      <a href={href} target="blank" className="underline">
+      <a href={href} target="blank" className="underline text-mono-11">
         {shortSha}
       </a>
       {": "}

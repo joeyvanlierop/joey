@@ -3,7 +3,6 @@ const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
   content: [
     "./writing/**/*.mdx",
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -13,16 +12,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        text: "var(--text-color)",
         mono: {
-          100: "#ededed",
-          200: "#a0a0a0",
-          300: "#7e7e7e",
-          400: "#707070",
-          500: "#3e3e3e",
-          600: "#343434",
-          700: "#2e2e2e",
-          800: "#1c1c1c",
-          900: "#1a1a1a",
+          1: "var(--mono1)",
+          2: "var(--mono2)",
+          3: "var(--mono3)",
+          4: "var(--mono4)",
+          5: "var(--mono5)",
+          6: "var(--mono6)",
+          7: "var(--mono7)",
+          8: "var(--mono8)",
+          9: "var(--mono9)",
+          10: "var(--mono10)",
+          11: "var(--mono11)",
+          12: "var(--mono12)",
         },
       },
       height: {
@@ -38,7 +41,7 @@ module.exports = {
       },
       boxShadow: {
         dot: "0 0 5px 0px rgba(0, 0, 0, 0.3)",
-        dark: "0 0 20px 0px rgba(0, 0, 0, 0.5)",
+        mono: "0 0 20px 0px var(--shadow-color)",
       },
       typography: {
         DEFAULT: {

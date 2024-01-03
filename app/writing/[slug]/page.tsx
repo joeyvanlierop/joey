@@ -36,13 +36,13 @@ export default async function Post({ params }) {
       <Column className="gap-14">
         <div className="flex flex-col justify-center items-start">
           <Link
-            className="font-header font-medium text-mono-400 mb-4 no-underline"
+            className="font-header font-medium text-mono-9 mb-4 no-underline"
             href="/"
           >
             Joey Van Lierop
           </Link>
           <Link
-            className="font-header font-medium text-mono-400 mb-4 no-underline"
+            className="font-header font-medium text-mono-9 mb-4 no-underline"
             href="/writing"
           >
             Writing
@@ -50,14 +50,9 @@ export default async function Post({ params }) {
           <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
           <FancyDate published={post.data.date} updated={post.data.updated} />
         </div>
-        {post.data.visibility === "ish" && <p>🚧 UNDER CONSTRUCTION 🚧</p>}
-        <div
-          className={`${post.data.visibility === "ish" ? "opacity-50" : ""}`}
-        >
-          <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
-            <MdxContent source={post.source} />
-          </article>
-        </div>
+        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium">
+          <MdxContent source={post.source} />
+        </article>
       </Column>
     </div>
   );
