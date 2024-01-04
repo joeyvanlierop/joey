@@ -4,7 +4,7 @@ function Root(props: { children: React.ReactNode }) {
   return <div className={"flex flex-col gap-14"}>{props.children}</div>;
 }
 
-function Section(props: { date: string; children: React.ReactNode }) {
+function Day(props: { date: string; children: React.ReactNode }) {
   return (
     <section className={"flex flex-col gap-4"}>
       <div className="flex items-center gap-4">
@@ -33,4 +33,4 @@ function Entry(props: { time: string; children: React.ReactNode }) {
   );
 }
 
-export { Root, Section, Entry };
+export { Root, Day, Entry };
