@@ -19,7 +19,7 @@ export function FancyDate({
     <Tooltip.Provider delayDuration={300} skipDelayDuration={0}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <time className="font-header text-mono-11">
+          <time className="font-header text-mono-11" dateTime={published}>
             {dayjs(published).format(`MMMM Do[,] YYYY`)}
             {isUpdated && "*"}
           </time>
@@ -31,7 +31,7 @@ export function FancyDate({
             side="bottom"
             align="start"
           >
-            <time className="font-header text-mono-11">
+            <time className="font-header text-mono-11" dateTime={updated}>
               {dayjs(updated).format("MMMM Do[,] YYYY")}
             </time>
           </Tooltip.Content>

@@ -22,7 +22,10 @@ export const ListItem: React.FC<PostData> = (props) => {
         <p className="mr-4 w-full overflow-hidden text-ellipsis whitespace-nowrap">
           {props.title}
         </p>
-        <time className="flex-shrink-0 overflow-hidden text-ellipsis whitespace-nowrap font-header text-sm text-mono-9">
+        <time
+          className="flex-shrink-0 overflow-hidden text-ellipsis whitespace-nowrap font-header text-sm text-mono-9"
+          dateTime={props.date}
+        >
           {dateNumber}
         </time>
       </div>

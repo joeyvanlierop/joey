@@ -53,7 +53,10 @@ export function Mood({
 function MoodEntry({ message, date }: MoodMeta) {
   return (
     <span>
-      <time className="font-header text-mono-11 pr-2 inline-block min-w-[60px]">
+      <time
+        className="font-header text-mono-11 pr-2 inline-block min-w-[60px]"
+        dateTime={date}
+      >
         {dayjs(date).format("MMM 'YY")}
       </time>
       {message}
