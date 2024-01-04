@@ -127,15 +127,14 @@ export default async function Home() {
                 target="_blank"
                 href="https://web.archive.org/web/20200702034239/https://scpa.ucalgary.ca/manageprofile/courses/w21/MUSI306.4"
               >
-                {" "}
                 <em className="fancy">The </em>
                 <Nook popup="🎶">
-                  <em className="fancy">Music</em>
-                </Nook>{" "}
-                <em className="fancy">of</em>{" "}
+                  <em className="fancy">Music </em>
+                </Nook>
+                <em className="fancy">of </em>
                 <Nook popup="🎸">
-                  <em className="fancy">Led Zeppelin</em>
-                </Nook>{" "}
+                  <em className="fancy">Led Zeppelin </em>
+                </Nook>
                 with Ralph Maier.
               </a>
             </p>
