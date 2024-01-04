@@ -7,15 +7,9 @@ import { Spacer } from "@components/spacer";
 import { Stack } from "@components/stack";
 import { Stars } from "@components/stars";
 import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider } from "next-themes";
 
 const components = { Definition, Center, Spacer, Image, Stack, Stars };
 
 export default function Providers({ children }) {
-  return (
-    // TODO: Use system style
-    <ThemeProvider attribute="class" defaultTheme="dark">
-      <MDXProvider components={components}>{children}</MDXProvider>
-    </ThemeProvider>
-  );
+  return <MDXProvider components={components}>{children}</MDXProvider>;
 }
