@@ -1,18 +1,16 @@
 import { HTMLAttributes, forwardRef, useState } from "react";
 
 export function Stars(props: { n: number; quote: string }) {
-  const [hopDelay] = useState(Math.random() * 20 * 1000);
-  const [animation] = useState(
-    Math.random() > 0.5 ? "animate-extend" : "animate-hop"
-  );
+  const [animationDelay] = useState(Math.random() * 20 * 1000);
+  const [animation] = useState(chooseAnimation());
 
   const renderStar = (enabled: boolean, delay: number) => {
     return (
       <Star
         enabled={enabled}
-        className={`${props.n > 1 ? animation : ""}`}
+        className={props.n > 1 ? animation : ""}
         style={{
-          animationDelay: `${delay + hopDelay}ms`,
+          animationDelay: `${delay + animationDelay}ms`,
         }}
       />
     );
@@ -57,3 +55,9 @@ const Star = forwardRef<HTMLSpanElement, StarProps>((props, ref) => {
     </span>
   );
 });
+
+function chooseAnimation() {
+  const choices = ["animate-extend", "animate-hop", "animate-grow"];
+  var index = Math.floor(Math.random() * choices.length);
+  return choices[index];
+}

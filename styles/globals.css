@@ -40,6 +40,10 @@
   .animate-extend {
     animation: extend 0.5s cubic-bezier(0.4, 0, 0.6, 1) forwards;
   }
+
+  .animate-grow {
+    animation: grow 0.5s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  }
 }
 
 @keyframes pulsate {
@@ -79,6 +83,18 @@
   }
   50% {
     transform: translateX(-3px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: scale(1.3);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 }
