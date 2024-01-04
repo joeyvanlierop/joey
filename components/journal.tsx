@@ -11,7 +11,7 @@ function Section(props: { date: string; children: React.ReactNode }) {
         <time className="text-mono-11 font-header shrink-0">
           {dayjs(props.date).format("dddd, MMMM Do")}
         </time>
-        <div className="h-[1px] bg-mono-5 rounded-full w-full" />
+        <hr className="border-border rounded-full w-full my-0" />
       </div>
       {props.children}
     </section>
