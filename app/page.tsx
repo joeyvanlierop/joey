@@ -1,5 +1,5 @@
 import { Column } from "@components/column";
-import { Nook } from "@components/home";
+import { Nook } from "@components/nook";
 import { getPost } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
@@ -132,7 +132,7 @@ export default async function Home() {
                 <Nook popup="🎶">
                   <em className="fancy">Music</em>
                 </Nook>{" "}
-                of{" "}
+                <em className="fancy">of</em>{" "}
                 <Nook popup="🎸">
                   <em className="fancy">Led Zeppelin</em>
                 </Nook>{" "}
