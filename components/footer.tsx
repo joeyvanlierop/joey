@@ -4,7 +4,7 @@ import { Wayback } from "./wayback";
 
 export function Footer() {
   return (
-    <footer className="h-12 w-full border-t border-mono-5 absolute bottom-0 flex justify-center items-center text-sm text-mono-9">
+    <footer className="h-12 w-full border-t border-border absolute bottom-0 flex justify-center items-center text-sm text-mono-9">
       <div className="flex justify-between items-center w-full max-w-full md:max-w-[640px] px-10 md:px-0">
         <Mood
           current={{

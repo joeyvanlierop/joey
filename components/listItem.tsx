@@ -16,7 +16,7 @@ export const ListItem: React.FC<PostData> = (props) => {
       className="group/item cursor-pointer transition-[opacity] hover:!opacity-100 focus:!opacity-100 group-hover:opacity-30 group-focus:opacity-30 no-underline"
     >
       <div
-        className="relative ml-[25%] mb-[-1px] mt-[-1px] flex items-center justify-start border-t border-b border-mono-5 py-3"
+        className="relative ml-[25%] mb-[-1px] mt-[-1px] flex items-center justify-start border-t border-b border-border py-3"
         title={props.description}
       >
         <p className="mr-4 w-full overflow-hidden text-ellipsis whitespace-nowrap">

@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         text: "var(--text-color)",
+        border: "var(--mono5)",
         mono: {
           1: "var(--mono1)",
           2: "var(--mono2)",

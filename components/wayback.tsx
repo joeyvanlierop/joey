@@ -11,7 +11,7 @@ export async function Wayback() {
     <ol className="flex flex-col max-h-96 overflow-y-scroll -mr-3">
       {deployments.map((deployment) => (
         <li
-          className="first:pt-0 py-2 border-b last:border-b-0 border-mono-5"
+          className="first:pt-0 py-2 border-b last:border-b-0 border-border"
           key={deployment.sha}
         >
           <Git
