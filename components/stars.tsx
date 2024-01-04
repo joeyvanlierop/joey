@@ -1,13 +1,16 @@
 import { HTMLAttributes, forwardRef, useState } from "react";
 
 export function Stars(props: { n: number; quote: string }) {
-  const [hopDelay] = useState(Math.random() * 30 * 1000);
+  const [hopDelay] = useState(Math.random() * 20 * 1000);
+  const [animation] = useState(
+    Math.random() > 0.5 ? "animate-extend" : "animate-hop"
+  );
 
   const renderStar = (enabled: boolean, delay: number) => {
     return (
       <Star
         enabled={enabled}
-        className={`${props.n > 1 ? "animate-hop" : ""}`}
+        className={`${props.n > 1 ? animation : ""}`}
         style={{
           animationDelay: `${delay + hopDelay}ms`,
         }}
