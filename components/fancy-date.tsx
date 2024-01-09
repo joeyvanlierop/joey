@@ -26,7 +26,7 @@ export function FancyDate({
         </Tooltip.Trigger>
         {isUpdated && (
           <Tooltip.Content
-            className="border border-border bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono tabular-nums -ml-[13px]"
+            className="border border-border bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono tabular-nums"
             sideOffset={8}
             side="bottom"
             align="start"
