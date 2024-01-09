@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "../styles/theme.css";
 import "../styles/scroll.css";
+import "../styles/animations.css";
 
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
