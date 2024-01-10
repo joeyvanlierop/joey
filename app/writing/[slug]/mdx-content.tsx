@@ -25,7 +25,7 @@ const Video = ({ href, children, ...rest }) => {
   return (
     <video
       autoPlay
-      loop
+      playsInline
       muted={muted}
       onClick={toggleMuted}
       className="mx-auto h-auto cursor-pointer"
