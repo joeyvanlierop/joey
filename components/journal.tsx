@@ -25,7 +25,7 @@ function Entry(props: { time: string; children: React.ReactNode }) {
   return (
     <div
       className={
-        "flex flex-col [&>p]:m-0 [&>img]:mt-2 [&>img]:mb-0 [&>img]:rounded-lg bg-mono-2 rounded-lg p-4 border border-border"
+        "flex flex-col [&>p]:m-0 [&>img]:mt-2 [&>img]:mb-0 [&>img]:rounded-lg [&>video]:mt-2 [&>video]:mb-0 [&>video]:rounded-lg bg-mono-2 rounded-lg p-4 border border-border"
       }
     >
       <time
