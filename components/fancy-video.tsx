@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export const FancyVideo = ({
   href,
   children,
-  defaultPaused = false,
+  defaultPaused = true,
   defaultLooping = false,
   defaultMuted = false,
   ...rest
@@ -15,6 +16,15 @@ export const FancyVideo = ({
   const [muted, setMuted] = useState(defaultMuted);
   const [time, setTime] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isInView = useInView(videoRef);
+
+  useEffect(() => {
+    if (isInView && videoRef.current) {
+      emitControl("play");
+    } else if (!isInView && videoRef.current) {
+      emitControl("pause");
+    }
+  }, [isInView]);
 
   const emitControl = (
     control:
@@ -80,7 +90,7 @@ export const FancyVideo = ({
         ref={videoRef}
         loop={looping}
         muted={muted}
-        autoPlay={!defaultPaused}
+        autoPlay
         playsInline
         onClick={() => emitControl(paused ? "play" : "pause")}
         className="cursor-pointer rounded-lg overflow-hidden"

@@ -17,6 +17,7 @@
     "autoprefixer": "10.4.16",
     "cssnano": "6.0.2",
     "dayjs": "1.11.10",
+    "framer-motion": "^10.18.0",
     "gray-matter": "4.0.3",
     "next": "14.0.4",
     "next-mdx-remote": "4.4.1",
