@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export const FancyVideo = ({
   href,
   children,
+  playInView = true,
   defaultPaused = true,
   defaultLooping = false,
   defaultMuted = false,
@@ -19,6 +20,8 @@ export const FancyVideo = ({
   const isInView = useInView(videoRef);
 
   useEffect(() => {
+    if (!playInView) return;
+
     if (isInView && videoRef.current) {
       emitControl("play");
     } else if (!isInView && videoRef.current) {
@@ -43,12 +46,16 @@ export const FancyVideo = ({
 
     switch (control) {
       case "play":
-        setPaused(false);
-        videoRef.current.play();
+        videoRef.current
+          .play()
+          .then(() => setPaused(false))
+          .catch(() => {
+            console.error("User has not interacted with document yet.");
+          });
         break;
       case "pause":
-        setPaused(true);
         videoRef.current.pause();
+        setPaused(true);
         break;
       case "mute":
         setMuted(true);
