@@ -2,10 +2,17 @@
 
 import { useRef, useState } from "react";
 
-export const FancyVideo = ({ href, children, ...rest }) => {
-  const [paused, setPaused] = useState(false);
-  const [looping, setLooping] = useState(false);
-  const [muted, setMuted] = useState(true);
+export const FancyVideo = ({
+  href,
+  children,
+  defaultPaused = false,
+  defaultLooping = false,
+  defaultMuted = false,
+  ...rest
+}) => {
+  const [paused, setPaused] = useState(defaultPaused);
+  const [looping, setLooping] = useState(defaultLooping);
+  const [muted, setMuted] = useState(defaultMuted);
   const [time, setTime] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -73,8 +80,8 @@ export const FancyVideo = ({ href, children, ...rest }) => {
         ref={videoRef}
         loop={looping}
         muted={muted}
+        autoPlay={!defaultPaused}
         playsInline
-        autoPlay
         onClick={() => emitControl(paused ? "play" : "pause")}
         className="cursor-pointer rounded-lg overflow-hidden"
         {...rest}
