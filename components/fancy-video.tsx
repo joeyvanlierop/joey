@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 
 export const FancyVideo = ({ href, children, ...rest }) => {
-  const [paused, setPaused] = useState(true);
+  const [paused, setPaused] = useState(false);
   const [looping, setLooping] = useState(true);
   const [muted, setMuted] = useState(true);
   const [time, setTime] = useState(0);
@@ -58,7 +58,7 @@ export const FancyVideo = ({ href, children, ...rest }) => {
   };
 
   return (
-    <div className="group relative h-auto m-0 mt-2 not-prose">
+    <div className="group relative m-0 mt-2 not-prose">
       <video
         onTimeUpdate={(event) => {
           console.log(event);
@@ -70,6 +70,7 @@ export const FancyVideo = ({ href, children, ...rest }) => {
         loop={looping}
         muted={muted}
         playsInline
+        autoPlay
         onClick={() => (paused ? videoHandler("play") : videoHandler("pause"))}
         className="cursor-pointer rounded-lg overflow-hidden"
         {...rest}
