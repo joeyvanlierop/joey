@@ -40,6 +40,7 @@ export function Clock({ children }) {
             onClick={() => setOpen((open) => !open)}
           >
             <div
+              suppressHydrationWarning
               className={`h-[8px] w-[0.5px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${secondDegrees}deg)`,
@@ -47,6 +48,7 @@ export function Clock({ children }) {
               }}
             />
             <div
+              suppressHydrationWarning
               className={`h-[7px] w-[1px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${minuteDegress}deg)`,
@@ -54,6 +56,7 @@ export function Clock({ children }) {
               }}
             />
             <div
+              suppressHydrationWarning
               className={`h-[5px] w-[1px] bg-mono-9 absolute top-1/2 left-1/2 origin-top transition-transform`}
               style={{
                 transform: `rotate(${hourDegrees}deg)`,
