@@ -91,12 +91,11 @@ export const FancyVideo = ({ href, children, ...rest }) => {
 const Controls = ({ paused, looping, muted, progress, videoHandler }) => {
   return (
     <div className="absolute bottom-4 left-4 right-4 h-9 flex gap-2 items-center bg-[rgba(0,0,0,0.4)] backdrop-blur-md backdrop-brightness-75 rounded-full p-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-150">
-      <ControlsButton>
+      <ControlsButton
+        onClick={() => (paused ? videoHandler("play") : videoHandler("pause"))}
+      >
         <svg
           className="h-[14px] w-[14px] bg-white"
-          onClick={() =>
-            paused ? videoHandler("play") : videoHandler("pause")
-          }
           style={{
             maskImage: paused ? PlayIcon : PauseIcon,
             maskSize: "100% 100%",
@@ -104,24 +103,25 @@ const Controls = ({ paused, looping, muted, progress, videoHandler }) => {
         />
       </ControlsButton>
       <div
-        className="relative w-full bg-[hsla(0,0%,100%,.3)] h-[3px] rounded-[3px] overflow-hidden cursor-pointer"
+        className="w-full bg-none h-full flex items-center cursor-pointer"
         onClick={(event) => {
           var bounds = event.currentTarget.getBoundingClientRect();
           var clickedProgress = (event.clientX - bounds.left) / bounds.width;
           videoHandler("progress", clickedProgress);
         }}
       >
-        <div
-          className="absolute w-full left-0 h-full bg-white transition origin-left"
-          style={{ transform: `scaleX(${progress}%)` }}
-        />
+        <div className="relative w-full bg-[hsla(0,0%,100%,.3)] h-[3px] rounded-[3px] overflow-hidden">
+          <div
+            className="absolute w-full left-0 h-full bg-white transition origin-left"
+            style={{ transform: `scaleX(${progress}%)` }}
+          />
+        </div>
       </div>
-      <ControlsButton>
+      <ControlsButton
+        onClick={() => (muted ? videoHandler("unmute") : videoHandler("mute"))}
+      >
         <svg
           className="h-[14px] w-[14px] bg-white color-[hsla(0,0%,100%,.3)] transition duration-150"
-          onClick={() =>
-            muted ? videoHandler("unmute") : videoHandler("mute")
-          }
           style={{
             maskImage: MuteIcon,
             maskSize: "100% 100%",
@@ -129,12 +129,13 @@ const Controls = ({ paused, looping, muted, progress, videoHandler }) => {
           }}
         />
       </ControlsButton>
-      <ControlsButton>
+      <ControlsButton
+        onClick={() =>
+          looping ? videoHandler("unloop") : videoHandler("loop")
+        }
+      >
         <svg
           className="h-[14px] w-[14px] bg-white color-[hsla(0,0%,100%,.3)] transition duration-150"
-          onClick={() =>
-            looping ? videoHandler("unloop") : videoHandler("loop")
-          }
           style={{
             maskImage: AutoplayIcon,
             maskSize: "100% 100%",
@@ -142,10 +143,9 @@ const Controls = ({ paused, looping, muted, progress, videoHandler }) => {
           }}
         />
       </ControlsButton>
-      <ControlsButton>
+      <ControlsButton onClick={() => videoHandler("maximize")}>
         <svg
           className="h-[14px] w-[14px] bg-white"
-          onClick={() => videoHandler("maximize")}
           style={{ maskImage: FullscreenIcon, maskSize: "100% 100%" }}
         />
       </ControlsButton>
@@ -153,9 +153,12 @@ const Controls = ({ paused, looping, muted, progress, videoHandler }) => {
   );
 };
 
-const ControlsButton = ({ children }) => {
+const ControlsButton = ({ onClick, children }) => {
   return (
-    <button className="p-[6px] hover:bg-[hsla(0,0%,100%,0.15)] rounded-md transition-all">
+    <button
+      className="p-[6px] hover:bg-[hsla(0,0%,100%,0.15)] rounded-md transition-all"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
