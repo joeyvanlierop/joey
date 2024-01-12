@@ -1,11 +1,11 @@
 "use client";
 
-import { Nook } from "@components/nook";
+import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
+import { Nook } from "@components/nook";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import { forwardRef } from "react";
-import { useToggle } from "hooks/useToggle";
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
@@ -19,28 +19,11 @@ const CustomLink = ({ href, children, ...rest }) => {
   );
 };
 
-const Video = ({ href, children, ...rest }) => {
-  const [muted, toggleMuted] = useToggle(true);
-
-  return (
-    <video
-      autoPlay
-      playsInline
-      muted={muted}
-      onClick={toggleMuted}
-      className="mx-auto h-auto cursor-pointer"
-      {...rest}
-    >
-      {children}
-    </video>
-  );
-};
-
 const components = {
   Journal,
   Nook,
   Image,
-  Video,
+  Video: FancyVideo,
   em: FancyItalics,
   a: CustomLink,
 };
