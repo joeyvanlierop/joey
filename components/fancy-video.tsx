@@ -74,7 +74,11 @@ export const FancyVideo = ({
         videoRef.current.loop = false;
         break;
       case "maximize":
-        videoRef.current.requestFullscreen();
+        if (videoRef.current["webkitEnterFullscreen"]) {
+          videoRef.current["webkitEnterFullscreen"]();
+        } else if (videoRef.current.requestFullscreen) {
+          videoRef.current.requestFullscreen();
+        }
         break;
       case "progress":
         videoRef.current.currentTime = progress! * videoRef.current.duration;
@@ -134,7 +138,7 @@ export const FancyVideo = ({
 
 const ControlPanel = ({ children }) => {
   return (
-    <div className="absolute bottom-4 left-4 right-4 h-9 flex gap-2 items-center bg-[rgba(0,0,0,0.4)] backdrop-blur-md backdrop-brightness-75 rounded-full p-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-150">
+    <div className="absolute bottom-4 left-4 right-4 h-9 flex gap-2 items-center bg-[rgba(0,0,0,0.4)] backdrop-blur-md backdrop-brightness-75 rounded-full p-2 md:translate-y-2 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-150">
       {children}
     </div>
   );
