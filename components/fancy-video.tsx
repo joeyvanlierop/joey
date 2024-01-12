@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 export const FancyVideo = ({ href, children, ...rest }) => {
   const [paused, setPaused] = useState(false);
-  const [looping, setLooping] = useState(true);
+  const [looping, setLooping] = useState(false);
   const [muted, setMuted] = useState(true);
   const [time, setTime] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
