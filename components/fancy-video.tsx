@@ -16,16 +16,17 @@ export const FancyVideo = ({
   const [looping, setLooping] = useState(defaultLooping);
   const [muted, setMuted] = useState(defaultMuted);
   const [time, setTime] = useState(0);
+  const [manual, setManual] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(videoRef);
 
   useEffect(() => {
     if (!playInView) return;
 
-    if (isInView && videoRef.current) {
-      emitControl("play");
+    if (isInView && videoRef.current && !manual) {
+      emitControl("play", false);
     } else if (!isInView && videoRef.current) {
-      emitControl("pause");
+      emitControl("pause", false);
     }
   }, [isInView]);
 
@@ -40,6 +41,7 @@ export const FancyVideo = ({
       | "unloop"
       | "maximize"
       | "progress",
+    manual = true,
     progress?: number
   ) => {
     if (!videoRef.current) return;
@@ -48,7 +50,10 @@ export const FancyVideo = ({
       case "play":
         videoRef.current
           .play()
-          .then(() => setPaused(false))
+          .then(() => {
+            setPaused(false);
+            if (manual) setManual(true);
+          })
           .catch(() => {
             console.error("User has not interacted with document yet.");
           });
@@ -56,6 +61,7 @@ export const FancyVideo = ({
       case "pause":
         videoRef.current.pause();
         setPaused(true);
+        if (manual) setManual(true);
         break;
       case "mute":
         setMuted(true);
@@ -118,7 +124,7 @@ export const FancyVideo = ({
           onClick={(event) => {
             var bounds = event.currentTarget.getBoundingClientRect();
             var clickedProgress = (event.clientX - bounds.left) / bounds.width;
-            emitControl("progress", clickedProgress);
+            emitControl("progress", true, clickedProgress);
           }}
           progress={getProgress()}
         />
