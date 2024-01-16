@@ -1,5 +1,5 @@
 import { Column } from "@components/column";
-import { getPost, getPostSlugs } from "@lib/post";
+import { getThing, getAllThingSlugs } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
@@ -9,7 +9,7 @@ import { MdxContent } from "./mdx-content";
 import { FancyDate } from "@components/fancy-date";
 
 export function generateMetadata({ params }): Metadata {
-  const post = getPost(params.slug);
+  const post = getThing(params.slug);
 
   return {
     title: post.data.title,
@@ -18,7 +18,7 @@ export function generateMetadata({ params }): Metadata {
     openGraph: {
       title: post.data.title,
       description: post.data.description,
-      url: `${getUrl()}/writing/${post.data.slug}`,
+      url: `${getUrl()}/things/${post.data.slug}`,
       type: "article",
       publishedTime: post.data.date,
       modifiedTime: post.data.updated,
@@ -43,9 +43,9 @@ export default async function Post({ params }) {
           </Link>
           <Link
             className="font-header font-medium text-mono-9 mb-4 no-underline"
-            href="/writing"
+            href="/things"
           >
-            Writing
+            Things
           </Link>
           <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
           <FancyDate published={post.data.date} updated={post.data.updated} />
@@ -59,7 +59,7 @@ export default async function Post({ params }) {
 }
 
 async function fetchPost(params) {
-  const post = getPost(params.slug);
+  const post = getThing(params.slug);
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
@@ -72,7 +72,7 @@ async function fetchPost(params) {
 }
 
 export async function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({
+  return getAllThingSlugs().map((slug) => ({
     slug,
   }));
 }

@@ -18,27 +18,27 @@ export interface Post {
   content: string;
 }
 
-export function getPostSlugs(): string[] {
+export function getAllThingSlugs(): string[] {
   return fs
-    .readdirSync(path.join("writing"))
+    .readdirSync(path.join("things"))
     .filter((file) => /\.mdx?$/.test(file))
     .map((file) => file.replace(/\.mdx?$/, ""));
 }
 
-export function getPost(slug: string): Post {
-  const file = fs.readFileSync(path.join("writing", `${slug}.mdx`));
+export function getThing(slug: string): Post {
+  const file = fs.readFileSync(path.join("things", `${slug}.mdx`));
   const post = matter(file) as unknown as Post;
   post.data.slug = slug;
   return post;
 }
 
-export function getPosts(ignoreVisibility?: boolean): Post[] {
-  return getPostSlugs()
-    .map((slug) => getPost(slug))
+export function getThings(ignoreVisibility?: boolean): Post[] {
+  return getAllThingSlugs()
+    .map((slug) => getThing(slug))
     .filter((post) => ignoreVisibility || post.data.visibility !== "private")
     .sort((postA, postB) => dayjs(postB.data.date).diff(postA.data.date));
 }
 
-export function getMostRecent(ignoreVisibility?: boolean): Post {
-  return getPosts(ignoreVisibility)[0];
+export function getMostRecentThings(ignoreVisibility?: boolean): Post {
+  return getThings(ignoreVisibility)[0];
 }

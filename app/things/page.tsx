@@ -1,18 +1,18 @@
 import { Column } from "@components/column";
 import { List } from "@components/list";
-import { getPosts } from "@lib/post";
+import { getThings } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Things",
   description: "Written things",
   metadataBase: new URL(getUrl()),
   openGraph: {
-    title: "Writing",
+    title: "Things",
     description: "Written things",
-    url: "https://joeyvanlierop.com/writing",
+    url: "https://joeyvanlierop.com/things",
     type: "website",
     images: "/og.png",
   },
@@ -29,7 +29,7 @@ export default async function Home() {
         >
           Joey Van Lierop
         </Link>
-        <p className="font-header font-medium pb-14">Writing</p>
+        <p className="font-header font-medium pb-14">Things</p>
         <List posts={posts} />
       </Column>
     </div>
@@ -37,7 +37,7 @@ export default async function Home() {
 }
 
 async function fetchPosts() {
-  return getPosts(false).map((post) => {
+  return getThings(false).map((post) => {
     return post.data;
   });
 }

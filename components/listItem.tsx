@@ -12,7 +12,7 @@ export const ListItem: React.FC<PostData> = (props) => {
   return (
     <Link
       tabIndex={0}
-      href={`/writing/${props.slug}`}
+      href={`/things/${props.slug}`}
       className="group/item cursor-pointer transition-[opacity] hover:!opacity-100 focus:!opacity-100 group-hover:opacity-30 group-focus:opacity-30 no-underline"
     >
       <div

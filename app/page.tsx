@@ -1,6 +1,6 @@
 import { Column } from "@components/column";
 import { Nook } from "@components/nook";
-import { getPost } from "@lib/post";
+import { getThing } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
@@ -52,15 +52,15 @@ export default async function Home() {
 
           {/* Pillars */}
           <section className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
-            <ShowoffSection title="Writing">
-              <WritingShowoff slug={"january-journal"} />
-              <WritingShowoff slug={"procrastination"} />
+            <ShowoffSection title="Things">
+              <ThingsShowoff slug={"january-journal"} />
+              <ThingsShowoff slug={"procrastination"} />
 
               {/* TODO: Make the dots jump */}
               <Showoff
-                title="...read more"
+                title="...more things"
                 description={"A messy collection of my infrequent thoughts."}
-                href={"/writing/"}
+                href={"/things/"}
               />
             </ShowoffSection>
             <ShowoffSection title="Projects">
@@ -72,16 +72,9 @@ export default async function Home() {
               />
               <Showoff
                 title="Ship It"
-                description={"One of the game jams of all time."}
+                description={"An unforgettable introduction to game jams."}
                 href={"https://github.com/joeyvanlierop/ld-51"}
                 external
-              />
-            </ShowoffSection>
-            <ShowoffSection title="Playground">
-              <Showoff
-                title="Hexagons"
-                description={"They are the bestagons."}
-                href={"/hexagons"}
               />
             </ShowoffSection>
           </section>
@@ -160,7 +153,7 @@ export default async function Home() {
 function ShowoffSection(props) {
   return (
     <section className="min-w-[192px] max-w-[192px]">
-      <h3 className="text-sm text-mono-11 pb-4">{props.title}</h3>
+      <h2 className="text-sm text-mono-11 pb-4">{props.title}</h2>
       <div className="flex flex-col gap-4">{props.children}</div>
     </section>
   );
@@ -182,13 +175,13 @@ function Showoff(props) {
   );
 }
 
-function WritingShowoff(props) {
-  const post = getPost(props.slug);
+function ThingsShowoff(props) {
+  const post = getThing(props.slug);
   return (
     <Showoff
       title={post.data.title}
       description={post.data.description}
-      href={`/writing/${post.data.slug}`}
+      href={`/things/${post.data.slug}`}
     />
   );
 }
