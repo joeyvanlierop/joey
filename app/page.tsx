@@ -8,11 +8,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Joey",
-  description: "A bit of my brain.",
+  description:
+    "My little nook on the internet. Updated every now and then, but mostly then.",
   metadataBase: new URL(getUrl()),
   openGraph: {
     title: "Joey",
-    description: "A bit of my brain.",
+    description:
+      "My little nook on the internet. Updated every now and then, but mostly then.",
     url: "https://joeyvanlierop.com",
     type: "website",
     images: "/og.png",
