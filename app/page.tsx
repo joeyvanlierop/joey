@@ -20,14 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  // const stagger = 120;
-  // const [delay, setDelay] = useState(stagger);
-
-  // const getDelay = useCallback(() => {
-  //   setDelay((delay) => delay + stagger);
-  //   return delay;
-  // }, [delay]);
-
   return (
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative leading-7">
