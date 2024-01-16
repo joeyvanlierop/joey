@@ -7,12 +7,12 @@ import { Metadata } from "next";
 // import { useCallback, useState } from "react";
 
 export const metadata: Metadata = {
-  title: "Joey",
+  title: "Joey Van Lierop",
   description:
     "My little nook on the internet. Updated every now and then, but mostly then.",
   metadataBase: new URL(getUrl()),
   openGraph: {
-    title: "Joey",
+    title: "Joey Van Lierop",
     description:
       "My little nook on the internet. Updated every now and then, but mostly then.",
     url: "https://joeyvanlierop.com",
