@@ -4,7 +4,6 @@ import { getPost } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { Metadata } from "next";
-// import { useCallback, useState } from "react";
 
 export const metadata: Metadata = {
   title: "Joey Van Lierop",
