@@ -22,7 +22,7 @@ const CustomLink = ({ href, children, ...rest }) => {
 const CustomBlockquote = ({ children, ...rest }) => {
   return (
     <blockquote
-      className="not-prose text-mono-11 my-6 [&>:not(:first-child)]:mt-3 [&>:not(:last-child)]:mb-3"
+      className="not-prose text-mono-11 [&:not(:first-child)]:mt-6 [&:not(:last-child)]:mb-6 [&>:not(:first-child)]:mt-3 [&>:not(:last-child)]:mb-3"
       {...rest}
     >
       {children}
