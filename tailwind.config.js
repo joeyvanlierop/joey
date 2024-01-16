@@ -58,6 +58,12 @@ module.exports = {
               margin: 0,
               marginRight: "0.25rem",
             },
+            "blockquote p:first-of-type": {
+              marginTop: 0,
+            },
+            "blockquote p:last-of-type": {
+              marginBottom: 0,
+            },
           },
         },
       },
