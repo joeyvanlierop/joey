@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/blockquote.css";
 import "../styles/theme.css";
 import "../styles/scroll.css";
 import "../styles/animations.css";

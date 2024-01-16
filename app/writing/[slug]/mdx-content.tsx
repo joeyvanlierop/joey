@@ -19,6 +19,17 @@ const CustomLink = ({ href, children, ...rest }) => {
   );
 };
 
+const CustomBlockquote = ({ children, ...rest }) => {
+  return (
+    <blockquote
+      className="not-prose text-mono-11 my-6 [&>:not(:first-child)]:mt-3 [&>:not(:last-child)]:mb-3"
+      {...rest}
+    >
+      {children}
+    </blockquote>
+  );
+};
+
 const components = {
   Journal,
   Nook,
@@ -26,6 +37,7 @@ const components = {
   Video: FancyVideo,
   em: FancyItalics,
   a: CustomLink,
+  blockquote: CustomBlockquote,
 };
 
 export function MdxContent({ source }) {

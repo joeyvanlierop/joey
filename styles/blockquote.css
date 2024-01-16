@@ -1,0 +1,15 @@
+blockquote {
+  position: relative;
+}
+
+blockquote:before {
+  content: open-quote;
+  position: absolute;
+  left: calc(-2px);
+  transform: translateX(-100%);
+}
+
+blockquote :last-child:after {
+  content: close-quote;
+  margin-left: 2px;
+}
