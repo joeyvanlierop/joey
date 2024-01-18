@@ -1,5 +1,3 @@
-"use client";
-
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";

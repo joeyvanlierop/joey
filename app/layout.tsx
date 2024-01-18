@@ -38,10 +38,6 @@ const sohne = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  authors: [{ name: "Joey Van Lierop" }, { name: "Joseph Van Lierop" }],
-};
-
 export const viewport: Viewport = {
   themeColor: "var(--gray2)",
 };
