@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const posts = await fetchPosts();
+  // const posts = await fetchPosts();
   return (
     <div className="flex flex-col items-center justify-center">
       <Column className="flex flex-col relative">
@@ -30,14 +30,14 @@ export default async function Home() {
           Joey Van Lierop
         </Link>
         <p className="font-header font-medium pb-14">Writing</p>
-        <List posts={posts} />
+        {/* <List posts={posts} /> */}
       </Column>
     </div>
   );
 }
 
-async function fetchPosts() {
-  return getPosts(false).map((post) => {
-    return post.data;
-  });
-}
+// async function fetchPosts() {
+//   return getPosts(false).map((post) => {
+//     return post.data;
+//   });
+// }
