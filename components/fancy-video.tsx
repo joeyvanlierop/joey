@@ -17,13 +17,16 @@ export const FancyVideo = ({
   const [muted, setMuted] = useState(defaultMuted);
   const [time, setTime] = useState(0);
   const [manual, setManual] = useState(false);
+  const [ended, setEnded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isInView = useInView(videoRef);
+  const isInView = useInView(videoRef, { amount: 0.75 });
 
   useEffect(() => {
     if (!playInView) return;
+    if (!videoRef.current) return;
+    if (ended && !looping) return;
 
-    if (isInView && videoRef.current && !manual) {
+    if (isInView && !manual) {
       emitControl("play", false);
     } else if (!isInView && videoRef.current) {
       emitControl("pause", false);
@@ -103,14 +106,22 @@ export const FancyVideo = ({
       <video
         onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)}
         onPause={() => setPaused(true)}
-        onPlay={() => setPaused(false)}
+        onPlay={() => {
+          setPaused(false);
+          setEnded(false);
+        }}
+        onEnded={() => setEnded(true)}
         ref={videoRef}
         loop={looping}
         muted={muted}
         autoPlay
         playsInline
         onClick={() => emitControl(paused ? "play" : "pause")}
-        className="cursor-pointer rounded-lg overflow-hidden"
+        className="cursor-pointer rounded-lg overflow-hidden transition-all"
+        style={{
+          filter:
+            ended && !looping ? "grayscale(0.75) brightness(0.5)" : undefined,
+        }}
         {...rest}
       >
         {children}
