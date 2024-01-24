@@ -58,6 +58,13 @@ module.exports = {
               margin: 0,
               marginRight: "0.25rem",
             },
+            // This allows a task item to have a note which aligns with the task text
+            ".task-list-item": {
+              marginLeft: "1rem",
+            },
+            ".task-list-item input[type='checkbox']": {
+              marginLeft: "-1.25rem",
+            },
           },
         },
       },
