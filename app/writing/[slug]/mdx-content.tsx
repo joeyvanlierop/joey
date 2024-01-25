@@ -19,6 +19,60 @@ const CustomLink = ({ href, children, ...rest }) => {
   );
 };
 
+const CustomTable = ({ href, children, ...rest }) => {
+  return (
+    <table className="w-full caption-bottom text-sm not-prose" {...rest}>
+      {children}
+    </table>
+  );
+};
+
+const CustomTHead = ({ href, children, ...rest }) => {
+  return (
+    <thead className="[&_tr]:border-b" {...rest}>
+      {children}
+    </thead>
+  );
+};
+
+const CustomTBody = ({ href, children, ...rest }) => {
+  return (
+    <tbody className="[&_tr:last-child]:border-0" {...rest}>
+      {children}
+    </tbody>
+  );
+};
+
+const CustomTR = ({ href, children, ...rest }) => {
+  return (
+    <tr
+      className="border-b border-border transition-colors hover:bg-mono-3 duration-75"
+      {...rest}
+    >
+      {children}
+    </tr>
+  );
+};
+
+const CustomTH = ({ href, children, ...rest }) => {
+  return (
+    <th
+      className="h-12 px-4 text-left align-middle font-semibold text-mono-11 [&:has([role=checkbox])]:pr-0 md:text-nowrap"
+      {...rest}
+    >
+      {children}
+    </th>
+  );
+};
+
+const CustomTD = ({ href, children, ...rest }) => {
+  return (
+    <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0" {...rest}>
+      {children}
+    </td>
+  );
+};
+
 const CustomBlockquote = ({ children, ...rest }) => {
   return (
     <blockquote
@@ -38,6 +92,12 @@ const components = {
   em: FancyItalics,
   a: CustomLink,
   blockquote: CustomBlockquote,
+  table: CustomTable,
+  thead: CustomTHead,
+  tbody: CustomTBody,
+  tr: CustomTR,
+  th: CustomTH,
+  td: CustomTD,
 };
 
 export function MdxContent({ source }) {
