@@ -39,7 +39,7 @@ async function fetchDeployments() {
     },
   };
   const data = await fetch(
-    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=100",
+    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=1000",
     options
   )
     .then((resp) => resp.json())
