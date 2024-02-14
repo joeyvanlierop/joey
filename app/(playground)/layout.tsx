@@ -13,7 +13,7 @@ export default function PlaygroundLayout({ children }) {
             Joey Van Lierop
           </Link>
           {/* TODO: Dynamic title */}
-          <h1 className="font-header font-medium mb-0">Hexagons</h1>
+          <h1 className="font-header font-medium mb-0">Playground</h1>
         </div>
         {children}
       </Column>

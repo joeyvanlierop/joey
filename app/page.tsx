@@ -79,6 +79,11 @@ export default async function Home() {
             </ShowoffSection>
             <ShowoffSection title="Playground">
               <Showoff
+                title="Image Stack"
+                description={"Elegantly stacked images."}
+                href={"/image-stack"}
+              />
+              <Showoff
                 title="Hexagons"
                 description={"They are the bestagons."}
                 href={"/hexagons"}
