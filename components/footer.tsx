@@ -9,12 +9,12 @@ export function Footer() {
         <Mood
           current={{
             message: "Back in the mountains",
-            date: "2023-02-14",
+            date: "2024-02-14",
           }}
           history={[
             {
               message: "Where did the snow go",
-              date: "2023-01-01",
+              date: "2024-01-01",
             },
             {
               message: "December Holidays are S-tier",
