@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "yarn dev",
       "presentation": {
-        "reveal": "always",
+        "reveal": "silent",
         "group": "joeyvanlierop",
         "panel": "dedicated"
       },
