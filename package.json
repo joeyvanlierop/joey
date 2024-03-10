@@ -13,26 +13,26 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-tooltip": "1.0.7",
     "@tailwindcss/typography": "0.5.10",
-    "@vercel/analytics": "1.1.1",
-    "autoprefixer": "10.4.16",
-    "cssnano": "6.0.2",
+    "@vercel/analytics": "1.2.2",
+    "autoprefixer": "10.4.18",
+    "cssnano": "6.1.0",
     "dayjs": "1.11.10",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "11.0.8",
     "gray-matter": "4.0.3",
-    "next": "14.0.4",
+    "next": "14.1.3",
     "next-mdx-remote": "4.4.1",
-    "postcss": "8.4.32",
+    "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "3.0.1",
-    "tailwindcss": "3.4.0"
+    "tailwindcss": "3.4.1"
   },
   "devDependencies": {
-    "@types/mdx": "2.0.10",
-    "@types/node": "20.10.6",
-    "@types/react": "18.2.46",
-    "prettier": "3.1.1",
-    "prettier-plugin-tailwindcss": "0.5.10",
-    "typescript": "5.3.3"
+    "@types/mdx": "2.0.11",
+    "@types/node": "20.11.25",
+    "@types/react": "18.2.64",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "0.5.12",
+    "typescript": "5.4.2"
   }
 }
