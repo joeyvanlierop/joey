@@ -65,6 +65,9 @@ module.exports = {
             ".task-list-item input[type='checkbox']": {
               marginLeft: "-1.25rem",
             },
+            figcaption: {
+              color: "var(--mono11)"
+            }
           },
         },
       },

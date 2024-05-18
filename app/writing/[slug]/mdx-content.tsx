@@ -84,11 +84,27 @@ const CustomBlockquote = ({ children, ...rest }) => {
   );
 };
 
+const CustomImage = ({ src, alt, caption, ...rest }) => {
+  if (caption !== undefined) {
+    return (
+      <figure>
+        <Image src={src} alt={alt} {...rest} />
+        <figcaption className="text-center">
+          <i className="fancy">
+            {caption}
+          </i>
+        </figcaption>
+      </figure>
+    );
+  } 
+  return <Image src={src} alt={alt} {...rest} />
+};
+
 const components = {
   Journal,
   Nook,
-  Image,
   Video: FancyVideo,
+  Image: CustomImage,
   em: FancyItalics,
   a: CustomLink,
   blockquote: CustomBlockquote,
