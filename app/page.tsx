@@ -8,12 +8,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Joey Van Lierop",
   description:
-    "My little nook on the internet. Updated every now and then, but mostly then.",
+    "My nook on the internet. Updated every now and then, but mostly then.",
   metadataBase: new URL(getUrl()),
   openGraph: {
     title: "Joey Van Lierop",
     description:
-      "My little nook on the internet. Updated every now and then, but mostly then.",
+      "My nook on the internet. Updated every now and then, but mostly then.",
     url: "https://joeyvanlierop.com",
     type: "website",
     images: "/og.png",
@@ -30,16 +30,12 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My little nook on the internet. Updated every now and then, but
-              mostly then.{" "}
-              <Nook popup="🏠">
-                <em className="fancy">Home</em>
-              </Nook>
-              .
+              My nook on the internet. Updated every now and then, but
+              mostly then.
             </p>
 
             <p className="mb-8 animate-enter animate-delay-[240ms]">
-              Currently studying computer science while developing{" "}
+              Studying computer science while developing{" "}
               <a
                 href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
                 target="_blank"
@@ -58,8 +54,8 @@ export default async function Home() {
 
               {/* TODO: Make the dots jump */}
               <Showoff
-                title="...read more"
-                description={"A messy collection of my infrequent thoughts."}
+                title="...more"
+                description={"A collection of my infrequent thoughts."}
                 href={"/writing/"}
               />
             </ShowoffSection>
@@ -77,11 +73,24 @@ export default async function Home() {
                 external
               />
             </ShowoffSection>
-            <ShowoffSection title="Playground">
+            <ShowoffSection title="Videos">
               <Showoff
-                title="Hexagons"
-                description={"They are the bestagons."}
-                href={"/hexagons"}
+                title="Livingstone"
+                description={"Crown land backpacking"}
+                href={"https://youtu.be/RYQblWW2RpE?si=8McPFI4buanr57HW"}
+                external
+              />
+              <Showoff
+                title="Lake Louise"
+                description={"Slackcountry"}
+                href={"https://youtu.be/mALdgkO1vtQ?si=B01csEgAR5vvg-RB"}
+                external
+              />
+              <Showoff
+                title="Improvement"
+                description={"Getting stronger"}
+                href={"https://youtu.be/66ND2IStaTI?si=2Xgp9YKyNLJER4z6"}
+                external
               />
             </ShowoffSection>
           </section>
@@ -93,13 +102,11 @@ export default async function Home() {
             </h2>
 
             <p className="animate-enter animate-delay-[600ms]">
-              Almost done school (ish). The fall semester was a bit of a grind
-              at the end, but now its time to enjoy the holidays. If only it
-              would snow...
+              Almost done school (ish). Enjoying the summer. Climbing lots, backpacking lotsish. Hoping that we don't get smoked out like last year.
             </p>
 
             <p className="animate-enter animate-delay-[600ms]">
-              The{" "}
+              Last semester, the{" "}
               <a
                 target="_blank"
                 href="https://web.archive.org/web/20220929210033/https://contacts.ucalgary.ca/info/cpsc/courses/w19/CPSC525"
