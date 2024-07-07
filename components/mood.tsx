@@ -32,7 +32,6 @@ export function Mood({
         <Tooltip.Content
           className="border border-border bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono text-text tabular-nums"
           sideOffset={10}
-          align="start"
         >
           <ol className="flex max-h-96 overflow-y-scroll -mr-3 flex-col-reverse">
             {history.map((message, index) => (
