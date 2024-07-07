@@ -8,7 +8,7 @@ export async function Wayback() {
   }
 
   return (
-    <ol className="flex flex-col max-h-96 overflow-y-scroll -mr-3">
+    <ol className="flex flex-col max-h-96 overflow-y-scroll -mr-3 max-w-96">
       {deployments.map((deployment) => (
         <li
           className="first:pt-0 py-2 border-b last:border-b-0 border-border"
