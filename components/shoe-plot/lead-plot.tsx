@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false, })
 
-export function LeadPlot() {
+export function LeadPlot(props) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
@@ -418,7 +418,8 @@ export function LeadPlot() {
           width: "100%",
           height: "500px",
           opacity: isLoaded ? 1 : 0,
-          transition: "all 0.5s"
+          transition: "all 0.75s",
+          transitionDelay: `${props.fadeDelay}s`
         }}
         onInitialized={() => setIsLoaded(true)}
       />
