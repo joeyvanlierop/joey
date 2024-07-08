@@ -3,6 +3,7 @@
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";
+import { LeadPlot } from "@components/shoe-plot/lead-plot";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import { forwardRef } from "react";
@@ -96,13 +97,14 @@ const CustomImage = ({ src, alt, caption, ...rest }) => {
         </figcaption>
       </figure>
     );
-  } 
+  }
   return <Image src={src} alt={alt} {...rest} />
 };
 
 const components = {
   Journal,
   Nook,
+  LeadPlot,
   Video: FancyVideo,
   Image: CustomImage,
   em: FancyItalics,

@@ -1,0 +1,15 @@
+.js-plotly-plot .plotly .main-svg {
+  background-color: inherit !important;
+}
+
+.surface {
+  stroke: var(--mono1) !important;
+}
+
+.surface:hover {
+  stroke: var(--mono12) !important;
+}
+
+text[data-unformatted="All"] {
+  fill: var(--text-color) !important;
+}
