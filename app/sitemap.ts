@@ -1,7 +1,5 @@
 import { getUrl } from "@lib/url";
-import fs from "fs";
 import { MetadataRoute } from "next";
-import path from "path";
 import { getPost, getPosts } from "../lib/post";
 
 export default function sitemap(): MetadataRoute.Sitemap {
