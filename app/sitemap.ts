@@ -21,13 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getPosts().map((post) => ({
       url: `${url}/writing/${post.data.slug}`,
       lastModified: getPost(post.data.slug).data.updated,
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
     })),
-    ...fs
-      .readdirSync(path.join("app", "(playground)"), { withFileTypes: true })
-      .filter((dirent) => dirent.isDirectory())
-      .map((dirent) => ({
-        url: `${url}/${dirent.name}`,
-      })),
   ];
 }
