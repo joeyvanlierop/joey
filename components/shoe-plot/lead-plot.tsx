@@ -1,5 +1,7 @@
+import dynamic from "next/dynamic";
 import { ReactNode } from "react";
-import Plot from "react-plotly.js";
+
+const Plot = dynamic(() => import("react-plotly.js"), { ssr: false, })
 
 export function LeadPlot(props: { className?: string; children: ReactNode }) {
   return (
