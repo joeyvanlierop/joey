@@ -8,10 +8,14 @@ export function Footer() {
       <div className="flex justify-between items-center w-full max-w-full md:max-w-[640px] px-10 md:px-0">
         <Mood
           current={{
-            message: "Getting sunburnt",
-            date: "2024-07-07",
+            message: "Thinking too much about shoes",
+            date: "2024-08-13",
           }}
           history={[
+            {
+              message: "Getting sunburnt",
+              date: "2024-07-07",
+            },
             {
               message: "Forgetting to write things",
               date: "2024-05-17",

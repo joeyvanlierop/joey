@@ -3,7 +3,8 @@
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";
-import { LeadPlot } from "@components/shoe-plot/lead-plot";
+import { WomensPlot } from "@components/shoe-plot/lead-plot";
+import { MensPlot } from "@components/shoe-plot/mens-plot";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import { forwardRef } from "react";
@@ -104,7 +105,8 @@ const CustomImage = ({ src, alt, caption, ...rest }) => {
 const components = {
   Journal,
   Nook,
-  LeadPlot,
+  MensPlot,
+  WomensPlot,
   Video: FancyVideo,
   Image: CustomImage,
   em: FancyItalics,
