@@ -227,7 +227,7 @@ export function WomensPlot(props) {
                 "",
                 "",
                 "",
-                "rgb(135, 197, 95)",
+                "rgb(220, 176, 242)",
                 "",
                 "",
                 "",
