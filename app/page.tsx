@@ -102,7 +102,7 @@ export default async function Home() {
             </h2>
 
             <p className="animate-enter animate-delay-[600ms]">
-              Almost done school (ish). Enjoying the summer. Climbing lots, backpacking lotsish. Hoping that we don't get smoked out like last year.
+              Almost done school (ish). Becoming an expert in Greek and Roman studies somehow. Getting stoked for ski season soon, we're due for lots of snow.
             </p>
 
             <p className="animate-enter animate-delay-[600ms]">
