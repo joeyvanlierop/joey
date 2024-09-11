@@ -8,6 +8,7 @@ import { MensPlot } from "@components/shoe-plot/mens-plot";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import { forwardRef } from "react";
+import Zoom from 'react-medium-image-zoom';
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
@@ -90,7 +91,9 @@ const CustomImage = ({ src, alt, caption, ...rest }) => {
   if (caption !== undefined) {
     return (
       <figure>
-        <Image src={src} alt={alt} {...rest} />
+        <Zoom zoomMargin={20} ZoomContent={CustomZoomContent} >
+          <Image src={src} alt={alt} {...rest} />
+        </Zoom>
         <figcaption className="text-center">
           <i className="fancy">
             {caption}
@@ -99,8 +102,22 @@ const CustomImage = ({ src, alt, caption, ...rest }) => {
       </figure>
     );
   }
-  return <Image src={src} alt={alt} {...rest} />
+  return (
+    <Zoom zoomMargin={20} >
+      <Image src={src} alt={alt} {...rest} />
+    </Zoom>
+  );
 };
+
+const CustomZoomContent = ({
+  img,
+}) => {
+  return (
+    <>
+      {img}
+    </>
+  )
+}
 
 const components = {
   Journal,

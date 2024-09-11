@@ -4,6 +4,7 @@ import "../styles/theme.css";
 import "../styles/scroll.css";
 import "../styles/animations.css";
 import "../styles/plotly.css";
+import "../styles/react-medium-image-zoom.css";
 
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
