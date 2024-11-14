@@ -75,9 +75,9 @@ export default async function Home() {
             </ShowoffSection>
             <ShowoffSection title="Videos">
               <Showoff
-                title="Livingstone"
-                description={"Crown land backpacking"}
-                href={"https://youtu.be/RYQblWW2RpE?si=8McPFI4buanr57HW"}
+                title="Fairy Meadows"
+                description={"Backcountry"}
+                href={"https://youtu.be/iSd6qFyObP4?si=iUD6VAX_3P88T9Gm"}
                 external
               />
               <Showoff
