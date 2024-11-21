@@ -38,24 +38,29 @@ async function fetchDeployments() {
       "Content-Type": "application/json",
     },
   };
-  const data = await fetch(
-    "https://api.vercel.com/v6/deployments?app=joeyvanlierop&limit=1000",
-    options
-  )
-    .then((resp) => resp.json())
-    .then((json) => json.deployments)
-    .then((deployments) =>
-      deployments.filter((deployment) => ({
-        deployment,
-      }))
-    )
-    .then((deployments) =>
-      deployments.map((deployment) => ({
+
+  const allDeployments: { url: string; message: string; sha: string }[] = [];
+  let nextPagination: string | null = null;
+
+  do {
+    const url = `https://api.vercel.com/v6/deployments?projectId=${process.env.VERCEL_PROJECT_ID}&limit=100&${nextPagination ? `until=${nextPagination}` : ""
+      }`;
+
+    const response = await fetch(url, options);
+    const { deployments, pagination } = await response.json();
+
+    // Append the current batch of deployments
+    allDeployments.push(
+      ...deployments.map((deployment) => ({
         url: deployment.url,
-        message: deployment.meta.githubCommitMessage,
-        sha: deployment.meta.githubCommitSha,
+        message: deployment.meta?.githubCommitMessage || "No message",
+        sha: deployment.meta?.githubCommitSha || "No SHA",
       }))
     );
 
-  return data;
+    // Update pagination cursor
+    nextPagination = pagination?.next || null;
+  } while (nextPagination);
+
+  return allDeployments;
 }
