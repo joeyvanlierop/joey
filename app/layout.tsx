@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Providers from "./providers";
+import Head from "next/head";
 
 const inter = localFont({
   src: "../public/fonts/Inter-roman.latin.var.woff2",
@@ -55,6 +56,9 @@ export default function RootLayout({ children }) {
       className={`bg-mono-1 ${inter.variable} ${newsreader.variable} ${sohne.variable}`}
       suppressHydrationWarning
     >
+      <Head>
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </Head>
       <body className={"font-sans text-text h-full relative"}>
         <Providers>
           <main className="md:py-32 pb-24 min-h-[100dvh] relative">

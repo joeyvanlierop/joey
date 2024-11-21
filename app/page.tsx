@@ -8,12 +8,12 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Joey Van Lierop",
   description:
-    "My nook on the internet. Updated every now and then, but mostly then.",
+    "A bit of my brain. Updated every now and then, but mostly then.",
   metadataBase: new URL(getUrl()),
   openGraph: {
     title: "Joey Van Lierop",
     description:
-      "My nook on the internet. Updated every now and then, but mostly then.",
+      "A bit of my brain. Updated every now and then, but mostly then.",
     url: "https://joeyvanlierop.com",
     type: "website",
     images: "/og.png",
@@ -30,7 +30,7 @@ export default async function Home() {
             <h1 className="font-medium leading-6">Joey Van Lierop</h1>
 
             <p className="animate-enter animate-delay-[120ms]">
-              My nook on the internet. Updated every now and then, but
+              A bit of my brain. Updated every now and then, but
               mostly then.
             </p>
 
