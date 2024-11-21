@@ -1,10 +1,10 @@
-import "../styles/globals.css";
-import "../styles/blockquote.css";
-import "../styles/theme.css";
-import "../styles/scroll.css";
 import "../styles/animations.css";
+import "../styles/blockquote.css";
+import "../styles/globals.css";
 import "../styles/plotly.css";
 import "../styles/react-medium-image-zoom.css";
+import "../styles/scroll.css";
+import "../styles/theme.css";
 
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -42,6 +42,13 @@ const sohne = localFont({
 
 export const metadata: Metadata = {
   authors: [{ name: "Joey Van Lierop" }, { name: "Joseph Van Lierop" }],
+  alternates: {
+    types: {
+      "application/rss+xml": "/writing/feed.xml",
+      "application/rss+xml ": "/writing/atom.xml", // Added a space after application/rss+xml to bypass the duplicate key, review in the future
+      "application/rss+json": "/writing/feed.json",
+    }
+  }
 };
 
 export const viewport: Viewport = {
