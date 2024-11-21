@@ -18,7 +18,7 @@ export function generateFeed() {
   const posts = getPosts();
   posts.forEach((post) => {
     feed.addItem({
-      id: `https://joeyvanlierop.com/writing/${post.data.slug}`,
+      id: `${post.data.slug}-${post.data.updated}`,
       link: `https://joeyvanlierop.com/writing/${post.data.slug}`,
       title: post.data.title,
       description: post.data.description,
