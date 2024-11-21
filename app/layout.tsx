@@ -44,9 +44,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Joey Van Lierop" }, { name: "Joseph Van Lierop" }],
   alternates: {
     types: {
-      "application/rss+xml": "/writing/feed.xml",
-      "application/rss+xml ": "/writing/atom.xml", // Added a space after application/rss+xml to bypass the duplicate key, review in the future
-      "application/rss+json": "/writing/feed.json",
+      "application/rss+xml ": "/feed"
     }
   }
 };
