@@ -30,7 +30,7 @@ function Entry(props: { time: string; children: React.ReactNode }) {
       >
         {props.time}
       </time>
-      <div className="flex flex-col gap-4 [&>p]:m-0 [&>img]:mt-2 [&>img]:mb-0">
+      <div className="flex flex-col gap-4 [&>p]:m-0 [&_img]:mt-2 [&_img]:mb-0">
         {props.children}
       </div>
     </div>
