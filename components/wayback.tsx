@@ -43,7 +43,7 @@ async function fetchDeployments() {
   let nextPagination: string | null = null;
 
   do {
-    const url = `https://api.vercel.com/v6/deployments?projectId=${process.env.VERCEL_PROJECT_ID}&limit=100&${nextPagination ? `until=${nextPagination}` : ""
+    const url = `https://api.vercel.com/v6/deployments?projectId=${process.env.VERCEL_PROJECT_ID}&state=READY&limit=100&${nextPagination ? `until=${nextPagination}` : ""
       }`;
 
     const response = await fetch(url, options);
