@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
-    "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-tooltip": "1.0.7",
     "@tailwindcss/typography": "0.5.10",
     "@vercel/analytics": "1.2.2",
@@ -22,7 +21,7 @@
     "gray-matter": "4.0.3",
     "next": "14.1.3",
     "next-mdx-remote": "4.4.1",
-    "plotly.js": "^2.33.0",
+    "plotly.js": "2.33.0",
     "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
