@@ -50,7 +50,7 @@ export default async function Post({ params }) {
           <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
           <FancyDate published={post.data.date} updated={post.data.updated} />
         </div>
-        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium [&>img]:rounded-lg [&>img]:my-0">
+        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium [&_img]:rounded-lg [&_img]:my-0">
           <MdxContent source={post.source} />
         </article>
       </Column>
