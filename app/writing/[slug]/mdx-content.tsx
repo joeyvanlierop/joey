@@ -87,14 +87,14 @@ const CustomBlockquote = ({ children, ...rest }) => {
   );
 };
 
-const CustomImage = ({ src, alt, caption, ...rest }) => {
+const CustomImage = ({ src, alt, caption, className, ...rest }) => {
   if (caption !== undefined) {
     return (
-      <figure>
+      <figure >
         <Zoom zoomMargin={20} ZoomContent={CustomZoomContent} >
-          <Image src={src} alt={alt} {...rest} />
+          <Image src={src} alt={alt} className={`${className} "mb-1"`} {...rest} />
         </Zoom>
-        <figcaption className="text-center">
+        <figcaption className="text-center" >
           <i className="fancy">
             {caption}
           </i>
@@ -104,11 +104,10 @@ const CustomImage = ({ src, alt, caption, ...rest }) => {
   }
   return (
     <Zoom zoomMargin={20} >
-      <Image src={src} alt={alt} {...rest} />
+      <Image src={src} alt={alt} className={className} {...rest} />
     </Zoom>
   );
 };
-
 const CustomZoomContent = ({
   img,
 }) => {
