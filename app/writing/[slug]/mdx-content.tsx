@@ -6,7 +6,7 @@ import { Nook } from "@components/nook";
 import { WomensPlot } from "@components/shoe-plot/lead-plot";
 import { MensPlot } from "@components/shoe-plot/mens-plot";
 import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { forwardRef } from "react";
 import Zoom from 'react-medium-image-zoom';
 
@@ -87,25 +87,18 @@ const CustomBlockquote = ({ children, ...rest }) => {
   );
 };
 
-const CustomImage = ({ src, alt, caption, className, ...rest }) => {
-  if (caption !== undefined) {
-    return (
-      <figure >
-        <Zoom zoomMargin={20} ZoomContent={CustomZoomContent} >
-          <Image src={src} alt={alt} className={`${className} "mb-1"`} {...rest} />
-        </Zoom>
-        <figcaption className="text-center" >
-          <i className="fancy">
-            {caption}
-          </i>
-        </figcaption>
-      </figure>
-    );
-  }
+const CustomImage = ({ title, ...rest }: ImageProps) => {
   return (
-    <Zoom zoomMargin={20} >
-      <Image src={src} alt={alt} className={className} {...rest} />
-    </Zoom>
+    <figure>
+      <Zoom zoomMargin={20} ZoomContent={CustomZoomContent}>
+        <Image {...rest} />
+      </Zoom>
+      {title && (
+        <figcaption className="text-center">
+          <i className="fancy">{title}</i>
+        </figcaption>
+      )}
+    </figure>
   );
 };
 const CustomZoomContent = ({
@@ -125,6 +118,7 @@ const components = {
   WomensPlot,
   Video: FancyVideo,
   Image: CustomImage,
+  img: CustomImage,
   em: FancyItalics,
   a: CustomLink,
   blockquote: CustomBlockquote,

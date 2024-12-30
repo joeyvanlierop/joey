@@ -1,4 +1,6 @@
 import { Column } from "@components/column";
+import { FancyDate } from "@components/fancy-date";
+import imageMetadata from "@lib/image-metadata";
 import { getPost, getPostSlugs } from "@lib/post";
 import { getUrl } from "@lib/url";
 import { Metadata } from "next";
@@ -6,7 +8,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
-import { FancyDate } from "@components/fancy-date";
+import rehypeUnwrapImages from "rehype-unwrap-images";
 
 export function generateMetadata({ params }): Metadata {
   const post = getPost(params.slug);
@@ -63,6 +65,7 @@ async function fetchPost(params) {
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
+      rehypePlugins: [imageMetadata, rehypeUnwrapImages],
     },
   });
   return {
