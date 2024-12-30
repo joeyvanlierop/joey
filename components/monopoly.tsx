@@ -78,12 +78,43 @@ function calculateLandingPosition(startPosition: number, roll: number): number {
   if (SPACES[newPosition].name === "Go to Jail") {
     return 10; // Position of "Jail" space
   }
-  if (SPACES[newPosition].name === "Community Chest" || SPACES[newPosition].name === "Chance") {
-    // Probability to draw a "Go to jail" card
-    if (Math.random() < 1 / 16) {
-      return 10;
+
+  // Handle "Community Chest" cards
+  if (SPACES[newPosition].name === "Community Chest") {
+    const luck = Math.random()
+    if (luck < 1 / 16) {
+      return SPACES.findIndex(space => space.name === "Go"); // Advance to GO
+    } else if (luck < 2 / 16) {
+      return SPACES.findIndex(space => space.name === "Jail/Just Visiting"); // Go to Jail
     }
   }
+
+  // Handle "Chance" spaces
+  if (SPACES[newPosition].name === "Chance") {
+    const luck = Math.random();
+    if (luck < 1 / 16) {
+      return SPACES.findIndex(space => space.name === "Go"); // Advance to GO
+    } else if (luck < 2 / 16) {
+      return SPACES.findIndex(space => space.name === "Jail/Just Visiting"); // Go to Jail
+    } else if (luck < 3 / 16) {
+      return SPACES.findIndex(space => space.name === "St. Charles Place"); // Go to St. Charles Place
+    } else if (luck < 4 / 16) {
+      return SPACES.findIndex(space => space.name === "Boardwalk"); // Go to Boardwalk
+    } else if (luck < 5 / 16) {
+      return SPACES.findIndex(space => space.name === "Reading Railroad"); // Go to Reading Railroad
+    } else if (luck < 7 / 16) {
+      // Go to next Railway
+      const railways = SPACES.filter(space => space.color === "Black");
+      return railways.findIndex(railway => SPACES.indexOf(railway) > newPosition) || 5
+    } else if (luck < 8 / 16) {
+      // Go to next Utility
+      const utilities = SPACES.filter(space => space.color === "Utility");
+      return utilities.findIndex(utility => SPACES.indexOf(utility) > newPosition) || 12
+    } else if (luck < 10 / 16) {
+      return newPosition - 3; // Go back 3 spaces
+    }
+  }
+
   return newPosition;
 }
 
@@ -184,7 +215,7 @@ const Monopoly: React.FC = () => {
           <Tooltip.Content
             className="border border-border bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono tabular-nums"
             sideOffset={8}
-            side={gridIndex < 11 ? "top" : gridIndex < 20 ? "right" : gridIndex < 30 ? "bottom" : "left"}
+            side={gridIndex < 11 ? "top" : gridIndex < 20 ? "right" : gridIndex < 31 ? "bottom" : "left"}
             align="center"
           >
             <div className="flex flex-col gap-1">
