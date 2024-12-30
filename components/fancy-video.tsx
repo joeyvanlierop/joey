@@ -121,6 +121,8 @@ export const FancyVideo = ({
         style={{
           filter:
             ended && !looping ? "grayscale(0.75) brightness(0.5)" : undefined,
+          aspectRatio: `calc(${rest.width} / ${rest.height})`
+
         }}
         {...rest}
       >
