@@ -4,7 +4,7 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./writing/**/*.mdx",
+    "./things/**/*.mdx",
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -66,8 +66,8 @@ module.exports = {
               marginLeft: "-1.25rem",
             },
             figcaption: {
-              color: "var(--mono11)"
-            }
+              color: "var(--mono11)",
+            },
           },
         },
       },

@@ -6,13 +6,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Writing",
-  description: "Written things",
+  title: "Things",
+  description: "Stuff I have made",
   metadataBase: new URL(getUrl()),
   openGraph: {
-    title: "Writing",
-    description: "Written things",
-    url: "https://joeyvanlierop.com/writing",
+    title: "Things",
+    description: "Stuff I have made",
+    url: "https://joeyvanlierop.com/things",
     type: "website",
     images: "/og.png",
   },
@@ -29,7 +29,7 @@ export default async function Home() {
         >
           Joey Van Lierop
         </Link>
-        <p className="font-header font-medium pb-14">Writing</p>
+        <p className="font-header font-medium pb-14">Things</p>
         <List posts={posts} />
       </Column>
     </div>

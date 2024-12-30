@@ -1,6 +1,6 @@
 import { getUrl } from "@lib/url";
 import { MetadataRoute } from "next";
-import { getPost, getPosts } from "../lib/post";
+import { getPost, getPosts } from "@lib/post";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = getUrl();
@@ -12,12 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
     },
     {
-      url: `${url}/writing`,
+      url: `${url}/things`,
       lastModified: "2023-09-14",
       changeFrequency: "weekly",
     },
     ...getPosts().map((post) => ({
-      url: `${url}/writing/${post.data.slug}`,
+      url: `${url}/things/${post.data.slug}`,
       lastModified: getPost(post.data.slug).data.updated,
       changeFrequency: "weekly" as const,
     })),

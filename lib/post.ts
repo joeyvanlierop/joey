@@ -3,7 +3,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-export interface PostData {
+export interface PostMetadata {
   title: string;
   date: string;
   updated: string;
@@ -14,19 +14,19 @@ export interface PostData {
 }
 
 export interface Post {
-  data: PostData;
+  data: PostMetadata;
   content: string;
 }
 
 export function getPostSlugs(): string[] {
   return fs
-    .readdirSync(path.join("writing"))
+    .readdirSync(path.join("things"))
     .filter((file) => /\.mdx?$/.test(file))
     .map((file) => file.replace(/\.mdx?$/, ""));
 }
 
 export function getPost(slug: string): Post {
-  const file = fs.readFileSync(path.join("writing", `${slug}.mdx`));
+  const file = fs.readFileSync(path.join("things", `${slug}.mdx`));
   const post = matter(file) as unknown as Post;
   post.data.slug = slug;
   return post;

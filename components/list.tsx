@@ -1,10 +1,10 @@
-import { PostData } from "@lib/post";
+import { PostMetadata } from "@lib/post";
 import dayjs from "dayjs";
 import { useMemo } from "react";
 import { ListSection } from "./listSection";
 
 interface ListProps {
-  posts: PostData[];
+  posts: PostMetadata[];
 }
 
 export const List: React.FC<ListProps> = (props) => {
@@ -21,8 +21,8 @@ export const List: React.FC<ListProps> = (props) => {
   );
 };
 
-const groupPosts = (posts: PostData[]) => {
-  const newPosts: Record<number, PostData[]> = {};
+const groupPosts = (posts: PostMetadata[]) => {
+  const newPosts: Record<number, PostMetadata[]> = {};
 
   posts.forEach((post) => {
     const year = dayjs(post.date).year();

@@ -1,9 +1,9 @@
-import { PostData } from "@lib/post";
+import { PostMetadata } from "@lib/post";
 import { ListItem } from "./listItem";
 
 interface ListSectionProps {
   year: string;
-  posts: PostData[];
+  posts: PostMetadata[];
 }
 
 export const ListSection: React.FC<ListSectionProps> = (props) => {

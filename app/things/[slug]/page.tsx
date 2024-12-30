@@ -20,7 +20,7 @@ export function generateMetadata({ params }): Metadata {
     openGraph: {
       title: post.data.title,
       description: post.data.description,
-      url: `${getUrl()}/thing/${post.data.slug}`,
+      url: `${getUrl()}/things/${post.data.slug}`,
       type: "article",
       publishedTime: post.data.date,
       modifiedTime: post.data.updated,
@@ -45,7 +45,7 @@ export default async function Post({ params }) {
           </Link>
           <Link
             className="font-header font-medium text-mono-9 mb-4 no-underline"
-            href="/thing"
+            href="/things"
           >
             Things
           </Link>

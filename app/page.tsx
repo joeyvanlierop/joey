@@ -49,15 +49,15 @@ export default async function Home() {
 
             {/* Pillars */}
             <section className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
-              <ShowoffSection title="Writing">
-                <WritingShowoff slug={"olympic-shoes"} />
-                <WritingShowoff slug={"a-roll-of-winter"} />
+              <ShowoffSection title="Thing">
+                <ThingShowoff slug={"olympic-shoes"} />
+                <ThingShowoff slug={"a-roll-of-winter"} />
 
                 {/* TODO: Make the dots jump */}
                 <Showoff
                   title="...more"
                   description={"A collection of my infrequent thoughts."}
-                  href={"/writing/"}
+                  href={"/things/"}
                 />
               </ShowoffSection>
               <ShowoffSection title="Projects">
@@ -191,13 +191,13 @@ function Showoff(props) {
   );
 }
 
-function WritingShowoff(props) {
+function ThingShowoff(props) {
   const post = getPost(props.slug);
   return (
     <Showoff
       title={post.data.title}
       description={post.data.description}
-      href={`/writing/${post.data.slug}`}
+      href={`/things/${post.data.slug}`}
     />
   );
 }
