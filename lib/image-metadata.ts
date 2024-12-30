@@ -1,3 +1,7 @@
+/**
+ * https://nikolovlazar.com/blog/generating-blur-for-dynamic-images-nextjs
+ */
+
 import imageSize from "image-size";
 import { ISizeCalculationResult } from "image-size/dist/types/interface";
 import lqip from "lqip-modern";
