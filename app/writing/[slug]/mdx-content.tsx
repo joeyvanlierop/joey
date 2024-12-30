@@ -7,7 +7,7 @@ import { WomensPlot } from "@components/shoe-plot/lead-plot";
 import { MensPlot } from "@components/shoe-plot/mens-plot";
 import { MDXRemote } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import Zoom from 'react-medium-image-zoom';
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
@@ -87,17 +87,11 @@ const CustomBlockquote = ({ children, ...rest }) => {
   );
 };
 
-const CustomImage = ({ className, title, ...rest }: ImageProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const onLoadCallback = () => {
-    setIsLoaded(true);
-  };
-
+const CustomImage = ({ title, ...rest }: ImageProps) => {
   return (
     <figure>
       <Zoom zoomMargin={20} ZoomContent={CustomZoomContent}>
-        <Image className={`transition-[filter] duration-500 ${isLoaded ? 'blur-0' : 'blur-xl'}`} onLoadingComplete={onLoadCallback} {...rest} />
+        <Image {...rest} />
       </Zoom>
       {title && (
         <figcaption className="text-center">
