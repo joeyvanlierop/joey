@@ -102,7 +102,7 @@ export const FancyVideo = ({
   };
 
   return (
-    <div className="group relative m-0 mt-2 not-prose">
+    <figure className="group relative">
       <video
         onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)}
         onPause={() => setPaused(true)}
@@ -149,7 +149,7 @@ export const FancyVideo = ({
         />
         <MaximizeControl onClick={() => emitControl("maximize")} />
       </ControlPanel>
-    </div>
+    </figure>
   );
 };
 
