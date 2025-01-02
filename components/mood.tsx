@@ -33,10 +33,10 @@ export function Mood({
           className="border border-border bg-mono-1 px-3 py-2 rounded-lg data-[state=delayed-open]:animate-tooltip-in data-[state=closed]:animate-tooltip-out shadow-mono text-text tabular-nums"
           sideOffset={10}
         >
-          <ol className="flex max-h-96 overflow-y-scroll -mr-3 flex-col-reverse">
+          <ol className="flex max-h-96 overflow-y-scroll -mr-3 flex-col">
             {history.map((message, index) => (
               <li
-                className="py-2 border-b first:border-b-0 border-border first:pb-0 last:pt-0"
+                className="py-2 border-b last:border-b-0 border-border last:pb-0 first:pt-0"
                 key={index}
               >
                 <MoodEntry {...message} />
