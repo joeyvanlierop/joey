@@ -49,16 +49,9 @@ export default async function Home() {
 
             {/* Pillars */}
             <section className="flex mb-8 -mx-10 pl-10 gap-8 animate-enter animate-delay-[360ms] overflow-x-auto mask">
-              <ShowoffSection title="Writing">
-                <WritingShowoff slug={"olympic-shoes"} />
+              <ShowoffSection title="Writing" href="/writing">
+                <WritingShowoff slug={"another-january-journal"} />
                 <WritingShowoff slug={"a-roll-of-winter"} />
-
-                {/* TODO: Make the dots jump */}
-                <Showoff
-                  title="...more"
-                  description={"A collection of my infrequent thoughts."}
-                  href={"/writing/"}
-                />
               </ShowoffSection>
               <ShowoffSection title="Projects">
                 <Showoff
@@ -169,8 +162,15 @@ export default async function Home() {
 function ShowoffSection(props) {
   return (
     <section className="min-w-[192px] max-w-[192px]">
-      <h3 className="text-sm text-mono-11 pb-4">{props.title}</h3>
-      <div className="flex flex-col gap-4">{props.children}</div>
+      <h3 className="text-sm text-mono-11 pb-4">
+        {props.href ?
+          <a href={props.href} target={props.external ? "_blank" : undefined}>
+            {props.title}
+          </a> :
+          props.title
+        }
+      </h3>
+      <div className="flex flex-col gap-4 items-start">{props.children}</div>
     </section>
   );
 }
