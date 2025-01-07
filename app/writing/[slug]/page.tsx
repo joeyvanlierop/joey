@@ -34,29 +34,27 @@ export default async function Post({ params }) {
   const post = await fetchPost(params);
 
   return (
-    <div className="flex w-full justify-center">
-      <Column className="gap-14">
-        <div className="flex flex-col justify-center items-start">
-          <Link
-            className="font-header font-medium text-mono-9 mb-4 no-underline"
-            href="/"
-          >
-            Joey Van Lierop
-          </Link>
-          <Link
-            className="font-header font-medium text-mono-9 mb-4 no-underline"
-            href="/writing"
-          >
-            Writing
-          </Link>
-          <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
-          <FancyDate published={post.data.date} updated={post.data.updated} />
-        </div>
-        <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium [&_img]:rounded-lg [&_img]:my-0">
-          <MdxContent source={post.source} />
-        </article>
-      </Column>
-    </div>
+    <>
+      <div className="flex flex-col justify-center items-start">
+        <Link
+          className="font-header font-medium text-mono-9 mb-4 no-underline"
+          href="/"
+        >
+          Joey Van Lierop
+        </Link>
+        <Link
+          className="font-header font-medium text-mono-9 mb-4 no-underline"
+          href="/writing"
+        >
+          Writing
+        </Link>
+        <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
+        <FancyDate published={post.data.date} updated={post.data.updated} />
+      </div>
+      <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium mt-14 [&_img]:rounded-lg [&_img]:my-0">
+        <MdxContent source={post.source} />
+      </article>
+    </>
   );
 }
 

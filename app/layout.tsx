@@ -6,6 +6,7 @@ import "../styles/react-medium-image-zoom.css";
 import "../styles/scroll.css";
 import "../styles/theme.css";
 
+import { Column } from "@components/column";
 import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
@@ -61,7 +62,12 @@ export default function RootLayout({ children }) {
     >
       <body className={"font-sans text-text h-full relative"}>
         <main className="md:py-32 pb-24 min-h-[100dvh] relative">
-          {children}
+
+          <div className="flex flex-col items-center justify-center">
+            <Column className="flex flex-col relative">
+              {children}
+            </Column>
+          </div>
         </main>
         <Footer />
         <Analytics />
