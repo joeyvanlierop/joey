@@ -1,5 +1,6 @@
 "use client";
 
+import BoardgameStats from "@components/boardgame-stats";
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";
@@ -9,6 +10,7 @@ import { MDXRemote } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { forwardRef } from "react";
 import Zoom from 'react-medium-image-zoom';
+import boardgameData from "@data/boardgames.json"
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
@@ -128,8 +130,11 @@ const components = {
   tr: CustomTR,
   th: CustomTH,
   td: CustomTD,
+  BoardgameStats,
 };
 
+const data = { boardgameData }
+
 export function MdxContent({ source }) {
-  return <MDXRemote {...source} components={components} />;
+  return <MDXRemote {...source} components={components} scope={data} />;
 }

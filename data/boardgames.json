@@ -1,0 +1,62 @@
+[
+  {
+    "game": "Scout",
+    "plays": [
+      {
+        "date": "2025-01-02",
+        "winners": [
+          "Chase"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Ra",
+    "plays": [
+      {
+        "date": "2025-01-02",
+        "winners": [
+          "Chase"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Betrayal at House on the Hill",
+    "plays": [
+      {
+        "date": "2025-01-02",
+        "winners": [
+          "Chase",
+          "Joey",
+          "Cole",
+          "Ethan",
+          "Nick"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Star Wars: Jabba's Palace",
+    "plays": [
+      {
+        "date": "2025-01-02",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Startups",
+    "plays": [
+      {
+        "date": "2025-01-02",
+        "winners": [
+          "Joey",
+          "Ethan"
+        ]
+      }
+    ]
+  }
+]
