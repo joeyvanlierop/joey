@@ -3,8 +3,9 @@
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+type LoadingState = "initial" | "loading" | "loaded" | "error";
+
 export const FancyVideo = ({
-  href,
   children,
   playInView = true,
   defaultPaused = true,
@@ -18,8 +19,16 @@ export const FancyVideo = ({
   const [time, setTime] = useState(0);
   const [manual, setManual] = useState(false);
   const [ended, setEnded] = useState(false);
+  const [loadingState, setLoadingState] = useState<LoadingState>("initial");
   const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(videoRef, { amount: 0.75 });
+
+  useEffect(() => {
+    if (videoRef.current && loadingState === "initial") {
+      videoRef.current.load();
+      setLoadingState("loading");
+    }
+  }, [videoRef.current, loadingState]);
 
   useEffect(() => {
     if (!playInView) return;
@@ -97,13 +106,13 @@ export const FancyVideo = ({
 
   const getProgress = () => {
     if (!videoRef.current) return 0;
-
     return (time / videoRef.current.duration) * 100;
   };
 
   return (
     <figure className="group relative">
       <video
+        preload="none"
         onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)}
         onPause={() => setPaused(true)}
         onPlay={() => {
@@ -111,13 +120,16 @@ export const FancyVideo = ({
           setEnded(false);
         }}
         onEnded={() => setEnded(true)}
+        onLoadStart={() => setLoadingState("loading")}
+        onLoadedData={() => setLoadingState("loaded")}
+        onError={() => setLoadingState("error")}
         ref={videoRef}
         loop={looping}
         muted={muted}
-        autoPlay
         playsInline
         onClick={() => emitControl(paused ? "play" : "pause")}
-        className="cursor-pointer rounded-lg overflow-hidden transition-all"
+        className={`cursor-pointer rounded-lg overflow-hidden transition-all bg-mono-5 ${loadingState !== "loaded" ? "animate-pulse" : ""
+          }`}
         style={{
           filter:
             ended && !looping ? "grayscale(0.75) brightness(0.5)" : undefined,
