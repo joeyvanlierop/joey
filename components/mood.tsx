@@ -2,7 +2,6 @@
 
 import * as Tooltip from "@radix-ui/react-tooltip";
 import dayjs from "dayjs";
-import { Dot } from "./dot";
 import { useState } from "react";
 
 type MoodMeta = { message: string; date: string };
@@ -62,3 +61,12 @@ function MoodEntry({ message, date }: MoodMeta) {
     </span>
   );
 }
+
+function Dot(props: { className?: string }) {
+  return (
+    <div
+      className={`${props.className} min-h-[8px] min-w-[8px] w-2 h-2 rounded-full shadow-dot`}
+    />
+  );
+}
+

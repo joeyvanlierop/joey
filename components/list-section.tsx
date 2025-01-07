@@ -1,5 +1,5 @@
 import { PostData } from "@lib/post";
-import { ListItem } from "./listItem";
+import { ListItem } from "./list-item";
 
 interface ListSectionProps {
   year: string;

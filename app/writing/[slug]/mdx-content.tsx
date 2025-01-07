@@ -4,13 +4,14 @@ import BoardgameStats from "@components/boardgame-stats";
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";
-import { WomensPlot } from "@components/shoe-plot/lead-plot";
-import { MensPlot } from "@components/shoe-plot/mens-plot";
+import { Plot } from "@components/plot";
 import { MDXRemote } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { forwardRef } from "react";
 import Zoom from 'react-medium-image-zoom';
 import boardgameData from "@data/boardgames.json"
+import olympicShoesMen from "@data/olympic-shoes-men.json"
+import olympicShoesWomen from "@data/olympic-shoes-women.json"
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
@@ -116,8 +117,7 @@ const CustomZoomContent = ({
 const components = {
   Journal,
   Nook,
-  MensPlot,
-  WomensPlot,
+  Plot,
   Video: FancyVideo,
   Image: CustomImage,
   img: CustomImage,
@@ -133,7 +133,7 @@ const components = {
   BoardgameStats,
 };
 
-const data = { boardgameData }
+const data = { boardgameData, olympicShoesMen, olympicShoesWomen }
 
 export function MdxContent({ source }) {
   return <MDXRemote {...source} components={components} scope={data} />;

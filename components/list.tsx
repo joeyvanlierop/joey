@@ -1,7 +1,7 @@
 import { PostData } from "@lib/post";
 import dayjs from "dayjs";
 import { useMemo } from "react";
-import { ListSection } from "./listSection";
+import { ListSection } from "./list-section";
 
 interface ListProps {
   posts: PostData[];
