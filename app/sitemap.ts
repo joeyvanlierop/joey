@@ -1,9 +1,14 @@
 import { getUrl } from "@lib/url";
 import { MetadataRoute } from "next";
 import { getPost, getPosts } from "../lib/post";
+import dayjs from "dayjs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = getUrl();
+
+  const mostRecentPostDate = getPosts()
+    .map((post) => post.data.date)
+    .reduce((a, b) => (new Date(a) > new Date(b) ? a : b));
 
   return [
     {
@@ -13,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${url}/writing`,
-      lastModified: "2023-09-14",
+      lastModified: mostRecentPostDate,
       changeFrequency: "weekly",
     },
     ...getPosts().map((post) => ({
