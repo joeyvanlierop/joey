@@ -1,24 +1,23 @@
 "use client";
 
 import BoardgameStats from "@components/boardgame-stats";
+import { FancyImage } from "@components/fancy-image";
 import { FancyVideo } from "@components/fancy-video";
 import * as Journal from "@components/journal";
 import { Nook } from "@components/nook";
 import { Plot } from "@components/plot";
-import { MDXRemote } from "next-mdx-remote";
-import Image, { ImageProps } from "next/image";
-import { forwardRef } from "react";
-import Zoom from 'react-medium-image-zoom';
-import boardgameData from "@data/boardgames.json"
-import olympicShoesMen from "@data/olympic-shoes-men.json"
-import olympicShoesWomen from "@data/olympic-shoes-women.json"
 import { Stars } from "@components/stars";
+import boardgameData from "@data/boardgames.json";
+import olympicShoesMen from "@data/olympic-shoes-men.json";
+import olympicShoesWomen from "@data/olympic-shoes-women.json";
+import { MDXRemote } from "next-mdx-remote";
+import { forwardRef } from "react";
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
 ));
 
-const CustomLink = ({ href, children, ...rest }) => {
+const FancyLink = ({ href, children, ...rest }) => {
   return (
     <a href={href} target={"_blank"} rel={"noopener noreferrer"} {...rest}>
       {children}
@@ -26,7 +25,7 @@ const CustomLink = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTable = ({ href, children, ...rest }) => {
+const FancyTable = ({ href, children, ...rest }) => {
   return (
     <table className="w-full caption-bottom text-sm not-prose" {...rest}>
       {children}
@@ -34,7 +33,7 @@ const CustomTable = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTHead = ({ href, children, ...rest }) => {
+const FancyTHead = ({ href, children, ...rest }) => {
   return (
     <thead className="[&_tr]:border-b" {...rest}>
       {children}
@@ -42,7 +41,7 @@ const CustomTHead = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTBody = ({ href, children, ...rest }) => {
+const FancyTBody = ({ href, children, ...rest }) => {
   return (
     <tbody className="[&_tr:last-child]:border-0" {...rest}>
       {children}
@@ -50,7 +49,7 @@ const CustomTBody = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTR = ({ href, children, ...rest }) => {
+const FancyTR = ({ href, children, ...rest }) => {
   return (
     <tr
       className="border-b border-border transition-colors hover:bg-mono-3 duration-75"
@@ -61,7 +60,7 @@ const CustomTR = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTH = ({ href, children, ...rest }) => {
+const FancyTH = ({ href, children, ...rest }) => {
   return (
     <th
       className="h-12 px-4 text-left align-middle font-semibold text-mono-11 [&:has([role=checkbox])]:pr-0 md:text-nowrap"
@@ -72,7 +71,7 @@ const CustomTH = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomTD = ({ href, children, ...rest }) => {
+const FancyTD = ({ href, children, ...rest }) => {
   return (
     <td className="p-4 align-middle [&:has([role=checkbox])]:pr-0" {...rest}>
       {children}
@@ -80,7 +79,7 @@ const CustomTD = ({ href, children, ...rest }) => {
   );
 };
 
-const CustomBlockquote = ({ children, ...rest }) => {
+const FancyBlockquote = ({ children, ...rest }) => {
   return (
     <blockquote
       className="not-prose text-mono-11 [&>:not(:first-child)]:mt-4 [&>:not(:last-child)]:mb-4"
@@ -91,46 +90,21 @@ const CustomBlockquote = ({ children, ...rest }) => {
   );
 };
 
-const CustomImage = ({ title, ...rest }: ImageProps) => {
-  return (
-    <figure>
-      <Zoom zoomMargin={20} ZoomContent={CustomZoomContent}>
-        <Image {...rest} />
-      </Zoom>
-      {title && (
-        <figcaption className="text-center">
-          <i className="fancy">{title}</i>
-        </figcaption>
-      )}
-    </figure>
-  );
-};
-const CustomZoomContent = ({
-  img,
-}) => {
-  return (
-    <>
-      {img}
-    </>
-  )
-}
-
 const components = {
+  blockquote: FancyBlockquote,
+  table: FancyTable,
+  thead: FancyTHead,
+  tbody: FancyTBody,
+  tr: FancyTR,
+  th: FancyTH,
+  td: FancyTD,
+  img: FancyImage,
+  a: FancyLink,
+  em: FancyItalics,
+  Video: FancyVideo,
   Journal,
   Nook,
   Plot,
-  Video: FancyVideo,
-  Image: CustomImage,
-  img: CustomImage,
-  em: FancyItalics,
-  a: CustomLink,
-  blockquote: CustomBlockquote,
-  table: CustomTable,
-  thead: CustomTHead,
-  tbody: CustomTBody,
-  tr: CustomTR,
-  th: CustomTH,
-  td: CustomTD,
   BoardgameStats,
   Stars,
 };
