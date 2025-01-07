@@ -12,6 +12,7 @@ import Zoom from 'react-medium-image-zoom';
 import boardgameData from "@data/boardgames.json"
 import olympicShoesMen from "@data/olympic-shoes-men.json"
 import olympicShoesWomen from "@data/olympic-shoes-women.json"
+import { Stars } from "@components/stars";
 
 const FancyItalics = forwardRef<HTMLElement>((props, ref) => (
   <em className="fancy" ref={ref} {...props} />
@@ -131,6 +132,7 @@ const components = {
   th: CustomTH,
   td: CustomTD,
   BoardgameStats,
+  Stars,
 };
 
 const data = { boardgameData, olympicShoesMen, olympicShoesWomen }

@@ -10,7 +10,6 @@ import { Footer } from "@components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import Providers from "./providers";
 
 const inter = localFont({
   src: "../public/fonts/Inter-roman.latin.var.woff2",
@@ -61,12 +60,10 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className={"font-sans text-text h-full relative"}>
-        <Providers>
-          <main className="md:py-32 pb-24 min-h-[100dvh] relative">
-            {children}
-          </main>
-          <Footer />
-        </Providers>
+        <main className="md:py-32 pb-24 min-h-[100dvh] relative">
+          {children}
+        </main>
+        <Footer />
         <Analytics />
       </body>
     </html>
