@@ -58,5 +58,28 @@
         ]
       }
     ]
+  },
+  {
+    "game": "Royal Visit",
+    "plays": [
+      {
+        "date": "2025-01-08",
+        "winners": [
+          "Joey"
+        ]
+      },
+      {
+        "date": "2025-01-08",
+        "winners": [
+          "Joey"
+        ]
+      },
+      {
+        "date": "2025-01-08",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
   }
 ]
