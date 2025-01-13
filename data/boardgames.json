@@ -18,6 +18,12 @@
         "winners": [
           "Chase"
         ]
+      },
+      {
+        "date": "2025-01-12",
+        "winners": [
+          "Joey"
+        ]
       }
     ]
   },
@@ -76,6 +82,17 @@
       },
       {
         "date": "2025-01-08",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Wingspan",
+    "plays": [
+      {
+        "date": "2025-01-12",
         "winners": [
           "Joey"
         ]
