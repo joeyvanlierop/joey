@@ -1,4 +1,3 @@
-import { Column } from "@components/column";
 import { Nook } from "@components/nook";
 import { getPost } from "@lib/post";
 import { getUrl } from "@lib/url";
