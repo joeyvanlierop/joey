@@ -1,4 +1,3 @@
-import { Column } from "@components/column";
 import { FancyDate } from "@components/fancy-date";
 import imageMetadata from "@lib/image-metadata";
 import { getPost, getPostSlugs } from "@lib/post";
@@ -6,9 +5,9 @@ import { getUrl } from "@lib/url";
 import { Metadata } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
+import rehypeUnwrapImages from "rehype-unwrap-images";
 import remarkGfm from "remark-gfm";
 import { MdxContent } from "./mdx-content";
-import rehypeUnwrapImages from "rehype-unwrap-images";
 
 export function generateMetadata({ params }): Metadata {
   const post = getPost(params.slug);
@@ -49,7 +48,7 @@ export default async function Post({ params }) {
           Writing
         </Link>
         <h1 className="font-header font-medium mb-0">{post.data.title}</h1>
-        <FancyDate published={post.data.date} updated={post.data.updated} />
+        <FancyDate published={post.data.date} updated={post.data.updated} path={`writing/${post.data.slug}.mdx`} />
       </div>
       <article className="prose dark:prose-invert prose-headings:font-header prose-headings:text-base prose-headings:font-medium mt-14 [&_img]:rounded-lg [&_img]:my-0">
         <MdxContent source={post.source} />

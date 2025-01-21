@@ -1,17 +1,18 @@
-"use client";
-
 import dayjs from "dayjs";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import FileWayback from "./file-wayback";
 
 dayjs.extend(advancedFormat);
 
 export function FancyDate({
   published,
   updated,
+  path,
 }: {
   published: string;
   updated: string;
+  path: string;
 }) {
   const isUpdated = published !== updated;
 
@@ -31,9 +32,11 @@ export function FancyDate({
             side="bottom"
             align="start"
           >
-            <time className="font-header text-mono-11" dateTime={updated}>
-              {dayjs(updated).format("MMMM Do[,] YYYY")}
-            </time>
+            <FileWayback
+              owner="joeyvanlierop"
+              repo="joey"
+              path={path}
+            />
           </Tooltip.Content>
         )}
       </Tooltip.Root>

@@ -1,4 +1,4 @@
-import { Git } from "./git";
+import { WaybackLink } from "./git";
 
 export async function Wayback() {
   const deployments = await fetchDeployments();
@@ -14,7 +14,7 @@ export async function Wayback() {
           className="first:pt-0 py-2 border-b last:border-b-0 border-border"
           key={deployment.sha}
         >
-          <Git
+          <WaybackLink
             message={deployment.message}
             url={deployment.url}
             sha={deployment.sha}
