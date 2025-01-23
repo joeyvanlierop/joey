@@ -1,4 +1,7 @@
 import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+
+dayjs.extend(advancedFormat);
 
 function Root(props: { children: React.ReactNode }) {
   return <div className={"flex flex-col gap-14"}>{props.children}</div>;
