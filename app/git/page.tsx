@@ -72,8 +72,8 @@ export default function Alias() {
     plom = pull origin master
     ploh = pull origin HEAD
     unstage = reset --soft HEAD^
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\\ %Creset%s%Cblue\\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\\ %Creset%s%Cblue\\\ [%cn]" --decorate --numstat
     f = "!git ls-files | grep -i"
     gr = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"`}
