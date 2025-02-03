@@ -157,5 +157,44 @@
         ]
       }
     ]
+  },
+  {
+    "game": "The White Castle",
+    "plays": [
+      {
+        "date": "2025-02-02",
+        "winners": [
+          "Max"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Arcs",
+    "plays": [
+      {
+        "date": "2025-02-02",
+        "winners": [
+          "Max"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Crabs In A Bucket",
+    "plays": [
+      {
+        "date": "2025-02-02",
+        "winners": [
+          "Joey"
+        ]
+      },
+      {
+        "date": "2025-02-02",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
   }
 ]
