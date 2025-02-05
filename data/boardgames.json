@@ -196,5 +196,16 @@
         ]
       }
     ]
+  },
+  {
+    "game": "El Grande",
+    "plays": [
+      {
+        "date": "2025-02-04",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
   }
 ]
