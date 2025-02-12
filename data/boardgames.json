@@ -194,6 +194,18 @@
         "winners": [
           "Joey"
         ]
+      },
+      {
+        "date": "2025-02-11",
+        "winners": [
+          "Joey"
+        ]
+      },
+      {
+        "date": "2025-02-11",
+        "winners": [
+          "Max"
+        ]
       }
     ]
   },
@@ -202,6 +214,17 @@
     "plays": [
       {
         "date": "2025-02-04",
+        "winners": [
+          "Joey"
+        ]
+      }
+    ]
+  },
+  {
+    "game": "Arcs",
+    "plays": [
+      {
+        "date": "2025-02-11",
         "winners": [
           "Joey"
         ]
