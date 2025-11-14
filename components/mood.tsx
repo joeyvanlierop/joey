@@ -7,10 +7,8 @@ import { useState } from "react";
 type MoodMeta = { message: string; date: string };
 
 export function Mood({
-  current,
   history,
 }: {
-  current: MoodMeta;
   history: MoodMeta[];
 }) {
   // https://github.com/radix-ui/primitives/issues/1573#issuecomment-1698975904
@@ -25,7 +23,7 @@ export function Mood({
             onClick={() => setOpen((open) => !open)}
           >
             <Dot className="bg-yellow-500 shadow-yellow-500 animate-pulsate shadow-dot" />
-            <p className="text-sm -mt-0.5">{current.message}</p>
+            <p className="text-sm -mt-0.5">{history[0].message}</p>
           </div>
         </Tooltip.Trigger>
         <Tooltip.Content

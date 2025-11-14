@@ -7,11 +7,15 @@ export function Footer() {
     <footer className="h-12 w-full border-t border-border absolute bottom-0 flex justify-center items-center text-sm text-mono-9">
       <div className="flex justify-between items-center w-full max-w-full md:max-w-[640px] px-10 md:px-0">
         <Mood
-          current={{
+          history={[
+            {
+            message: "We are so back (again)",
+            date: "2025-11-13",
+            },
+            {
             message: "We are so back",
             date: "2025-01-01",
-          }}
-          history={[
+            },
             {
               message: "Melancholic",
               date: "2024-12-05",
