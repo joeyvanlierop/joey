@@ -65,21 +65,21 @@ export default async function Home() {
         </ShowoffSection>
         <ShowoffSection title="Videos">
           <Showoff
-            title="Fairy Meadows"
+            title="Top Hat Traverse"
+            description={"Jackcountry"}
+            href={"https://youtu.be/f5oOZbnl3K8?si=N8d8HYTKajn23mHx"}
+            external
+          />
+          <Showoff
+            title="Paradise Valley"
             description={"Backcountry"}
+            href={"https://youtu.be/18pPzl1_R4Q?si=TX-8LGfHzH8_L1BY"}
+            external
+          />
+          <Showoff
+            title="Fairy Meadows"
+            description={"Huckleberries"}
             href={"https://youtu.be/iSd6qFyObP4?si=iUD6VAX_3P88T9Gm"}
-            external
-          />
-          <Showoff
-            title="Lake Louise"
-            description={"Slackcountry"}
-            href={"https://youtu.be/mALdgkO1vtQ?si=B01csEgAR5vvg-RB"}
-            external
-          />
-          <Showoff
-            title="Improvement"
-            description={"Getting stronger"}
-            href={"https://youtu.be/66ND2IStaTI?si=2Xgp9YKyNLJER4z6"}
             external
           />
         </ShowoffSection>
