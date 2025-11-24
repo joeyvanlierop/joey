@@ -92,18 +92,18 @@ export default async function Home() {
         </h2>
 
         <p className="animate-enter animate-delay-[600ms]">
-          Almost done school (ish). Becoming an expert in Greek and Roman studies somehow. Getting stoked for ski season soon, we're due for lots of snow.
+          Finished studying computer science at the start of the year. Became an expert in Greek and Roman studies somehow. Didn't do nearly enough climbing this summer. Getting stoked once again for skiing, this will be the season.
         </p>
 
         <p className="animate-enter animate-delay-[600ms]">
-          Last semester, the{" "}
+          Shoutout to the professors who actually care. The{" "}
           <a
             target="_blank"
             href="https://web.archive.org/web/20220929210033/https://contacts.ucalgary.ca/info/cpsc/courses/w19/CPSC525"
           >
             (ethical) hacking course with Ryan Henry
           </a>{" "}
-          showed me how evil code can be if you are clever enough.{" "}
+          showed me how sneaky code can be if you are clever enough.{" "}
           <a
             target="_blank"
             href="https://web.archive.org/web/20231202114757/https://hist.ucalgary.ca/manageprofile/courses/f23/HTST200"
@@ -111,8 +111,7 @@ export default async function Home() {
             <em className="fancy">Events and Ideas that Shook the World</em>{" "}
             with Paul Chastko
           </a>{" "}
-          was a fun chronological exploration of revolution. I will say that
-          nothing can quite beat{" "}
+          was a fun chronological exploration of revolution. Nothing will ever beat{" "}
           <a
             target="_blank"
             href="https://web.archive.org/web/20200702034239/https://scpa.ucalgary.ca/manageprofile/courses/w21/MUSI306.4"
@@ -143,7 +142,7 @@ export default async function Home() {
             Notion
           </a>
           . Learning how to make things detailed, elegant, and
-          blazingly-fast™. Trying to understand how to combine it all into
+          blazing-fast™. Trying to understand how to combine it all into
           a unparalleled, unified experience. Buzzword buzzword buzzword.
           Buzzword.
         </p>
