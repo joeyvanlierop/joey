@@ -32,12 +32,12 @@ export default async function Home() {
         </p>
 
         <p className="mb-8 animate-enter animate-delay-[240ms]">
-          Studying computer science while developing{" "}
+          Working as a computer scientist at{" "}
           <a
-            href="https://cesium.com/blog/2023/08/31/fluid-planet-immerses-young-students-in-the-outdoors/"
+            href="https://www.fuelinnovate.com/"
             target="_blank"
           >
-            Fluid Planet
+            FUEL Innovation
           </a>
           .
         </p>
