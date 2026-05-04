@@ -64,6 +64,7 @@ async function fetchPost(params) {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [imageMetadata, rehypeUnwrapImages],
     },
+    blockJS: false,
   });
   return {
     data: post.data,

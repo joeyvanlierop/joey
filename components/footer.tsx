@@ -9,6 +9,10 @@ export function Footer() {
         <Mood
           history={[
             {
+            message: "New job new me",
+            date: "2026-05-04",
+            },
+            {
             message: "HAPPY NEW YEAR(S)",
             date: "2026-01-01",
             },

@@ -32,12 +32,12 @@ export default async function Home() {
         </p>
 
         <p className="mb-8 animate-enter animate-delay-[240ms]">
-          Working as a computer scientist at{" "}
+          Working as a software developer at{" "}
           <a
-            href="https://www.fuelinnovate.com/"
+            href="https://www.clio.com/ca/"
             target="_blank"
           >
-            FUEL Innovation
+            Clio
           </a>
           .
         </p>
@@ -92,7 +92,7 @@ export default async function Home() {
         </h2>
 
         <p className="animate-enter animate-delay-[600ms]">
-          Finished studying computer science at the start of the year. Became an expert in Greek and Roman studies somehow. Didn't do nearly enough climbing this summer. Getting stoked once again for skiing, this will be the season.
+          Started my new job at Clio in April. Leaving FUEL was bittersweet, and I know that I will cherish the friends and memories I made during my time there. With that said, Clio is fantastic and it's exciting getting to work at a SaaS company. Also free lunch. 
         </p>
 
         <p className="animate-enter animate-delay-[600ms]">
