@@ -92,7 +92,7 @@ export default async function Home() {
         </h2>
 
         <p className="animate-enter animate-delay-[600ms]">
-          Started my new job at Clio in April. Leaving FUEL was bittersweet, and I know that I will cherish the friends and memories I made during my time there. With that said, Clio is fantastic and it's exciting getting to work at a SaaS company. Also free lunch. 
+          Entering my quaterlife crisis. Trying to be more creative. Definitely updating this website all the time. Waiting for the snow.
         </p>
 
         <p className="animate-enter animate-delay-[600ms]">
